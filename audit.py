@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Contrôles de mise en page de la maquette AsstMO.
+"""Contrôles de mise en page de la maquette AssMO.
 
 Je ne peux pas regarder les écrans : ces trois contrôles remplacent le coup d'œil
 qui manque. Chacun vient d'un bug réellement rencontré.
@@ -135,14 +135,16 @@ for page in pages:
     m = MiseEnPage(page.name)
     m.feed(texte)
 
-# Le rouge de marque ne sort pas du châssis : une seule occurrence tolérée,
-# l'échantillon de la page Fondations.
-rouge = [(p.name, len(re.findall(r'var\(--brand\)|var\(--brand-wash\)', p.read_text(encoding='utf-8'))))
-         for p in sorted((racine / 'src').glob('*.html'))]
-hors_chassis = [(n, c) for n, c in rouge if c and not n.startswith('00-')]
-for nom, nb in hors_chassis:
-    defauts.append(f'{nom} : {nb} usage(s) du rouge de marque dans un écran — '
-                   f'il est réservé au châssis, utilisez la rampe de phase')
+# La couleur de marque ne sort pas du châssis. Deux écrans y ont droit : les
+# Fondations, qui la documentent, et la connexion, qui porte le logo en grand.
+# Partout ailleurs, un écran qui la cite peint une donnée en couleur d'interface.
+IDENTITE = ('00-', '02-')
+marque = [(f.name, len(re.findall(r'var\(--brand\)|var\(--brand-wash\)', f.read_text(encoding='utf-8'))))
+          for f in sorted((racine / 'src').glob('*.html'))]
+for nom, nb in marque:
+    if nb and not nom.startswith(IDENTITE):
+        defauts.append(f'{nom} : {nb} usage(s) de la couleur de marque dans un écran — '
+                       f'elle est réservée au châssis, utilisez la rampe de phase')
 
 if defauts:
     print(f'✕ {len(defauts)} défaut(s) :\n')
@@ -151,4 +153,4 @@ if defauts:
     sys.exit(1)
 
 print(f'✓ {len(pages)} pages — structure, grilles à colonnes fixes, largeurs et '
-      f'usage du rouge : rien à signaler')
+      f'usage de la couleur de marque : rien à signaler')

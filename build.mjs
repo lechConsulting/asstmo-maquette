@@ -72,6 +72,13 @@ const L = (cle) => {
   return ROUTES[cle];
 };
 
+const LOGO = `<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AssMO">
+  <rect width="512" height="512" rx="110.93" fill="#1b2a41"/>
+  <path d="M85.33 401.07H426.67" fill="none" stroke="#3a4a63" stroke-width="17.07" stroke-linecap="round"/>
+  <path d="M93.87 256 256 102.4 418.13 256" fill="none" stroke="#dd6b13" stroke-width="46.93" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M179.2 298.67 234.67 354.13 341.33 238.93" fill="none" stroke="#fff" stroke-width="38.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
 /* ---------------------------------------------------------------- fragments */
 const NAV = [
   { groupe: 'Pilotage', items: [
@@ -101,8 +108,8 @@ const NAV = [
 function sidebar(actif) {
   return `<aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">AMO</div>
-      <div><div class="brand-name">AsstMO</div><div class="brand-sub">Agence Verdier</div></div>
+      <div class="brand-mark">${LOGO}</div>
+      <div><div class="brand-name">Ass<em>MO</em></div><div class="brand-sub">Agence Verdier</div></div>
     </div>
     ${NAV.map(
       (g) => `<div class="nav-group"><div class="nav-label">${g.groupe}</div>
@@ -162,7 +169,8 @@ const rendre = (html) =>
     .replace(/\{\{sidebar:([a-zA-Z-]*)\}\}/g, (_, a) => sidebar(a))
     .replace(/\{\{topbar:?([^}]*)\}\}/g, (_, a) => topbar(a))
     .replace(/\{\{onglets:([a-zA-Z-]*)\}\}/g, (_, a) => onglets(a))
-    .replace(/\{\{l:([A-Za-z]+)\}\}/g, (_, a) => L(a));
+    .replace(/\{\{l:([A-Za-z]+)\}\}/g, (_, a) => L(a))
+    .replace(/\{\{logo\}\}/g, () => LOGO);
 
 /* -------------------------------------------------------------- génération */
 const fichiers = readdirSync(dossierSrc).filter((f) => f.endsWith('.html')).sort();
@@ -188,7 +196,7 @@ for (const fichier of fichiers) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO · ${meta.id} — ${meta.titre}</title>
+<title>AssMO · ${meta.id} — ${meta.titre}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -236,14 +244,14 @@ writeFileSync(
 <!-- @dsCard group="Fondations" -->
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO — maquette, sommaire</title>
+<title>AssMO — maquette, sommaire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
 <style>${css}</style></head>
 <body><div class="content" style="max-width:940px;margin:0 auto;padding:34px 22px">
 <div class="page-head"><div>
-  <h1 class="page-title">AsstMO — maquette</h1>
+  <h1 class="page-title">AssMO — maquette</h1>
   <div class="page-sub">${index.length} écrans. Chaque page est autonome et se bascule en mode sombre.</div>
 </div><div class="page-actions">
   <a class="btn" href="${L('fondations')}">Fondations</a>

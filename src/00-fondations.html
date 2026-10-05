@@ -1,68 +1,78 @@
-<!--meta { "id":"00", "titre":"Fondations", "groupe":"Fondations", "largeur":1280, "hauteur":1800 } -->
+<!--meta { "id":"00", "titre":"Fondations", "groupe":"Fondations", "largeur":1280, "hauteur":1900 } -->
 <div class="content" style="max-width:1120px;margin:0 auto;padding:28px 22px">
 
   <div class="page-head">
-    <div>
-      <h1 class="page-title">Fondations</h1>
-      <div class="page-sub">Les jetons et composants dont sont faits les 36 écrans. Châssis repris de l'outil actuel, palettes validées par script.</div>
+    <div class="row" style="gap:16px">
+      <div class="brand-mark" style="width:64px;height:64px">{{logo}}</div>
+      <div>
+        <h1 class="page-title">Charte graphique</h1>
+        <div class="page-sub">Tirée du logo AssMO · couleurs relevées dans le PDF, palettes validées par script</div>
+      </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-head"><div class="card-title">Ce qui vient de l'outil actuel</div>
-      <span class="badge st-neutral">jetons relevés dans son CSS</span></div>
+    <div class="card-head"><div class="card-title">Les couleurs du logo</div>
+      <span class="badge st-neutral">relevées, pas estimées</span></div>
     <div class="card-body stack">
-      <div class="grid-4">
-        <div class="tile"><div class="tile-label">Typographie</div><div class="tile-value sm">Inter</div><div class="tile-note">la sienne, à toutes les graisses</div></div>
-        <div class="tile"><div class="tile-label">Primaire</div>
-          <div class="row" style="gap:9px"><span style="width:26px;height:26px;border-radius:8px;background:var(--brand);display:block"></span>
-            <div class="tile-value sm">#c12525</div></div>
-          <div class="tile-note"><code style="font-size:10.5px">hsl(0 68% 45%)</code></div></div>
-        <div class="tile"><div class="tile-label">Neutres</div><div class="tile-value sm">Ardoise</div><div class="tile-note">fond #f9fafb, carte blanche</div></div>
-        <div class="tile"><div class="tile-label">Rayon</div><div class="tile-value sm">10 / 16 px</div><div class="tile-note">contrôles / cartes</div></div>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#1b2a41"></div><div class="meta"><b>Bleu nuit</b><span class="muted">tuile, « Ass », actions</span><code>#1b2a41</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#dd6b13"></div><div class="meta"><b>Orange</b><span class="muted">chevron, « MO », accent</span><code>#dd6b13</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#f08a3c"></div><div class="meta"><b>Orange clair</b><span class="muted">le même, sur fond sombre</span><code>#f08a3c</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#3a4a63"></div><div class="meta"><b>Ardoise</b><span class="muted">ligne de sol, encre secondaire</span><code>#3a4a63</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#c9cdd4"></div><div class="meta"><b>Gris clair</b><span class="muted">ligne de sol en sombre</span><code>#c9cdd4</code></div></div>
+        <div class="swatch"><div class="chip" style="background:#f6f4ef;box-shadow:inset 0 0 0 1px var(--border)"></div><div class="meta"><b>Crème</b><span class="muted">fond de page</span><code>#f6f4ef</code></div></div>
       </div>
-      <div class="spec">
-        Reprise aussi : la <b>barre latérale blanche</b> en mode clair, les cartes blanches
-        largement arrondies sur un fond très pâle, et les onglets soulignés en rouge. Pas repris :
-        leur conflation du rouge primaire et du rouge destructif, qui rend les alertes illisibles
-        — voir ci-dessous.
-      </div>
+      <div class="spec">Extraites du fichier vectoriel du logo, pas d'une capture : ce sont les
+        valeurs exactes posées par le graphiste. Le logo source est versionné dans
+        <code>logo/</code>, avec l'icône redessinée en SVG à partir de ses tracés.</div>
     </div>
   </div>
 
   <div class="card" style="border-color:var(--phase-3)">
     <div class="card-head" style="background:var(--phase-1-wash)">
-      <div class="card-title">La règle qui tient tout : le rouge ne sort jamais du châssis</div></div>
+      <div class="card-title">La règle qui tient tout : l'orange accentue, le bleu nuit agit</div></div>
     <div class="card-body stack">
-      <div class="alert alert-critical">
-        <span class="ico">✕</span>
-        <div><b>Mesuré : le rouge de marque et le rouge « critique » sont à 4,8 d'écart perceptif.</b>
-          Le plancher est à 15. Deux badges rouges côte à côte seraient indiscernables, y compris
-          en vision normale. Changer l'une des deux teintes n'était pas une option : la première
-          est la signature de l'outil, la seconde appartient à une palette de statut qu'on ne thème
-          pas.</div>
+      <div class="alert alert-warning">
+        <span class="ico">▲</span>
+        <div><b>Mesuré : l'orange du logo ne peut pas porter de texte.</b>
+          3,39:1 en blanc sur orange, 3,09:1 sur le fond crème — sous le seuil de 4,5 exigé pour
+          du texte courant. En faire la couleur des boutons aurait donné une interface au rabais
+          sur son élément le plus cliqué.</div>
       </div>
-      <div class="spec"><b>On les sépare donc par le rôle, pas par la teinte.</b></div>
-      <div class="grid-2">
+      <div class="grid-3">
         <div class="m-card">
-          <b style="font-size:13px">Rouge de marque — châssis, en aplat</b>
+          <b style="font-size:13px">Bleu nuit — les actions</b>
           <div class="row wrap" style="gap:9px;margin-top:4px">
             <button class="btn btn-primary">Terminer l'étape</button>
-            <span class="nav-item is-active" style="width:auto"><span class="ico">⌂</span>Chantiers</span>
-            <a href="#">un lien</a>
           </div>
-          <small class="muted">Bouton principal, entrée de menu active, onglet actif, liens,
-            anneau de focus. Jamais sur une donnée.</small>
+          <small class="muted">Blanc sur <code style="font-size:11px">#1b2a41</code> : <b>14,4:1</b>.
+            Bouton principal, barre latérale, encre.</small>
         </div>
         <div class="m-card">
-          <b style="font-size:13px">Rouge critique — statut, en fond pâle</b>
+          <b style="font-size:13px">Orange — l'accent</b>
           <div class="row wrap" style="gap:9px;margin-top:4px">
-            <span class="badge st-critical">✕ Décennale échue</span>
-            <button class="btn btn-danger">Écarter définitivement</button>
+            <span class="nav-item is-active" style="width:auto;background:var(--brand-deep)"><span class="ico">⌂</span>Chantiers</span>
           </div>
-          <small class="muted">Fond pâle, encre foncée, <b>toujours</b> une icône et un libellé.
-            Le bouton destructif est en contour, jamais en aplat.</small>
+          <small class="muted">Liseré d'élément actif, soulignement d'onglet, anneau de focus,
+            interrupteur. <b>Jamais un fond de texte.</b></small>
         </div>
+        <div class="m-card">
+          <b style="font-size:13px">Orange foncé — le texte</b>
+          <div class="row wrap" style="gap:9px;margin-top:4px">
+            <a href="#" style="font-size:14px">un lien de l'interface</a>
+          </div>
+          <small class="muted"><code style="font-size:11px">#b0550f</code> — même teinte, même
+            saturation, clarté 38 %. <b>5,06:1</b> sur blanc, <b>4,60:1</b> sur crème.</small>
+        </div>
+      </div>
+      <div class="alert alert-critical">
+        <span class="ico">✕</span>
+        <div><b>L'orange de marque est à 7,3 d'écart perceptif du statut « serious ».</b>
+          Le plancher est à 15 : indiscernables. Comme pour tout conflit de ce genre, on ne retouche
+          aucune des deux teintes — on les sépare par le <b>rôle</b>. L'orange n'existe qu'en accent
+          de châssis ; le statut n'existe qu'en fond pâle avec une icône et un libellé.
+          Aucune donnée n'est peinte en orange de marque.</div>
       </div>
     </div>
   </div>
@@ -79,12 +89,13 @@
       </div>
       <div class="spec">
         <b>Une seule teinte qui fonce, pas quatre couleurs</b> : les phases sont ordonnées, la rampe
-        dit l'avancement sans qu'on ait à mémoriser un code. Quatre teintes distinctes avaient été
-        essayées d'abord — le violet et le bleu se confondent en mode sombre (écart 1,9 en
-        daltonisme protan, seuil 8). Le bleu joue aussi un second rôle depuis que le châssis est
-        rouge : <b>rouge = interface, bleu = données</b>.
+        dit l'avancement sans qu'on ait à mémoriser un code. Le bleu ne sert qu'à ça, d'où la
+        répartition générale : <b>bleu nuit = actions, orange = accents, bleu = données</b>.
       </div>
-      <div class="spec">Mode sombre : <code>#9ec5f4</code> <code>#6da7ec</code> <code>#3987e5</code> <code>#184f95</code> — même sens de lecture, fenêtre décalée. Lightness monotone, écarts ≥ 0,06, extrémité la plus proche du fond à 2,06:1.</div>
+      <div class="note"><small><b>La surface sombre est volontairement plus noire que le bleu nuit
+        du logo.</b> Sur <code>#1b2a41</code>, le dernier pas de la rampe tombait à 1,78:1, sous le
+        plancher de 2:1 — la phase 4 devenait invisible sur la carte. La carte sombre est donc
+        <code>#19202c</code>, et le bleu nuit reste à la barre latérale.</small></div>
       <div>
         <div class="meter-head"><span>Répartition des 62 étapes</span><b>62</b></div>
         <div class="progress-stack" style="height:12px">
@@ -94,10 +105,10 @@
           <span class="bg-ph-4" style="flex:16"></span>
         </div>
         <div class="row wrap" style="margin-top:8px;gap:14px">
-          <span class="badge ph-1"><i class="dot"></i>1 — Réception &amp; administratif · ét. 1-5</span>
-          <span class="badge ph-2"><i class="dot"></i>2 — Études · ét. 6-21</span>
-          <span class="badge ph-3"><i class="dot"></i>3 — Préparation · ét. 22-46</span>
-          <span class="badge ph-4"><i class="dot"></i>4 — Travaux &amp; réception · ét. 47-62</span>
+          <span class="badge ph-1"><i class="dot"></i>1 — Réception &amp; administratif</span>
+          <span class="badge ph-2"><i class="dot"></i>2 — Études</span>
+          <span class="badge ph-3"><i class="dot"></i>3 — Préparation</span>
+          <span class="badge ph-4"><i class="dot"></i>4 — Travaux &amp; réception</span>
         </div>
       </div>
     </div>
@@ -105,22 +116,22 @@
 
   <div class="card">
     <div class="card-head"><div class="card-title">Fonctions — catégoriel, ordre figé</div>
-      <span class="muted">ni bleu ni rouge : l'un est la donnée, l'autre le châssis</span></div>
+      <span class="muted">ni orange, ni bleu, ni rouge : les trois sont déjà pris</span></div>
     <div class="card-body stack">
       <div class="swatches">
-        <div class="swatch"><div class="chip" style="background:var(--fn-direction)"></div><div class="meta"><b>Direction</b><code>#eb6834</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--fn-admin)"></div><div class="meta"><b>Administratif</b><code>#4a3aa7</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--fn-technique)"></div><div class="meta"><b>Secr. technique</b><code>#008300</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-direction)"></div><div class="meta"><b>Direction</b><code>#4a3aa7</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-admin)"></div><div class="meta"><b>Administratif</b><code>#1baf7a</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-technique)"></div><div class="meta"><b>Secr. technique</b><code>#eda100</code></div></div>
         <div class="swatch"><div class="chip" style="background:var(--fn-etude)"></div><div class="meta"><b>Bureau d'étude</b><code>#e87ba4</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--fn-conducteur)"></div><div class="meta"><b>Conducteur</b><code>#eda100</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-conducteur)"></div><div class="meta"><b>Conducteur</b><code>#008300</code></div></div>
       </div>
       <div class="spec">
-        Écart le plus faible entre deux fonctions voisines : <b>16,3</b> en daltonisme deutan
-        (seuil 8), <b>19,6</b> en vision normale (plancher 15), en mode clair ; <b>13,0</b> et
-        <b>19,3</b> en sombre. L'orange de la Direction est à 15,1 du rouge de marque — juste
-        au-dessus du plancher, et il ne porte jamais de texte.
-        Le magenta et le jaune passent sous 3:1 sur fond blanc : c'est pourquoi un badge de
-        fonction est un <i>fond teinté + encre foncée + pastille pleine</i>, jamais du texte coloré.
+        L'orange est pris par la marque, le bleu par les phases, le rouge par les statuts : il
+        restait exactement cinq teintes utilisables, et un seul ordre qui passe les deux modes.
+        Écart le plus faible entre deux fonctions voisines : <b>9,1</b> en daltonisme protan
+        (seuil 8), <b>19,6</b> en vision normale (plancher 15) en clair ; <b>8,4</b> et <b>19,3</b>
+        en sombre. Trois d'entre elles passent sous 3:1 sur blanc — d'où le badge à fond teinté,
+        encre foncée et pastille pleine, jamais du texte coloré.
       </div>
       <div class="row wrap">
         <span class="badge fn-direction"><i class="dot"></i>Direction</span>
@@ -128,6 +139,10 @@
         <span class="badge fn-technique"><i class="dot"></i>Secrétariat technique</span>
         <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
         <span class="badge fn-conducteur"><i class="dot"></i>Conducteur de travaux</span>
+      </div>
+      <div class="spec">Les acteurs externes sont volontairement <b>neutres</b> — ce ne sont pas des
+        fonctions du cabinet :</div>
+      <div class="row wrap">
         <span class="badge fn-artisan"><i class="dot"></i>Artisan</span>
         <span class="badge fn-client"><i class="dot"></i>Client</span>
       </div>
@@ -145,21 +160,20 @@
           <span class="badge st-critical">✕ Décennale échue</span>
         </div>
         <div class="spec">Un statut porte <b>toujours</b> une icône et un libellé : sur fond clair,
-          l'avertissement est à 1,79:1, la couleur seule serait illisible. Ces quatre pas sont
-          délibérément distincts des teintes de fonction pour qu'un statut n'usurpe jamais une fonction.</div>
+          l'avertissement est à 1,79:1, la couleur seule serait illisible.</div>
       </div>
     </div>
     <div class="card">
       <div class="card-head"><div class="card-title">Typographie — Inter</div></div>
       <div class="card-body">
-        <div class="type-row"><span class="lbl">page-title · 22/600</span><span style="font-size:22px;font-weight:600;letter-spacing:-.022em">Extension Martin</span></div>
+        <div class="type-row"><span class="lbl">page-title · 22/600</span><span style="font-size:22px;font-weight:600;letter-spacing:-.024em">Extension Martin</span></div>
         <div class="type-row"><span class="lbl">tile-value · 27/650</span><span class="tile-value">26 860 €</span></div>
         <div class="type-row"><span class="lbl">hero · 42/680</span><span class="hero-figure">55 %</span></div>
         <div class="type-row"><span class="lbl">corps · 14/400</span><span>Réception du devis de couverture</span></div>
         <div class="type-row"><span class="lbl">meta · 12/400</span><span class="muted">il y a 2 heures · Élodie Charrier</span></div>
-        <div class="spec" style="margin-top:10px">Inter en fonte variable, donc les graisses
+        <div class="spec" style="margin-top:10px">Inter en fonte variable : les graisses
           intermédiaires (550, 650, 680) sont réelles. Chiffres proportionnels par défaut ;
-          <code>tabular-nums</code> réservé aux colonnes qui doivent s'aligner.</div>
+          <code>tabular-nums</code> réservé aux colonnes qui s'alignent.</div>
       </div>
     </div>
   </div>
@@ -174,9 +188,7 @@
           <button class="btn btn-ghost">Sauter</button>
           <button class="btn btn-danger">Écarter définitivement</button>
         </div>
-        <div class="row wrap">
-          <button class="btn btn-lg btn-primary">Oui, je serai là</button>
-        </div>
+        <div class="row wrap"><button class="btn btn-lg btn-primary">Oui, je serai là</button></div>
         <div class="seg"><span class="is-active">Tous</span><span>En cours</span><span>Terminés</span><span>Archivés</span></div>
         <div class="row">
           <span class="switch is-on"></span><span style="font-size:13px">Partagé au client</span>
@@ -185,32 +197,20 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-head"><div class="card-title">Tuiles chiffrées</div></div>
+      <div class="card-head"><div class="card-title">Surfaces</div></div>
       <div class="card-body">
-        <div class="grid-2" style="gap:12px">
-          <div class="tile"><div class="tile-label">En attente</div><div class="tile-value">7</div><div class="tile-note">dont 2 en retard</div></div>
-          <div class="tile"><div class="tile-label">Faites aujourd'hui</div><div class="tile-value">4</div><div class="tile-delta up">▲ +2 vs hier</div></div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:var(--page);box-shadow:inset 0 0 0 1px var(--border)"></div><div class="meta"><b>Page</b><code>#f6f4ef</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--surface);box-shadow:inset 0 0 0 1px var(--border)"></div><div class="meta"><b>Carte</b><code>#ffffff</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--surface-2)"></div><div class="meta"><b>Atténuée</b><code>#f0ede5</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Encre</b><code>#1b2a41</code></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--ink-2)"></div><div class="meta"><b>Encre 2</b><code>#3a4a63</code></div></div>
+          <div class="swatch"><div class="chip" style="background:#19202c"></div><div class="meta"><b>Carte sombre</b><code>#19202c</code></div></div>
         </div>
-        <div class="spec" style="margin-top:12px">Le chiffre domine, le libellé le précède, le contexte
-          le suit. Pas de graphique là où un nombre suffit.</div>
+        <div class="spec" style="margin-top:12px">Toutes les validations ont été refaites contre ces
+          surfaces réelles. Un contraste mesuré contre un autre fond que celui où la couleur
+          s'affiche ne veut rien dire.</div>
       </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-head"><div class="card-title">Surfaces</div></div>
-    <div class="card-body">
-      <div class="swatches">
-        <div class="swatch"><div class="chip" style="background:var(--page);border-bottom:1px solid var(--border)"></div><div class="meta"><b>Page</b><code>#f9fafb</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--surface);border-bottom:1px solid var(--border)"></div><div class="meta"><b>Carte</b><code>#ffffff</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--surface-2)"></div><div class="meta"><b>Atténuée</b><code>#f0f2f5</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--surface-sunken)"></div><div class="meta"><b>Creusée</b><code>#e9ecf1</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Encre</b><code>#1b202d</code></div></div>
-        <div class="swatch"><div class="chip" style="background:var(--ink-muted)"></div><div class="meta"><b>Encre discrète</b><code>#676e7e</code></div></div>
-      </div>
-      <div class="spec" style="margin-top:12px">Toutes les validations de palette ont été refaites
-        contre ces surfaces réelles — <code>#ffffff</code> en clair, <code>#191e29</code> en sombre.
-        Un contraste mesuré contre un autre fond que celui où la couleur s'affiche ne veut rien dire.</div>
     </div>
   </div>
 

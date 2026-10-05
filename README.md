@@ -1,6 +1,6 @@
-# AsstMO — maquette
+# AssMO — maquette
 
-Maquette d'écrans pour **AsstMO**, l'assistant des maîtres d'œuvre.
+Maquette d'écrans pour **AssMO**, l'assistant des maîtres d'œuvre.
 Elle sert à valider le périmètre fonctionnel et la direction visuelle *avant* tout développement.
 
 👉 **[Ouvrir la maquette](https://lechconsulting.github.io/asstmo-maquette/)**

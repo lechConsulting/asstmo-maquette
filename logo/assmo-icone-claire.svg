@@ -1,0 +1,7 @@
+<!-- AssMO — icône sur fond clair : tuile crème, coche bleu nuit. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AssMO">
+  <rect width="512" height="512" rx="110.93" fill="#f6f4ef"/>
+  <path d="M85.33 401.07H426.67" fill="none" stroke="#c9cdd4" stroke-width="17.07" stroke-linecap="round"/>
+  <path d="M93.87 256 256 102.4 418.13 256" fill="none" stroke="#f08a3c" stroke-width="46.93" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M179.2 298.67 234.67 354.13 341.33 238.93" fill="none" stroke="#1b2a41" stroke-width="38.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -6,7 +6,7 @@
     <div class="content">
       <div class="page-head">
         <div><h1 class="page-title">Compte rendu de rendez-vous</h1>
-          <div class="page-sub">Enregistrez le rendez-vous, le texte est transcrit puis mis en forme</div></div>
+          <div class="page-sub">Déposez l'enregistrement du Dictaphone, ou enregistrez ici — le texte est transcrit puis mis en forme</div></div>
         <div class="page-actions">
           <button class="btn">✎ Saisir à la main</button>
         </div>
@@ -16,8 +16,10 @@
         <div class="stack">
 
           <div class="card">
-            <div class="card-head"><div class="card-title">Enregistrement</div>
-              <span class="badge st-neutral">02 min 47 s</span></div>
+            <div class="card-head">
+              <div class="card-title">La source audio</div>
+              <div class="seg"><span class="is-active">Importer un fichier</span><span>Enregistrer ici</span></div>
+            </div>
             <div class="card-body stack">
               <div class="grid-2" style="gap:12px">
                 <div class="field"><label>Chantier</label>
@@ -26,34 +28,55 @@
                   <input class="input" value="Choix des matériaux"></div>
               </div>
 
-              <div style="background:var(--surface-2);border-radius:var(--radius);padding:18px;text-align:center">
-                <div class="row" style="justify-content:center;gap:14px">
-                  <button class="btn btn-lg" style="background:var(--critical);color:#fff;border-color:transparent;border-radius:50%;width:62px;height:62px;padding:0;font-size:22px">■</button>
-                </div>
-                <div class="num" style="font-size:22px;font-weight:650;margin-top:12px">02:47</div>
-                <div class="row" style="justify-content:center;gap:2px;margin-top:12px;height:34px;align-items:flex-end">
-                  <i style="width:3px;height:40%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:70%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:30%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:90%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:55%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:100%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:45%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:75%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:35%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:60%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:85%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:25%;background:var(--phase-3);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:50%;background:var(--baseline);display:block;border-radius:2px"></i>
-                  <i style="width:3px;height:20%;background:var(--baseline);display:block;border-radius:2px"></i>
-                </div>
-                <small class="muted" style="display:block;margin-top:12px">Appuyez pour arrêter.
-                  L'enregistrement reste sur votre appareil jusqu'à l'envoi.</small>
+              <div class="dropzone">
+                <div style="font-size:26px">♪</div>
+                <b style="font-size:14px">Déposez l'enregistrement, ou choisissez un fichier</b>
+                <div class="muted" style="font-size:12.5px;margin-top:4px">
+                  m4a · mp3 · wav · mp4 · webm — jusqu'à 25 Mo par envoi</div>
+                <button class="btn btn-primary" style="margin-top:11px">Choisir un fichier</button>
+              </div>
+
+              <div class="scroll-x"><table class="tbl" style="margin:0 -17px;width:calc(100% + 34px)">
+                <thead><tr><th>Fichier</th><th class="num">Durée</th><th class="num">Poids</th><th>Format</th><th>État</th><th></th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><b>Nouvel enregistrement 12.m4a</b>
+                      <div class="muted" style="font-size:11.5px">Dictaphone · 5 octobre 14 h 02</div></td>
+                    <td class="num">47:12</td><td class="num">22,4 Mo</td>
+                    <td><span class="badge st-neutral">AAC</span></td>
+                    <td><span class="badge st-good">✓ Prêt à transcrire</span></td>
+                    <td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+                  <tr>
+                    <td><b>Réunion Tilleuls.m4a</b>
+                      <div class="muted" style="font-size:11.5px">Dictaphone · qualité sans perte</div></td>
+                    <td class="num">1:12:40</td><td class="num">58,1 Mo</td>
+                    <td><span class="badge st-neutral">AAC</span></td>
+                    <td><span class="badge st-warning">▲ Découpé en 3 morceaux</span>
+                      <div class="muted" style="font-size:11.5px">au-delà de 25 Mo par envoi</div></td>
+                    <td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+                </tbody>
+              </table></div>
+
+              <div class="note">
+                <small><b>Depuis un iPhone.</b> Dans Dictaphone, appuyez sur l'enregistrement,
+                  puis <b>⋯ › Partager › Enregistrer dans Fichiers</b>. Le bouton ci-dessus ouvre
+                  directement Fichiers, où il n'y a plus qu'à le prendre. Le Dictaphone produit du
+                  <b>.m4a</b>, que le service de transcription lit sans conversion.</small>
+              </div>
+
+              <div class="alert alert-warning" style="padding:11px 13px">
+                <span class="ico">▲</span>
+                <div><small><b>Un enregistrement en « sans perte » dépasse vite la limite.</b>
+                  Une heure de réunion pèse une quinzaine de mégaoctets en qualité compressée, et
+                  près de soixante en sans perte. Au-delà de 25 Mo, le fichier est découpé —
+                  <b>sur les silences, jamais au milieu d'une phrase</b>, sinon on perd un mot à
+                  chaque coupure — puis les morceaux sont transcrits dans l'ordre et recollés.
+                  Si le Dictaphone est réglé en sans perte, le basculer en compressé évite tout ça.</small></div>
               </div>
 
               <div class="stack-sm">
-                <div class="row between"><span style="font-size:12.5px"><span class="badge st-good">✓</span> Envoi de l'enregistrement</span><span class="muted" style="font-size:12px">3,2 Mo</span></div>
-                <div class="row between"><span style="font-size:12.5px"><span class="badge st-good">✓</span> Transcription de l'audio</span><span class="muted" style="font-size:12px">18 s</span></div>
+                <div class="row between"><span style="font-size:12.5px"><span class="badge st-good">✓</span> Envoi du fichier</span><span class="muted" style="font-size:12px">22,4 Mo</span></div>
+                <div class="row between"><span style="font-size:12.5px"><span class="badge st-good">✓</span> Transcription de l'audio</span><span class="muted" style="font-size:12px">2 min 10 s · 47 min d'audio</span></div>
                 <div class="row between"><span style="font-size:12.5px"><span class="badge st-warning">◴</span> Rédaction du compte rendu</span><span class="muted" style="font-size:12px">en cours…</span></div>
                 <div class="progress"><span style="width:72%"></span></div>
               </div>
@@ -64,6 +87,47 @@
                   Whisper : l'API de Claude ne sait pas lire le son. C'est Claude qui rédige ensuite
                   le compte rendu structuré à partir du texte. Si l'une des deux clés manque, la
                   page reste utilisable en saisie manuelle.</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Ou enregistrer directement ici</div>
+              <span class="badge st-neutral">l'autre chemin</span></div>
+            <div class="card-body stack">
+              <div class="row wrap between" style="gap:16px">
+                <div style="background:var(--surface-2);border-radius:var(--radius);padding:16px 22px;text-align:center">
+                  <button class="btn btn-lg" style="background:var(--critical);color:#fff;border-color:transparent;border-radius:50%;width:56px;height:56px;padding:0;font-size:20px">●</button>
+                  <div class="num" style="font-size:18px;font-weight:650;margin-top:9px">00:00</div>
+                  <div class="row" style="justify-content:center;gap:2px;margin-top:9px;height:26px;align-items:flex-end">
+                    <i style="width:3px;height:30%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:55%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:25%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:70%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:40%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:60%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:35%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:50%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:20%;background:var(--baseline);display:block;border-radius:2px"></i>
+                    <i style="width:3px;height:45%;background:var(--baseline);display:block;border-radius:2px"></i>
+                  </div>
+                </div>
+                <div class="grow" style="min-width:280px">
+                  <table class="tbl" style="margin:0">
+                    <thead><tr><th>Quand c'est le bon chemin</th><th>Importer</th><th>Enregistrer ici</th></tr></thead>
+                    <tbody>
+                      <tr><td>Réunion d'une heure</td><td class="center">✓</td><td class="center muted">—</td></tr>
+                      <tr><td>Téléphone en poche, écran verrouillé</td><td class="center">✓</td><td class="center muted">—</td></tr>
+                      <tr><td>Enregistrement déjà fait</td><td class="center">✓</td><td class="center muted">—</td></tr>
+                      <tr><td>Note rapide de quelques minutes</td><td class="center muted">—</td><td class="center">✓</td></tr>
+                      <tr><td>Depuis l'ordinateur, après coup</td><td class="center muted">—</td><td class="center">✓</td></tr>
+                    </tbody>
+                  </table>
+                  <small class="muted" style="display:block;margin-top:10px">Enregistrer dans le
+                    navigateur oblige à <b>garder l'onglet ouvert et l'écran allumé</b> : sur un
+                    téléphone, l'enregistrement s'arrête dès que l'écran se verrouille. Pour une
+                    vraie réunion, le Dictaphone est plus sûr — d'où l'import en premier.</small>
+                </div>
               </div>
             </div>
           </div>
@@ -178,8 +242,8 @@
           <div class="card">
             <div class="card-head"><div class="card-title">Bon à savoir</div></div>
             <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
-              <div><b>Durée.</b> Un envoi est plafonné à 25 Mo, soit une vingtaine de minutes.
-                Au-delà, l'enregistrement est à découper — le message le dit avant d'échouer.</div>
+              <div><b>Taille.</b> 25 Mo par envoi — environ 1 h 20 en qualité compressée, 25 minutes
+                en sans perte. Au-delà, le fichier est découpé sur les silences, puis recollé.</div>
               <hr style="border:0;border-top:1px solid var(--grid)">
               <div><b>Confidentialité.</b> L'audio part chez un tiers pour être transcrit, puis il
                 est supprimé du serveur dès que le texte est revenu. Prévenez les participants.</div>

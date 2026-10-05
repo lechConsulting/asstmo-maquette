@@ -4,35 +4,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO · 31 — Espace client</title>
+<title>AssMO · 31 — Espace client</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
 <style>
 /* ===========================================================================
-   AsstMO — jetons de design et composants de maquette
+   AssMO — charte graphique, tirée du logo
 
-   Châssis repris de l'outil actuel (PBMO), jetons relevés dans son CSS :
-     Inter · neutres ardoise (fond #f9fafb, carte blanche) · rouge primaire
-     hsl(0 68% 45%) = #c12525 · rayon .625rem · barre latérale blanche en clair.
+   Couleurs relevées dans le PDF du logo, pas estimées à l'œil :
+     #1b2a41  bleu nuit   tuile de l'icône, mot « Ass », coche sur fond sombre
+     #dd6b13  orange      chevron et « MO » sur fond clair
+     #f08a3c  orange clair  les mêmes, sur fond sombre
+     #3a4a63  ardoise     ligne de sol sous la coche
+     #c9cdd4  gris clair  la même, sur la tuile claire
+     #f6f4ef  crème       fond de la version claire
 
-   RÈGLE QUI TIENT TOUT : le rouge de marque ne sort jamais du châssis.
-   Mesuré, il est à 4,8 d'écart perceptif du rouge « critique » (plancher 15) :
-   les deux sont indiscernables. On les sépare donc par le RÔLE, pas par la
-   teinte — le rouge de marque n'existe qu'en aplat sur le châssis (bouton
-   principal, entrée de menu active, onglet actif, liens) ; le rouge critique
-   n'existe qu'en fond pâle avec une encre foncée, une icône et un libellé.
-   Aucune donnée n'est jamais peinte en rouge de marque.
+   RÉPARTITION DES RÔLES — mesurée, pas choisie par goût :
+   l'orange du logo ne porte pas de texte (3,4:1 sur blanc, 3,9:1 sur l'encre
+   blanche d'un bouton). Il devient donc l'ACCENT : indicateur d'élément actif,
+   liseré, soulignement d'onglet, anneau de focus — jamais un fond de texte.
+   Le BLEU NUIT porte les actions (bouton principal : blanc sur #1b2a41, 14,4:1).
+   Pour un lien ou un texte orange sur fond clair, --brand-texte est le même
+   orange assombri à 38 % de clarté : 5,06:1 sur blanc, 4,60:1 sur crème.
+
+   L'orange de marque est à 7,3 d'écart perceptif du statut « serious » (#ec835a),
+   pour un plancher de 15 : indiscernables. Même parade que d'habitude — on les
+   sépare par le rôle, l'un en aplat de châssis, l'autre en fond pâle avec icône
+   et libellé. Aucune donnée n'est peinte en orange de marque.
 
    Palettes validées avec scripts/validate_palette.js (skill dataviz), contre
-   les surfaces réelles #ffffff et #191e29 :
+   les surfaces réelles #ffffff et #19202c :
      · phases  = rampe ORDINALE bleue (les phases sont ordonnées 1→4)
                  clair  #86b6ef #5598e7 #2a78d6 #184f95   → tout passe
                  sombre #9ec5f4 #6da7ec #3987e5 #184f95   → tout passe
-     · fonctions = 5 teintes CATÉGORIELLES, ordre figé, sans bleu ni rouge
-                 orange · violet · vert · magenta · jaune
-                 CVD ΔE 16,3 clair / 13,0 sombre · vision normale 19,6 / 19,3
-                 magenta et jaune sont sous 3:1 sur fond clair : les badges
+                 La surface sombre est volontairement plus noire que le bleu nuit
+                 du logo : sur #1b2a41, le dernier pas de la rampe tombait à
+                 1,78:1, sous le plancher de 2:1.
+     · fonctions = 5 teintes CATÉGORIELLES, ordre figé, sans orange (la marque),
+                 sans bleu (les phases) et sans rouge (les statuts) :
+                 violet · aqua · jaune · magenta · vert
+                 CVD ΔE 9,1 clair / 8,4 sombre · vision normale 19,6 / 19,3
+                 Trois d'entre elles passent sous 3:1 sur fond blanc : les badges
                  portent un fond teinté et un texte foncé, jamais du texte coloré.
      · statut  = palette fixe, jamais thémée, toujours icône + libellé.
    =========================================================================== */
@@ -40,27 +53,28 @@
 :root {
   color-scheme: light;
 
-  /* Surfaces et encres — ardoise, comme l'outil actuel */
-  --page:            #f9fafb;
+  /* Surfaces et encres — crème et bleu nuit, les neutres du logo */
+  --page:            #f6f4ef;
   --surface:         #ffffff;
-  --surface-2:       #f0f2f5;
-  --surface-sunken:  #e9ecf1;
-  --ink:             #1b202d;
-  --ink-2:           #4a5260;
-  --ink-muted:       #676e7e;
-  --grid:            #eceef2;
-  --baseline:        #cfd3da;
-  --neutral:         #64748b;
-  --border:          rgba(27, 32, 45, .10);
-  --border-strong:   rgba(27, 32, 45, .17);
-  --shadow:          0 1px 2px rgba(27, 32, 45, .05), 0 10px 26px -14px rgba(27, 32, 45, .16);
+  --surface-2:       #f0ede5;
+  --surface-sunken:  #e8e4da;
+  --ink:             #1b2a41;
+  --ink-2:           #3a4a63;
+  --ink-muted:       #6b7788;
+  --grid:            #ebe7de;
+  --baseline:        #c9cdd4;
+  --neutral:         #3a4a63;
+  --border:          rgba(27, 42, 65, .11);
+  --border-strong:   rgba(27, 42, 65, .18);
+  --shadow:          0 1px 2px rgba(27, 42, 65, .05), 0 10px 26px -14px rgba(27, 42, 65, .18);
 
-  /* Marque — le rouge de l'outil actuel, châssis uniquement */
-  --brand:           #c12525;
-  --brand-hover:     #a81f1f;
+  /* Marque */
+  --brand:           #dd6b13;   /* accent : indicateurs, liserés, focus */
+  --brand-texte:     #b0550f;   /* le même, assombri, pour le texte et les liens */
+  --brand-wash:      #fdf1e4;
+  --brand-deep:      #1b2a41;   /* actions : bouton principal, barre latérale */
+  --brand-deep-2:    #142033;
   --brand-ink:       #ffffff;
-  --brand-wash:      #fdeaea;
-  --brand-deep:      #1b202d;   /* fond des pages pleine page (connexion) */
 
   /* Phases du workflow — rampe ordinale, c'est de la DONNÉE */
   --phase-1:         #86b6ef;
@@ -72,22 +86,22 @@
   --phase-3-wash:    #dfebfb;
   --phase-4-wash:    #dae6f8;
 
-  /* Fonctions — catégoriel, ordre figé */
-  --fn-direction:    #eb6834;
-  --fn-admin:        #4a3aa7;
-  --fn-technique:    #008300;
-  --fn-etude:        #e87ba4;
-  --fn-conducteur:   #eda100;
-  --fn-direction-wash:  #fdeee8;
-  --fn-admin-wash:      #eeecf8;
-  --fn-technique-wash:  #e6f4e6;
+  /* Fonctions — catégoriel, ordre figé, sans orange ni bleu ni rouge */
+  --fn-direction:    #4a3aa7;   /* violet  */
+  --fn-admin:        #1baf7a;   /* aqua    */
+  --fn-technique:    #eda100;   /* jaune   */
+  --fn-etude:        #e87ba4;   /* magenta */
+  --fn-conducteur:   #008300;   /* vert    */
+  --fn-direction-wash:  #edebf8;
+  --fn-admin-wash:      #e4f6ef;
+  --fn-technique-wash:  #fdf5e3;
   --fn-etude-wash:      #fdeff4;
-  --fn-conducteur-wash: #fdf5e3;
+  --fn-conducteur-wash: #e6f4e6;
 
-  /* Acteurs externes */
-  --ext-artisan:     #b45309;
+  /* Acteurs externes — neutres : ce ne sont pas des fonctions du cabinet */
+  --ext-artisan:     #475569;
   --ext-client:      #0f766e;
-  --ext-artisan-wash:#fdf2e3;
+  --ext-artisan-wash:#eef0f3;
   --ext-client-wash: #e5f3f1;
 
   /* Statut — fixe, jamais thémé */
@@ -104,47 +118,49 @@
   --serious-ink:     #9c3c13;
   --critical-ink:    #9d1f1f;
 
-  --radius:          16px;   /* cartes — l'outil actuel arrondit beaucoup */
-  --radius-sm:       10px;   /* contrôles — son --radius exact */
+  --radius:          16px;
+  --radius-sm:       10px;
   --radius-lg:       22px;
   --radius-pill:     999px;
   --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* Mode sombre — pas un simple inverse : chaque pas est choisi pour le fond sombre */
+/* Mode sombre — chaque pas est choisi pour le fond sombre, pas inversé */
 @media (prefers-color-scheme: dark) {
   :root:where(:not([data-theme="light"])) {
     color-scheme: dark;
-    --page: #131720; --surface: #191e29; --surface-2: #252a37; --surface-sunken: #10141c;
-    --ink: #f3f5f7; --ink-2: #c3cad3; --ink-muted: #98a6b3;
-    --grid: #252a37; --baseline: #3b4150; --neutral: #64748b;
+    --page: #10151e; --surface: #19202c; --surface-2: #232c3b; --surface-sunken: #0c1018;
+    --ink: #f2f4f7; --ink-2: #c3ccd8; --ink-muted: #95a2b3;
+    --grid: #232c3b; --baseline: #3b465a; --neutral: #64748b;
     --border: rgba(255,255,255,.09); --border-strong: rgba(255,255,255,.18);
     --shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px -14px rgba(0,0,0,.8);
-    --brand: #ce2727; --brand-hover: #e03636; --brand-wash: #2c1719; --brand-deep: #10141c;
+    --brand: #f08a3c; --brand-texte: #f08a3c; --brand-wash: #2e2113;
+    --brand-deep: #1b2a41; --brand-deep-2: #22334f; --brand-ink: #ffffff;
     --phase-1: #9ec5f4; --phase-2: #6da7ec; --phase-3: #3987e5; --phase-4: #184f95;
     --phase-1-wash: #1c2a3c; --phase-2-wash: #1a2639; --phase-3-wash: #182336; --phase-4-wash: #161f30;
-    --fn-direction: #d95926; --fn-admin: #9085e9; --fn-technique: #008300; --fn-etude: #d55181; --fn-conducteur: #c98500;
-    --fn-direction-wash: #342118; --fn-admin-wash: #262139; --fn-technique-wash: #182817; --fn-etude-wash: #331e27; --fn-conducteur-wash: #2e2614;
-    --ext-artisan: #d99543; --ext-client: #35a79b;
-    --ext-artisan-wash: #2e2516; --ext-client-wash: #16302e;
+    --fn-direction: #9085e9; --fn-admin: #199e70; --fn-technique: #c98500; --fn-etude: #d55181; --fn-conducteur: #008300;
+    --fn-direction-wash: #262139; --fn-admin-wash: #13281f; --fn-technique-wash: #2e2614; --fn-etude-wash: #331e27; --fn-conducteur-wash: #182817;
+    --ext-artisan: #94a3b8; --ext-client: #35a79b;
+    --ext-artisan-wash: #242c38; --ext-client-wash: #16302e;
     --good-wash: #16291a; --warning-wash: #2e2614; --serious-wash: #31211c; --critical-wash: #2f1a1a;
     --good-ink: #5cc85c; --warning-ink: #f0c060; --serious-ink: #f0a080; --critical-ink: #ef8080;
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #131720; --surface: #191e29; --surface-2: #252a37; --surface-sunken: #10141c;
-  --ink: #f3f5f7; --ink-2: #c3cad3; --ink-muted: #98a6b3;
-  --grid: #252a37; --baseline: #3b4150; --neutral: #64748b;
+  --page: #10151e; --surface: #19202c; --surface-2: #232c3b; --surface-sunken: #0c1018;
+  --ink: #f2f4f7; --ink-2: #c3ccd8; --ink-muted: #95a2b3;
+  --grid: #232c3b; --baseline: #3b465a; --neutral: #64748b;
   --border: rgba(255,255,255,.09); --border-strong: rgba(255,255,255,.18);
   --shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px -14px rgba(0,0,0,.8);
-  --brand: #ce2727; --brand-hover: #e03636; --brand-wash: #2c1719; --brand-deep: #10141c;
+  --brand: #f08a3c; --brand-texte: #f08a3c; --brand-wash: #2e2113;
+  --brand-deep: #1b2a41; --brand-deep-2: #22334f; --brand-ink: #ffffff;
   --phase-1: #9ec5f4; --phase-2: #6da7ec; --phase-3: #3987e5; --phase-4: #184f95;
   --phase-1-wash: #1c2a3c; --phase-2-wash: #1a2639; --phase-3-wash: #182336; --phase-4-wash: #161f30;
-  --fn-direction: #d95926; --fn-admin: #9085e9; --fn-technique: #008300; --fn-etude: #d55181; --fn-conducteur: #c98500;
-  --fn-direction-wash: #342118; --fn-admin-wash: #262139; --fn-technique-wash: #182817; --fn-etude-wash: #331e27; --fn-conducteur-wash: #2e2614;
-  --ext-artisan: #d99543; --ext-client: #35a79b;
-  --ext-artisan-wash: #2e2516; --ext-client-wash: #16302e;
+  --fn-direction: #9085e9; --fn-admin: #199e70; --fn-technique: #c98500; --fn-etude: #d55181; --fn-conducteur: #008300;
+  --fn-direction-wash: #262139; --fn-admin-wash: #13281f; --fn-technique-wash: #2e2614; --fn-etude-wash: #331e27; --fn-conducteur-wash: #182817;
+  --ext-artisan: #94a3b8; --ext-client: #35a79b;
+  --ext-artisan-wash: #242c38; --ext-client-wash: #16302e;
   --good-wash: #16291a; --warning-wash: #2e2614; --serious-wash: #31211c; --critical-wash: #2f1a1a;
   --good-ink: #5cc85c; --warning-ink: #f0c060; --serious-ink: #f0a080; --critical-ink: #ef8080;
 }
@@ -160,7 +176,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--brand); text-decoration: none; }
+a { color: var(--brand-texte); text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -.014em; }
 p { margin: 0 0 .75em; }
@@ -183,39 +199,41 @@ small { font-size: 12px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 
 /* ------------------------------------------------------------- ossature
-   Barre latérale blanche sur fond clair, comme l'outil actuel. */
+   Barre latérale bleu nuit : c'est la tuile du logo, agrandie. */
 .app { display: grid; grid-template-columns: 252px 1fr; min-height: 100vh; }
 .sidebar {
-  background: var(--surface);
-  color: var(--ink-2);
+  background: var(--brand-deep);
+  color: #c3cdda;
   padding: 18px 14px;
   display: flex; flex-direction: column; gap: 22px;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid transparent;
 }
-.brand { display: flex; align-items: center; gap: 10px; padding: 2px 6px 0; }
-.brand-mark {
-  width: 36px; height: 36px; border-radius: 11px;
-  background: var(--brand); color: #fff;
-  display: grid; place-items: center; font-weight: 700; font-size: 12.5px; letter-spacing: -.02em;
-}
-.brand-name { font-size: 15.5px; font-weight: 650; color: var(--ink); letter-spacing: -.02em; }
-.brand-sub { font-size: 11.5px; color: var(--ink-muted); }
+.brand { display: flex; align-items: center; gap: 11px; padding: 2px 6px 0; }
+.brand-mark { width: 38px; height: 38px; flex: none; display: block; }
+.brand-mark svg { width: 100%; height: 100%; display: block; }
+.brand-name { font-size: 17px; font-weight: 700; color: #fff; letter-spacing: -.028em; line-height: 1.1; }
+.brand-name em { font-style: normal; color: var(--brand); }
+.brand-sub { font-size: 11px; color: #8d9cb0; letter-spacing: .02em; }
 .nav-group { display: grid; gap: 2px; }
-.nav-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: var(--ink-muted); padding: 0 8px 6px; font-weight: 600; }
+.nav-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: #7f8ea4; padding: 0 8px 6px; font-weight: 600; }
 .nav-item {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 10px; border-radius: var(--radius-sm);
-  color: var(--ink-2); font-size: 13.5px;
+  color: #c3cdda; font-size: 13.5px;
 }
-.nav-item:hover { background: var(--surface-2); text-decoration: none; color: var(--ink); }
-.nav-item.is-active { background: var(--brand); color: #fff; font-weight: 550; }
+.nav-item:hover { background: rgba(255,255,255,.07); text-decoration: none; color: #fff; }
+/* actif : fond très léger + liseré orange. L'orange marque, il ne porte pas le texte. */
+.nav-item.is-active {
+  background: rgba(255,255,255,.10); color: #fff; font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--brand);
+}
 .nav-item .ico { width: 16px; text-align: center; opacity: .85; }
 .nav-item .count {
   margin-left: auto; font-size: 11px; font-variant-numeric: tabular-nums;
-  background: var(--surface-2); color: var(--ink-muted); border-radius: var(--radius-pill); padding: 1px 7px;
+  background: rgba(255,255,255,.12); color: #c3cdda; border-radius: var(--radius-pill); padding: 1px 7px;
 }
-.nav-item.is-active .count { background: rgba(0,0,0,.22); color: #fff; }
-.sidebar-foot { margin-top: auto; border-top: 1px solid var(--border); padding-top: 14px; }
+.nav-item.is-active .count { background: var(--brand); color: #1b2a41; font-weight: 700; }
+.sidebar-foot { margin-top: auto; border-top: 1px solid rgba(255,255,255,.12); padding-top: 14px; }
 
 .main { display: flex; flex-direction: column; min-width: 0; background: var(--page); }
 .topbar {
@@ -236,7 +254,7 @@ small { font-size: 12px; }
 .content { padding: 22px; display: grid; gap: 18px; align-content: start; }
 
 .page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.page-title { font-size: 22px; letter-spacing: -.022em; }
+.page-title { font-size: 22px; letter-spacing: -.024em; }
 .page-sub { color: var(--ink-2); font-size: 13px; margin-top: 3px; }
 .page-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
@@ -276,13 +294,13 @@ small { font-size: 12px; }
   display: grid; gap: 3px; align-content: start;
 }
 .tile-label { font-size: 11.5px; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
-.tile-value { font-size: 27px; font-weight: 650; line-height: 1.1; letter-spacing: -.028em; }
+.tile-value { font-size: 27px; font-weight: 650; line-height: 1.1; letter-spacing: -.03em; }
 .tile-value.sm { font-size: 20px; }
 .tile-note { font-size: 12px; color: var(--ink-2); }
 .tile-delta { font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
 .tile-delta.up { color: var(--good-ink); }
 .tile-delta.down { color: var(--critical-ink); }
-.hero-figure { font-size: 42px; font-weight: 680; letter-spacing: -.035em; line-height: 1; }
+.hero-figure { font-size: 42px; font-weight: 680; letter-spacing: -.038em; line-height: 1; }
 
 /* ---------------------------------------------------------------- badges */
 .badge {
@@ -296,7 +314,6 @@ small { font-size: 12px; }
 .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
 .badge-lg { font-size: 12.5px; padding: 4px 11px; }
 
-/* fonctions : fond teinté + encre foncée + pastille pleine */
 .fn-direction  { background: var(--fn-direction-wash);  color: var(--ink); }
 .fn-admin      { background: var(--fn-admin-wash);      color: var(--ink); }
 .fn-technique  { background: var(--fn-technique-wash);  color: var(--ink); }
@@ -312,7 +329,6 @@ small { font-size: 12px; }
 .fn-artisan    .dot { background: var(--ext-artisan); }
 .fn-client     .dot { background: var(--ext-client); }
 
-/* phases : rampe ordinale */
 .ph-1 { background: var(--phase-1-wash); color: var(--ink); }
 .ph-2 { background: var(--phase-2-wash); color: var(--ink); }
 .ph-3 { background: var(--phase-3-wash); color: var(--ink); }
@@ -322,14 +338,15 @@ small { font-size: 12px; }
 .ph-3 .dot { background: var(--phase-3); }
 .ph-4 .dot { background: var(--phase-4); }
 
-/* statut : toujours icône + libellé */
 .st-good     { background: var(--good-wash);     color: var(--good-ink); }
 .st-warning  { background: var(--warning-wash);  color: var(--warning-ink); }
 .st-serious  { background: var(--serious-wash);  color: var(--serious-ink); }
 .st-critical { background: var(--critical-wash); color: var(--critical-ink); }
 .st-neutral  { background: var(--surface-2);     color: var(--ink-2); }
 
-/* --------------------------------------------------------------- boutons */
+/* --------------------------------------------------------------- boutons
+   Le bouton principal est bleu nuit : blanc sur #1b2a41, 14,4:1. L'orange du
+   logo ne tient pas de texte blanc (3,4:1), il reste un accent. */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;
   font: inherit; font-size: 13px; font-weight: 550;
@@ -338,12 +355,11 @@ small { font-size: 12px; }
   cursor: pointer; white-space: nowrap;
 }
 .btn:hover { background: var(--surface-2); text-decoration: none; }
-.btn-primary { background: var(--brand); border-color: transparent; color: var(--brand-ink); }
-.btn-primary:hover { background: var(--brand-hover); }
+.btn-primary { background: var(--brand-deep); border-color: transparent; color: var(--brand-ink); }
+.btn-primary:hover { background: var(--brand-deep-2); color: var(--brand-ink); }
 .btn-light { background: var(--surface-2); border-color: transparent; color: var(--ink-2); }
 .btn-ghost { background: transparent; border-color: transparent; color: var(--ink-2); }
 .btn-ghost:hover { background: var(--surface-2); color: var(--ink); }
-/* destructif : contour, jamais aplat — l'aplat rouge est réservé au bouton principal */
 .btn-danger { background: transparent; border-color: var(--critical); color: var(--critical-ink); }
 .btn-danger:hover { background: var(--critical-wash); }
 .btn-sm { font-size: 12px; padding: 4px 10px; }
@@ -354,7 +370,7 @@ small { font-size: 12px; }
 
 .seg { display: inline-flex; background: var(--surface-2); border: 1px solid transparent; border-radius: var(--radius-sm); padding: 3px; gap: 2px; }
 .seg > * { padding: 4px 11px; border-radius: 7px; font-size: 12.5px; color: var(--ink-2); cursor: pointer; }
-.seg > .is-active { background: var(--surface); color: var(--ink); font-weight: 550; box-shadow: 0 1px 2px rgba(27,32,45,.1); }
+.seg > .is-active { background: var(--surface); color: var(--ink); font-weight: 550; box-shadow: 0 1px 2px rgba(27,42,65,.12); }
 
 /* ---------------------------------------------------------------- onglets */
 .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); overflow-x: auto; }
@@ -363,7 +379,8 @@ small { font-size: 12px; }
   border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
 }
 .tab:hover { color: var(--ink); text-decoration: none; }
-.tab.is-active { color: var(--brand); border-bottom-color: var(--brand); font-weight: 600; }
+/* l'orange souligne, l'encre reste lisible */
+.tab.is-active { color: var(--ink); border-bottom-color: var(--brand); font-weight: 650; }
 .tab .count { font-size: 11px; color: var(--ink-muted); margin-left: 5px; font-variant-numeric: tabular-nums; }
 
 /* --------------------------------------------------------------- tableaux */
@@ -381,8 +398,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
 .tbl-fixed { table-layout: fixed; }
 .scroll-x { overflow-x: auto; }
 
-/* ------------------------------------------------------------ avancement
-   Teinte par défaut = phase 3, jamais le rouge de marque : c'est de la donnée. */
+/* ------------------------------------------------------------ avancement */
 .progress { height: 8px; border-radius: 4px; background: var(--surface-sunken); overflow: hidden; }
 .progress > span { display: block; height: 100%; border-radius: 4px; background: var(--phase-3); }
 .progress.thin { height: 6px; }
@@ -431,6 +447,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
   border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink);
 }
 .input::placeholder { color: var(--ink-muted); }
+/* anneau de focus orange : un repère, pas du texte — 3,4:1 sur blanc suffit */
 .input:focus, .select:focus { outline: 2px solid var(--brand); outline-offset: -1px; border-color: var(--brand); }
 .input.lg { font-size: 16px; padding: 12px 14px; }
 textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
@@ -444,7 +461,7 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
   border: 1.5px solid var(--border-strong); border-radius: 5px; background: var(--surface);
   display: grid; place-items: center; font-size: 11px; color: transparent;
 }
-.check.is-on .box { background: var(--brand); border-color: var(--brand); color: #fff; }
+.check.is-on .box { background: var(--brand-deep); border-color: var(--brand-deep); color: #fff; }
 .check.is-on > span:last-child { color: var(--ink); }
 .switch { width: 36px; height: 20px; border-radius: 999px; background: var(--baseline); position: relative; flex: none; }
 .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; }
@@ -465,7 +482,6 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .alert-warning  { background: var(--warning-wash);  color: var(--warning-ink); }
 .alert-critical { background: var(--critical-wash); color: var(--critical-ink); }
 .alert-good     { background: var(--good-wash);     color: var(--good-ink); }
-/* « info » n'est pas une alerte rouge : teinte de la rampe des phases */
 .alert-info     { background: var(--phase-1-wash);  color: var(--ink); }
 .alert b { font-weight: 650; }
 
@@ -497,7 +513,7 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .step.is-current {
   /* un seul enfant ici : on sort de la grille deux colonnes de .step,
      sinon le contenu se retrouve coincé dans la colonne de 30px.
-     Fond neutre + liseré de marque : « vous êtes ici », pas « alerte ». */
+     Fond neutre + liseré orange : « vous êtes ici », pas « alerte ». */
   display: block;
   background: var(--surface-2); border-radius: var(--radius);
   box-shadow: inset 3px 0 0 var(--brand);
@@ -509,7 +525,7 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .kanban-col { background: var(--surface-sunken); border-radius: var(--radius); padding: 12px; display: grid; gap: 9px; align-content: start; }
 .kanban-head { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; font-weight: 600; padding: 2px 3px; }
 .kanban-head .count { font-variant-numeric: tabular-nums; color: var(--ink-muted); font-weight: 500; }
-.task { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 12px; display: grid; gap: 7px; box-shadow: 0 1px 2px rgba(27,32,45,.05); }
+.task { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 12px; display: grid; gap: 7px; box-shadow: 0 1px 2px rgba(27,42,65,.05); }
 .task-title { font-size: 13px; font-weight: 550; line-height: 1.35; }
 .task-meta { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; font-size: 11.5px; color: var(--ink-muted); }
 .prio { width: 3px; border-radius: 2px; align-self: stretch; }
@@ -555,7 +571,6 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 }
 .mail:last-child { border-bottom: none; }
 .mail:hover { background: var(--surface-2); }
-/* non lu : fond neutre + liseré, jamais une teinte d'alerte */
 .mail.is-unread { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--phase-3); }
 .mail-from { font-size: 13px; font-weight: 600; }
 .mail.is-read .mail-from { font-weight: 500; color: var(--ink-2); }
@@ -582,11 +597,11 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .photo { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); background: var(--surface-2); }
 .photo .img { aspect-ratio: 4/3; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .04em; }
 .photo .cap { padding: 7px 9px; font-size: 11.5px; color: var(--ink-2); }
-.ph-a { background: linear-gradient(135deg, #64748b, #3f4a5a); }
-.ph-b { background: linear-gradient(135deg, #8b7a64, #5a4e3f); }
-.ph-c { background: linear-gradient(135deg, #648b7c, #3f5a50); }
-.ph-d { background: linear-gradient(135deg, #7a648b, #4e3f5a); }
-.ph-e { background: linear-gradient(135deg, #8b6470, #5a3f48); }
+.ph-a { background: linear-gradient(135deg, #5a6b82, #35415a); }
+.ph-b { background: linear-gradient(135deg, #85745c, #564a3a); }
+.ph-c { background: linear-gradient(135deg, #5d8277, #38514a); }
+.ph-d { background: linear-gradient(135deg, #6f6188, #453c56); }
+.ph-e { background: linear-gradient(135deg, #8a6a5c, #57403a); }
 
 /* ------------------------------------------------- mobile / espaces externes */
 .phones { display: flex; gap: 26px; flex-wrap: wrap; align-items: flex-start; justify-content: center; }
@@ -600,10 +615,9 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .phone-body { padding: 16px; display: grid; gap: 14px; }
 .phone-caption { text-align: center; font-size: 12px; color: var(--ink-muted); margin-top: 9px; }
 .m-head { display: grid; gap: 3px; }
-.m-title { font-size: 19px; font-weight: 650; letter-spacing: -.025em; }
+.m-title { font-size: 19px; font-weight: 650; letter-spacing: -.027em; }
 .m-sub { font-size: 13px; color: var(--ink-2); }
 .m-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; display: grid; gap: 9px; background: var(--surface); }
-/* accent = repère de lecture, en teinte de phase : le rouge resterait anxiogène */
 .m-card.accent { border-color: var(--phase-3); background: var(--phase-1-wash); }
 .m-row { display: flex; align-items: center; gap: 11px; padding: 13px 14px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
 .m-row .grow { display: grid; gap: 2px; }
@@ -611,7 +625,7 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .m-tabbar { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-top: 1px solid var(--border); background: var(--surface-2); }
 .m-tab { padding: 10px 4px; text-align: center; font-size: 10.5px; color: var(--ink-muted); display: grid; gap: 3px; }
 .m-tab .ico { font-size: 17px; }
-.m-tab.is-active { color: var(--brand); font-weight: 600; }
+.m-tab.is-active { color: var(--brand-texte); font-weight: 600; }
 
 /* ------------------------------------------------------- page d'impression */
 .a4 {
@@ -635,12 +649,12 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 
 /* ----------------------------------------------------- bandeau de maquette */
 .mock-bar {
-  background: var(--ink); color: #fff; font-size: 12px;
+  background: var(--brand-deep); color: #fff; font-size: 12px;
   padding: 8px 16px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
 }
-.mock-bar .tagid { font-weight: 700; letter-spacing: .04em; }
+.mock-bar .tagid { font-weight: 700; letter-spacing: .04em; color: var(--brand); }
 .mock-bar .sep { opacity: .35; }
-.mock-bar a { color: #cbd5e1; }
+.mock-bar a { color: #b7c4d4; }
 .mock-bar .persona { margin-left: auto; display: inline-flex; gap: 7px; align-items: center; }
 .theme-toggle { background: rgba(255,255,255,.14); border: 0; color: #fff; font: inherit; font-size: 11.5px; padding: 3px 9px; border-radius: 999px; cursor: pointer; }
 
@@ -674,7 +688,7 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .agenda-ev {
   background: var(--surface); border-radius: var(--radius-sm); padding: 8px 10px;
   display: grid; gap: 2px; border-left: 3px solid var(--phase-3);
-  box-shadow: 0 1px 2px rgba(27,32,45,.05);
+  box-shadow: 0 1px 2px rgba(27,42,65,.05);
 }
 .agenda-ev.rdv       { border-left-color: var(--fn-direction); }
 .agenda-ev.reunion   { border-left-color: var(--phase-3); }
