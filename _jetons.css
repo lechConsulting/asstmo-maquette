@@ -468,7 +468,13 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .step.is-skipped .step-title { color: var(--ink-muted); text-decoration: line-through; }
 .step-consigne { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
 .step-sub { margin-left: 14px; padding-left: 14px; border-left: 2px solid var(--grid); }
-.step.is-current { background: var(--brand-wash); border-radius: var(--radius); padding: 13px; margin: 4px 0; border-bottom: none; }
+.step.is-current {
+  /* un seul enfant ici : on sort de la grille deux colonnes de .step,
+     sinon le contenu se retrouve coincé dans la colonne de 30px. */
+  display: block;
+  background: var(--brand-wash); border-radius: var(--radius);
+  padding: 13px; margin: 4px 0; border-bottom: none;
+}
 
 /* -------------------------------------------------------------- kanban */
 .kanban { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; align-items: start; }
@@ -488,14 +494,19 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .gantt { font-size: 12px; }
 .gantt-head, .gantt-row { display: grid; grid-template-columns: 190px 1fr; align-items: center; }
 .gantt-head { border-bottom: 1px solid var(--border); padding-bottom: 7px; margin-bottom: 4px; }
-.gantt-days { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
+.gantt-days { display: grid; grid-template-columns: repeat(14, 1fr); }
 .gantt-day { text-align: center; font-size: 10.5px; color: var(--ink-muted); padding: 0 1px; }
 .gantt-day.we { color: var(--baseline); }
 .gantt-row { border-bottom: 1px solid var(--grid); }
 .gantt-row:last-child { border-bottom: none; }
 .gantt-label { padding: 9px 10px 9px 0; display: grid; gap: 1px; }
 .gantt-label b { font-size: 12.5px; font-weight: 550; }
-.gantt-track { position: relative; height: 38px; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px); background-size: calc(100% / 14) 100%; }
+/* 14 colonnes explicites : avec des colonnes implicites, une ligne qui ne porte
+   qu'une barre courte n'en créerait que deux et ne s'alignerait pas sur l'en-tête. */
+.gantt-track { position: relative; height: 38px; display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px);
+  background-size: calc(100% / 14) 100%; }
 .gantt-bar {
   grid-row: 1; align-self: center; height: 22px; border-radius: 6px;
   display: flex; align-items: center; padding: 0 8px; gap: 6px;
