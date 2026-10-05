@@ -1,0 +1,161 @@
+<!--meta { "id":"15", "titre":"Planning conducteur", "groupe":"Cabinet", "role":"Conducteur", "largeur":1440, "hauteur":1120 } -->
+<div class="app">
+  {{sidebar:planningCond}}
+  <div class="main">
+    {{topbar:Élodie Charrier@ÉC@Conducteur de travaux|fn-conducteur}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Mon planning</h1>
+          <div class="page-sub">Tous mes chantiers · semaine du 2 au 15 novembre · 14 interventions</div></div>
+        <div class="page-actions">
+          <select class="select" style="width:auto"><option>Mes chantiers (3)</option><option>Tous les conducteurs</option><option>Marie Fontaine</option></select>
+          <div class="seg"><span>Semaine</span><span class="is-active">2 semaines</span><span>Mois</span></div>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="tile"><div class="tile-label">Interventions</div><div class="tile-value">14</div><div class="tile-note">sur 3 chantiers</div></div>
+        <div class="tile"><div class="tile-label">À confirmer</div><div class="tile-value" style="color:var(--warning-ink)">4</div><div class="tile-note">relances envoyées</div></div>
+        <div class="tile"><div class="tile-label">Journée la plus chargée</div><div class="tile-value sm">jeu 12 nov.</div><div class="tile-note">5 entreprises sur 2 chantiers</div></div>
+        <div class="tile"><div class="tile-label">Conflits</div><div class="tile-value" style="color:var(--critical-ink)">2</div><div class="tile-note">à arbitrer</div></div>
+      </div>
+
+      <div class="alert alert-critical">
+        <span class="ico">✕</span>
+        <div><b>Jeudi 12 novembre, vous êtes attendue sur deux chantiers à 8 h</b> — réunion de
+          chantier à Craponne et réception de la charpente à Lyon 3<sup>e</sup>, 35 minutes de route
+          entre les deux. Et Électricité Bonnet démarre ce jour-là avec une décennale échue.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Novembre, du 2 au 15</div>
+          <div class="row wrap" style="gap:12px;font-size:11.5px">
+            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--phase-3);display:block"></i>Confirmée</span>
+            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:repeating-linear-gradient(45deg,var(--warning) 0 4px,#e0a015 4px 8px);display:block"></i>À confirmer</span>
+            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--good);display:block"></i>Faite</span>
+            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--critical);display:block"></i>Conflit</span>
+            <span class="row" style="gap:5px"><i style="width:10px;height:10px;background:var(--ink);transform:rotate(45deg);display:block"></i>Ma présence</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="gantt">
+            <div class="gantt-head">
+              <div></div>
+              <div class="gantt-days">
+                <div class="gantt-day">lun 2</div><div class="gantt-day">mar 3</div><div class="gantt-day">mer 4</div>
+                <div class="gantt-day">jeu 5</div><div class="gantt-day">ven 6</div><div class="gantt-day we">sam 7</div>
+                <div class="gantt-day we">dim 8</div><div class="gantt-day">lun 9</div><div class="gantt-day">mar 10</div>
+                <div class="gantt-day">mer 11</div><div class="gantt-day"><b>jeu 12</b></div><div class="gantt-day">ven 13</div>
+                <div class="gantt-day we">sam 14</div><div class="gantt-day we">dim 15</div>
+              </div>
+            </div>
+
+            <div class="gantt-row" style="background:var(--phase-3-wash)">
+              <div class="gantt-label"><b>CH-2026-014 · Extension Martin</b><small class="muted">Craponne</small></div>
+              <div class="gantt-track" style="height:16px"></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Gros œuvre</b><small class="muted">Maçonnerie Fontaine</small></div>
+              <div class="gantt-track"><div class="gantt-bar ok" style="grid-column:4 / span 7">✓ Confirmée</div></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Charpente</b><small class="muted">Toitures du Rhône</small></div>
+              <div class="gantt-track"><div class="gantt-bar ok" style="grid-column:11 / span 4">✓ Confirmée</div></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Électricité</b><small class="muted">Électricité Bonnet</small></div>
+              <div class="gantt-track"><div class="gantt-bar late" style="grid-column:11 / span 3">✕ Décennale échue</div></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Plomberie</b><small class="muted">Sanivalley</small></div>
+              <div class="gantt-track"><div class="gantt-bar ok" style="grid-column:12 / span 3">✓ Confirmée</div></div>
+            </div>
+
+            <div class="gantt-row" style="background:var(--phase-2-wash)">
+              <div class="gantt-label"><b>CH-2026-018 · École Brindas</b><small class="muted">Brindas</small></div>
+              <div class="gantt-track" style="height:16px"></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Visite de site</b><small class="muted">avec la mairie</small></div>
+              <div class="gantt-track"><div class="gantt-bar done" style="grid-column:2 / span 1">✓</div></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Désamiantage</b><small class="muted">à attribuer</small></div>
+              <div class="gantt-track"><div class="gantt-bar pending" style="grid-column:8 / span 4">▲ À confirmer</div></div>
+            </div>
+
+            <div class="gantt-row" style="background:var(--phase-4-wash)">
+              <div class="gantt-label"><b>CH-2026-011 · SCI Les Tilleuls</b><small class="muted">Lyon 3e</small></div>
+              <div class="gantt-track" style="height:16px"></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Réception charpente</b><small class="muted">Toitures du Rhône</small></div>
+              <div class="gantt-track"><div class="gantt-bar late" style="grid-column:11 / span 1">✕ 8 h</div></div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label" style="padding-left:14px"><b>Peinture</b><small class="muted">Decorhône</small></div>
+              <div class="gantt-track"><div class="gantt-bar pending" style="grid-column:12 / span 3">▲ À confirmer</div></div>
+            </div>
+
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Ma présence</b><small class="muted">réunions et réceptions</small></div>
+              <div class="gantt-track">
+                <div class="gantt-milestone" style="grid-column:2"></div>
+                <div class="gantt-milestone" style="grid-column:4"></div>
+                <div class="gantt-milestone" style="grid-column:9"></div>
+                <div class="gantt-milestone" style="grid-column:11;background:var(--critical)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-foot">
+          <small class="muted">Le planning global n'est pas une saisie : il relit les interventions
+            déclarées sur chaque chantier. On le corrige donc depuis
+            <a href="{{l:planning}}">le planning du chantier</a>, pas ici.</small>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Charge par jour</div></div>
+          <div class="card-body">
+            <table class="tbl" style="margin:-16px">
+              <thead><tr><th>Jour</th><th>Entreprises sur site</th><th>Chantiers</th><th style="width:120px">Charge</th></tr></thead>
+              <tbody>
+                <tr><td>lun 9 nov.</td><td class="num">2</td><td>1</td><td><div class="progress thin"><span class="bg-good" style="width:40%"></span></div></td></tr>
+                <tr><td>mar 10 nov.</td><td class="num">2</td><td>2</td><td><div class="progress thin"><span class="bg-good" style="width:40%"></span></div></td></tr>
+                <tr><td>mer 11 nov.</td><td class="num">3</td><td>2</td><td><div class="progress thin"><span class="bg-warning" style="width:60%"></span></div></td></tr>
+                <tr style="background:var(--critical-wash)"><td><b>jeu 12 nov.</b></td><td class="num"><b>5</b></td><td>2</td><td><div class="progress thin"><span class="bg-critical" style="width:100%"></span></div></td></tr>
+                <tr><td>ven 13 nov.</td><td class="num">4</td><td>2</td><td><div class="progress thin"><span class="bg-warning" style="width:80%"></span></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-title">À confirmer</div><span class="badge st-warning">▲ 4</span></div>
+          <div class="card-body stack-sm">
+            <div class="row between"><div><b style="font-size:13px">Désamiantage — École Brindas</b>
+              <div class="muted" style="font-size:12px">9 → 12 nov. · entreprise non attribuée</div></div>
+              <button class="btn btn-sm">Chercher</button></div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div class="row between"><div><b style="font-size:13px">Électricité Bonnet — Martin</b>
+              <div class="muted" style="font-size:12px">12 → 14 nov. · lien non ouvert</div></div>
+              <button class="btn btn-sm">Relancer</button></div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div class="row between"><div><b style="font-size:13px">Peinture Decorhône — Tilleuls</b>
+              <div class="muted" style="font-size:12px">12 → 14 nov. · sans réponse</div></div>
+              <button class="btn btn-sm">Relancer</button></div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div class="row between"><div><b style="font-size:13px">Alpes Bois — Martin</b>
+              <div class="muted" style="font-size:12px">dates non proposées</div></div>
+              <button class="btn btn-sm">Proposer</button></div>
+            <button class="btn btn-block" style="margin-top:4px">✉ Relancer les 3 non-confirmés</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,202 @@
+<!--meta { "id":"17", "titre":"Messagerie — à traiter", "groupe":"Cabinet", "role":"Administratif", "largeur":1440, "hauteur":1200 } -->
+<div class="app">
+  {{sidebar:messagerie}}
+  <div class="main">
+    {{topbar:Marc Delaunay@MD@Administratif|fn-admin}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Messagerie</h1>
+          <div class="page-sub">9 messages à traiter · 247 rattachés automatiquement ce mois-ci · 118 écartés</div></div>
+        <div class="page-actions">
+          <button class="btn">⟳ Relever</button>
+          <button class="btn btn-primary">✉ Écrire</button>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="tile"><div class="tile-label">Rattachés par jeton</div><div class="tile-value">186</div><div class="tile-note">75 % — ne se trompe jamais</div></div>
+        <div class="tile"><div class="tile-label">Par le fil</div><div class="tile-value">42</div><div class="tile-note">17 % — In-Reply-To</div></div>
+        <div class="tile"><div class="tile-label">Par l'adresse</div><div class="tile-value">19</div><div class="tile-note">8 % — un seul projet possible</div></div>
+        <div class="tile"><div class="tile-label">À traiter à la main</div><div class="tile-value" style="color:var(--warning-ink)">9</div><div class="tile-note">3,5 % du courrier</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row wrap between" style="gap:14px">
+            <div style="max-width:620px">
+              <b style="font-size:13.5px">Comment un message trouve son chantier</b>
+              <div class="muted" style="font-size:12.5px;margin-top:4px">
+                Quatre chemins essayés dans l'ordre, du plus sûr au plus faible, et <b>le premier qui
+                répond l'emporte</b>. Aucune lecture du sujet, aucun score de ressemblance :
+                en cas de doute on s'abstient et le message arrive ici.
+              </div>
+            </div>
+            <div class="row wrap" style="gap:7px">
+              <span class="badge st-good">1 · Jeton de l'adresse</span>
+              <span class="muted">›</span>
+              <span class="badge st-good">2 · Fil de discussion</span>
+              <span class="muted">›</span>
+              <span class="badge st-warning">3 · Adresse d'expéditeur</span>
+              <span class="muted">›</span>
+              <span class="badge st-serious">4 · À traiter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">À traiter</div>
+          <div class="row" style="gap:10px">
+            <div class="seg"><span class="is-active">À traiter <b>9</b></span><span>Rattachés</span><span>Écartés</span><span>Envoyés</span></div>
+          </div>
+        </div>
+        <div class="maillist">
+
+          <a class="mail is-unread" href="{{l:mail}}" style="color:inherit;text-decoration:none">
+            <div><span class="avatar sm" style="background:var(--ext-artisan);width:22px;height:22px;border-radius:6px;font-size:9px">PS</span></div>
+            <div>
+              <div class="mail-from">Léa Vidal · Plomberie Sanivalley</div>
+              <div class="mail-subj">Devis DEV-2214 — extension</div>
+              <div class="mail-snip">Bonjour, veuillez trouver notre devis pour le lot plomberie…</div>
+              <div class="row wrap" style="gap:6px;margin-top:7px">
+                <span class="attach">⎙ DEV-2214.pdf · 310 Ko</span>
+                <span class="badge st-serious">▲ Devis détecté, chantier incertain</span>
+              </div>
+            </div>
+            <div class="mail-side"><span>il y a 2 h</span>
+              <span class="badge st-warning">▲ 2 chantiers possibles</span></div>
+          </a>
+
+          <div class="mail is-unread">
+            <div><span class="avatar sm" style="background:var(--baseline);color:var(--ink);width:22px;height:22px;border-radius:6px;font-size:9px">MB</span></div>
+            <div>
+              <div class="mail-from">Mairie de Brindas · urbanisme</div>
+              <div class="mail-subj">DP 069 027 26 B0041 — demande de pièces complémentaires</div>
+              <div class="mail-snip">Votre dossier est incomplet. Merci de fournir sous un mois le volet paysager…</div>
+              <div class="row wrap" style="gap:6px;margin-top:7px">
+                <span class="attach">⎙ Courrier_pieces.pdf · 180 Ko</span>
+              </div>
+            </div>
+            <div class="mail-side"><span>il y a 4 h</span>
+              <div class="row" style="gap:5px"><button class="btn btn-sm">Rattacher</button></div></div>
+          </div>
+
+          <div class="mail is-unread">
+            <div><span class="avatar sm" style="background:var(--ext-artisan);width:22px;height:22px;border-radius:6px;font-size:9px">AB</span></div>
+            <div>
+              <div class="mail-from">Didier Marchand · Alpes Bois</div>
+              <div class="mail-subj">Re: Re: Fwd: devis menuiseries (transféré 3 fois)</div>
+              <div class="mail-snip">Je vous renvoie le devis corrigé, le précédent avait une erreur sur le coulissant…</div>
+              <div class="row wrap" style="gap:6px;margin-top:7px">
+                <span class="attach">⎙ Devis_AB_7741_v2.pdf · 420 Ko</span>
+                <span class="badge st-serious">▲ Fil cassé par les transferts</span>
+              </div>
+            </div>
+            <div class="mail-side"><span>hier</span>
+              <div class="row" style="gap:5px"><button class="btn btn-sm">Rattacher</button></div></div>
+          </div>
+
+          <div class="mail">
+            <div><span class="avatar sm" style="background:var(--baseline);color:var(--ink);width:22px;height:22px;border-radius:6px;font-size:9px">SM</span></div>
+            <div>
+              <div class="mail-from">SMABTP · sinistres</div>
+              <div class="mail-subj">Dossier DO-2026-44871 — accord de prise en charge</div>
+              <div class="mail-snip">Nous donnons notre accord pour la prise en charge des travaux décrits…</div>
+            </div>
+            <div class="mail-side"><span>hier</span>
+              <div class="row" style="gap:5px"><button class="btn btn-sm">Rattacher</button></div></div>
+          </div>
+
+          <div class="mail">
+            <div><span class="avatar sm" style="background:var(--surface-sunken);color:var(--ink-muted);width:22px;height:22px;border-radius:6px;font-size:9px">PB</span></div>
+            <div>
+              <div class="mail-from">Point.P Craponne · commercial</div>
+              <div class="mail-subj">Nos promotions de novembre sur l'isolation</div>
+              <div class="mail-snip">Profitez de -20 % sur toute la gamme laine de verre jusqu'au 30 novembre…</div>
+              <div class="row wrap" style="gap:6px;margin-top:7px">
+                <span class="badge st-neutral">Aucun projet · prospection</span>
+              </div>
+            </div>
+            <div class="mail-side"><span>2 jours</span>
+              <div class="row" style="gap:5px">
+                <button class="btn btn-sm btn-ghost">Écarter</button>
+                <button class="btn btn-sm btn-danger">Écarter définitivement</button>
+              </div></div>
+          </div>
+
+          <div class="mail">
+            <div><span class="avatar sm" style="background:var(--surface-sunken);color:var(--ink-muted);width:22px;height:22px;border-radius:6px;font-size:9px">??</span></div>
+            <div>
+              <div class="mail-from">cabinet-dentaire-lyon3@orange.fr</div>
+              <div class="mail-subj">Rappel de votre rendez-vous du 14 octobre</div>
+              <div class="mail-snip">Nous vous rappelons votre rendez-vous de détartrage…</div>
+              <div class="row wrap" style="gap:6px;margin-top:7px">
+                <span class="badge st-neutral">Personnel · hors métier</span>
+              </div>
+            </div>
+            <div class="mail-side"><span>2 jours</span>
+              <div class="row" style="gap:5px">
+                <button class="btn btn-sm btn-ghost">Écarter</button>
+                <button class="btn btn-sm btn-danger">Écarter définitivement</button>
+              </div></div>
+          </div>
+
+        </div>
+        <div class="card-foot">
+          <small class="muted">Les 9 messages restants sont de la même eau : relances commerciales,
+            courriers d'administration sans référence de dossier, et deux fils cassés par des
+            transferts successifs.</small>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Pourquoi deux boutons pour écarter</div></div>
+          <div class="card-body stack-sm">
+            <div class="row-top" style="gap:11px">
+              <button class="btn btn-sm btn-ghost" style="flex:none">Écarter</button>
+              <div class="spec"><b>« Écarté cette fois-ci. »</b> Le même cas pourra se reproposer.
+                C'est le bon geste pour une promotion qui, un autre jour, pourrait concerner un
+                chantier en cours.</div>
+            </div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div class="row-top" style="gap:11px">
+              <button class="btn btn-sm btn-danger" style="flex:none">Écarter définitivement</button>
+              <div class="spec"><b>« Et qu'on ne redemande plus — ce n'est pas un client. »</b>
+                Le contenu et les pièces jointes sont supprimés ; seule l'adresse est retenue, pour
+                reconnaître l'expéditeur la prochaine fois.</div>
+            </div>
+            <div class="note">
+              <small>Un seul bouton ne saurait pas faire les deux : il bloquerait trop, ou
+                n'apprendrait jamais rien. Ici l'utilisateur n'énonce pas une préférence qui pourrait
+                varier — il énonce un fait qu'il connaît.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-title">Répertoire des non-clients</div>
+            <span class="muted" style="font-size:12px">34 adresses, 6 domaines</span></div>
+          <div class="scroll-x"><table class="tbl">
+            <thead><tr><th>Adresse ou domaine</th><th class="num">Posée le</th><th>Par</th></tr></thead>
+            <tbody>
+              <tr><td><code style="font-size:11.5px">@promos-batiment.fr</code></td><td class="num">28/09/2026</td><td>Marc Delaunay</td></tr>
+              <tr><td><code style="font-size:11.5px">newsletter@salon-batimat.com</code></td><td class="num">22/09/2026</td><td>Hélène Verdier</td></tr>
+              <tr><td><code style="font-size:11.5px">cabinet-dentaire-lyon3@orange.fr</code></td><td class="num">15/09/2026</td><td>Marie Fontaine</td></tr>
+              <tr><td><code style="font-size:11.5px">@mailing-pro-btp.net</code></td><td class="num">11/09/2026</td><td>Marc Delaunay</td></tr>
+            </tbody>
+          </table></div>
+          <div class="card-foot">
+            <small class="muted"><b>Trois colonnes, et rien d'autre</b> : l'adresse, la date, qui
+              l'a posée. Ni nom, ni motif, ni objet — le minimum pour reconnaître, rien pour
+              décrire. Le répertoire est <b>par personne</b> et non par cabinet : le dentiste de
+              l'un peut être le prospect de l'autre. Un domaine entier ne s'y pose qu'après un
+              deuxième refus.</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,183 @@
+<!--meta { "id":"16", "titre":"Mes tâches", "groupe":"Cabinet", "role":"Conducteur + Direction", "largeur":1440, "hauteur":1060 } -->
+<div class="app">
+  {{sidebar:taches}}
+  <div class="main">
+    {{topbar:Marie Fontaine@MF@Conducteur|fn-conducteur,Direction|fn-direction}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Mes tâches</h1>
+          <div class="page-sub">Marie Fontaine · conductrice <b>et</b> direction — 31 des 62 étapes lui reviennent</div></div>
+        <div class="page-actions">
+          <div class="seg"><span class="is-active">Mes fonctions</span><span>Nommément</span><span>Tout le cabinet</span></div>
+          <button class="btn btn-primary">＋ Tâche</button>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <span class="ico">◆</span>
+        <div><b>Deux fonctions cumulées, une seule liste.</b> Les tâches adressées à la Direction et
+          celles adressées au Conducteur de travaux arrivent au même endroit ; le badge dit laquelle
+          des deux casquettes est concernée. C'est ce qui évite de se connecter deux fois.</div>
+      </div>
+
+      <div class="kanban">
+
+        <div class="kanban-col">
+          <div class="kanban-head"><span>À faire</span><span class="count">5</span></div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-haute"></span>
+              <div class="grow">
+                <div class="task-title">Pointage chiffrage</div>
+                <div class="task-meta">
+                  <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+                  <span class="badge ph-3"><i class="dot"></i>Ét. 26</span>
+                </div>
+                <div class="task-meta"><span>CH-2026-014 · Extension Martin</span></div>
+                <div class="task-meta"><span class="badge st-critical">✕ en retard de 3 j</span></div>
+              </div></div>
+          </div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-haute"></span>
+              <div class="grow">
+                <div class="task-title">Validation des factures — situation n° 2</div>
+                <div class="task-meta">
+                  <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                  <span class="badge ph-4"><i class="dot"></i>Ét. 49</span>
+                </div>
+                <div class="task-meta"><span>CH-2026-011 · SCI Les Tilleuls</span></div>
+                <div class="task-meta"><span class="badge st-warning">▲ aujourd'hui</span></div>
+              </div></div>
+          </div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-normale"></span>
+              <div class="grow">
+                <div class="task-title">Test de perméabilité</div>
+                <div class="task-meta">
+                  <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                  <span class="badge ph-4"><i class="dot"></i>Ét. 52</span>
+                </div>
+                <div class="task-meta"><span>CH-2026-009 · Surélévation Berger</span></div>
+                <div class="task-meta muted"><span>échéance 14 oct.</span></div>
+              </div></div>
+          </div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-normale"></span>
+              <div class="grow">
+                <div class="task-title">Choix clients — produits et matériaux</div>
+                <div class="task-meta">
+                  <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                  <span class="badge ph-3"><i class="dot"></i>Ét. 30</span>
+                </div>
+                <div class="task-meta"><span>CH-2026-018 · École Brindas</span></div>
+                <div class="task-meta muted"><span>Magasin ou explication</span></div>
+              </div></div>
+          </div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-basse"></span>
+              <div class="grow">
+                <div class="task-title">Informer l'assurance de la fissure mitoyenne</div>
+                <div class="task-meta"><span class="badge st-neutral">issue d'un compte rendu</span></div>
+                <div class="task-meta"><span>CH-2026-014 · Extension Martin</span></div>
+              </div></div>
+          </div>
+        </div>
+
+        <div class="kanban-col">
+          <div class="kanban-head"><span>En cours</span><span class="count">3</span></div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-haute"></span>
+              <div class="grow">
+                <div class="task-title">Rapprocher le devis « DEV-2214 »</div>
+                <div class="task-meta"><span class="badge st-neutral">créée par le moteur</span></div>
+                <div class="task-meta muted"><span>aucun rapprochement automatique trouvé</span></div>
+                <div class="task-meta"><a href="{{l:mail}}" style="font-size:12px">Ouvrir l'e-mail ›</a></div>
+              </div></div>
+          </div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-normale"></span>
+              <div class="grow">
+                <div class="task-title">Remise en service / liaison B Enedis</div>
+                <div class="task-meta">
+                  <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                  <span class="badge ph-4"><i class="dot"></i>Ét. 51</span>
+                </div>
+                <div class="task-meta"><span>CH-2026-011 · SCI Les Tilleuls</span></div>
+                <div class="task-meta muted"><span>demande déposée, en attente d'Enedis</span></div>
+              </div></div>
+          </div>
+
+          <div class="task">
+            <div class="row-top"><span class="prio prio-normale"></span>
+              <div class="grow">
+                <div class="task-title">Arbitrer le chevauchement élec / plomberie</div>
+                <div class="task-meta"><span class="badge st-warning">▲ conflit de planning</span></div>
+                <div class="task-meta"><span>CH-2026-014 · 12 au 14 nov.</span></div>
+              </div></div>
+          </div>
+        </div>
+
+        <div class="kanban-col">
+          <div class="kanban-head"><span>Terminé</span><span class="count">4 aujourd'hui</span></div>
+
+          <div class="task" style="opacity:.72">
+            <div class="row-top"><span class="prio prio-basse"></span>
+              <div class="grow">
+                <div class="task-title" style="text-decoration:line-through">Démarrage travaux</div>
+                <div class="task-meta"><span class="badge ph-4"><i class="dot"></i>Ét. 47</span>
+                  <span class="badge st-good">✓ 09 h 12</span></div>
+                <div class="task-meta"><span>CH-2026-009 · Surélévation Berger</span></div>
+              </div></div>
+          </div>
+
+          <div class="task" style="opacity:.72">
+            <div class="row-top"><span class="prio prio-basse"></span>
+              <div class="grow">
+                <div class="task-title" style="text-decoration:line-through">Étude de sol</div>
+                <div class="task-meta"><span class="badge ph-3"><i class="dot"></i>Ét. 39</span>
+                  <span class="badge st-good">✓ 10 h 44</span></div>
+                <div class="task-meta"><span>CH-2026-014 · Extension Martin</span></div>
+              </div></div>
+          </div>
+
+          <div class="task" style="opacity:.72">
+            <div class="row-top"><span class="prio prio-basse"></span>
+              <div class="grow">
+                <div class="task-title" style="text-decoration:line-through">RDV signature des marchés</div>
+                <div class="task-meta"><span class="badge ph-3"><i class="dot"></i>Ét. 44</span>
+                  <span class="badge st-good">✓ 14 h 05</span></div>
+                <div class="task-meta"><span>CH-2026-011 · SCI Les Tilleuls</span></div>
+              </div></div>
+          </div>
+
+          <div class="task" style="opacity:.72">
+            <div class="row-top"><span class="prio prio-basse"></span>
+              <div class="grow">
+                <div class="task-title" style="text-decoration:line-through">Envoi des PV artisans</div>
+                <div class="task-meta"><span class="badge ph-4"><i class="dot"></i>Ét. 59</span>
+                  <span class="badge st-good">✓ 16 h 30</span></div>
+                <div class="task-meta"><span>CH-2026-009 · Surélévation Berger</span></div>
+              </div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="card-body row between wrap" style="gap:14px">
+          <small class="muted">Une tâche terminée fait avancer l'étape du chantier, et l'étape
+            suivante crée automatiquement la tâche de la fonction qui en répond. C'est la mécanique
+            qui évite d'avoir à se demander « qui doit faire quoi maintenant ».</small>
+          <a class="btn btn-sm" href="{{l:etapes}}">Voir le workflow d'un chantier</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
