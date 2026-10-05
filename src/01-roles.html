@@ -41,7 +41,7 @@
             validation des factures, perméabilité, PV de réception.</td>
           <td class="num"><b>14</b></td>
           <td><div class="progress thin"><span style="width:22.6%;background:var(--fn-conducteur)"></span></div><small class="muted">23 %</small></td>
-          <td><small><a href="{{l:planningCond}}">Planning global</a> · <a href="{{l:planning}}">Planning chantier</a> · <a href="{{l:taches}}">Mes tâches</a></small></td>
+          <td><small><a href="{{l:visite}}">Visite de chantier</a> · <a href="{{l:planningCond}}">Planning global</a> · <a href="{{l:taches}}">Mes tâches</a></small></td>
         </tr>
         <tr>
           <td><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span></td>
@@ -95,7 +95,8 @@
       <div class="row"><div class="avatar" style="background:var(--fn-conducteur);color:#3a2800">ÉC</div>
         <div class="grow"><b style="font-size:13.5px">Élodie Charrier</b><div class="muted" style="font-size:12px">elodie@agence-verdier.fr</div></div></div>
       <div class="row wrap" style="gap:5px"><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></div>
-      <small class="muted">3 chantiers en cours, 12 interventions cette semaine.</small>
+      <small class="muted">3 chantiers en cours. Travaille surtout depuis
+        <a href="{{l:visite}}">son téléphone, sur les chantiers</a>.</small>
     </div></div>
     <div class="card"><div class="card-body stack-sm">
       <div class="row"><div class="avatar" style="background:var(--fn-admin)">MD</div>
@@ -136,13 +137,19 @@
     <div class="card">
       <div class="card-head"><div class="card-title">Super admin plateforme</div><span class="badge st-neutral">ROLE_SUPER_ADMIN</span></div>
       <div class="card-body stack-sm">
-        <div class="spec">Hors cabinet. C'est le seul rôle qui franchit le cloisonnement, et il le fait
-          en basculant explicitement de cabinet — jamais en voyant tout à la fois.</div>
+        <div class="spec">Hors cabinet, et <b>sans aucune vue consolidée du métier</b> : ni liste
+          de tous les chantiers, ni chiffre d'affaires cumulé, ni recherche qui traverse les
+          cloisons. Pour voir quoi que ce soit d'un cabinet, il doit <b>y entrer</b>, un cabinet à
+          la fois, avec un motif — et l'entrée est journalisée, consultable par l'administrateur du
+          cabinet concerné.</div>
         <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.75">
-          <li><a href="{{l:cabinets}}">Cabinets</a> — création, bascule</li>
-          <li><a href="{{l:moteur}}">Moteur d'évènements</a> — les règles de traitement des e-mails</li>
-          <li>Mémoire du moteur et répertoire des non-clients</li>
+          <li><a href="{{l:cabinets}}">Cabinets et abonnements</a> — les formules Stripe, les sièges,
+            les impayés, et l'entrée dans un cabinet</li>
+          <li><a href="{{l:moteur}}">Moteur d'évènements</a> — les règles du socle, communes à la
+            plateforme ; celles d'un cabinet se voient depuis ce cabinet</li>
         </ul>
+        <div class="note"><small>Ce qui est consolidé, c'est <b>la facturation de la plateforme</b> —
+          ce que les cabinets paient pour l'utiliser, jamais ce qu'ils gagnent.</small></div>
       </div>
     </div>
   </div>

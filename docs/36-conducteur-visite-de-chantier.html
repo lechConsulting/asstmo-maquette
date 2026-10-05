@@ -1,10 +1,10 @@
 <!doctype html>
-<!-- @dsCard group="Administration" -->
+<!-- @dsCard group="Conducteur" -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO · 26 — Cabinets</title>
+<title>AsstMO · 36 — Conducteur — visite de chantier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -692,253 +692,289 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 </head>
 <body>
 <div class="mock-bar no-print">
-  <span class="tagid">26</span>
-  <span>Cabinets</span>
+  <span class="tagid">36</span>
+  <span>Conducteur — visite de chantier</span>
   <span class="sep">·</span>
-  <span style="color:#9a9a96">Administration</span>
-  <span class="sep">·</span><span style="color:#9ec5f4">Super admin</span>
+  <span style="color:#9a9a96">Conducteur</span>
+  <span class="sep">·</span><span style="color:#9ec5f4">Conducteur</span>
   <span class="persona">
     <a href="index.html">Sommaire</a>
     <a href="01-roles.html">Rôles</a>
     <button class="theme-toggle" id="bascule">Mode sombre</button>
   </span>
 </div>
-<div class="app">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="brand-mark">AMO</div>
-      <div><div class="brand-name">AsstMO</div><div class="brand-sub">Agence Verdier</div></div>
-    </div>
-    <div class="nav-group"><div class="nav-label">Pilotage</div>
-      <a class="nav-item" href="03-tableau-de-bord.html">
-            <span class="ico">◱</span><span>Tableau de bord</span></a><a class="nav-item" href="04-vue-d-ensemble.html">
-            <span class="ico">◫</span><span>Vue d'ensemble</span></a><a class="nav-item" href="05-chantiers.html">
-            <span class="ico">⌂</span><span>Chantiers</span><span class="count">12</span></a><a class="nav-item" href="15-planning-conducteur.html">
-            <span class="ico">▦</span><span>Planning</span></a><a class="nav-item" href="16-mes-taches.html">
-            <span class="ico">✓</span><span>Mes tâches</span><span class="count">7</span></a></div><div class="nav-group"><div class="nav-label">Échanges</div>
-      <a class="nav-item" href="17-messagerie-a-traiter.html">
-            <span class="ico">✉</span><span>Messagerie</span><span class="count">9</span></a><a class="nav-item" href="19-compte-rendu-rdv.html">
-            <span class="ico">◴</span><span>Comptes rendus</span></a></div><div class="nav-group"><div class="nav-label">Carnet d'adresses</div>
-      <a class="nav-item" href="20-annuaire-clients.html">
-            <span class="ico">☺</span><span>Clients</span></a><a class="nav-item" href="21-annuaire-artisans.html">
-            <span class="ico">⚒</span><span>Artisans</span><span class="count">46</span></a></div><div class="nav-group"><div class="nav-label">Administration</div>
-      <a class="nav-item" href="22-modele-de-workflow.html">
-            <span class="ico">⇄</span><span>Modèles de workflow</span></a><a class="nav-item" href="23-bareme-d-honoraires.html">
-            <span class="ico">％</span><span>Barème d'honoraires</span></a><a class="nav-item" href="24-utilisateurs.html">
-            <span class="ico">◉</span><span>Utilisateurs</span></a><a class="nav-item" href="25-moteur-d-evenements.html">
-            <span class="ico">⚙</span><span>Moteur d'évènements</span></a><a class="nav-item is-active" href="26-cabinets.html">
-            <span class="ico">▣</span><span>Cabinets</span></a></div>
-    <div class="sidebar-foot">
-      <a class="nav-item" href="01-roles.html"><span class="ico">⇥</span><span>Changer de rôle</span></a>
-    </div>
-  </aside>
-  <div class="main">
-    <div class="topbar">
-    <div class="search"><span>⌕</span><span>Rechercher un chantier, un client, un artisan…</span><span class="kbd">⌘K</span></div>
-    <button class="btn btn-sm">＋ Nouveau chantier</button>
-    <div class="row" style="gap:9px"><span class="badge st-neutral"><i class="dot"></i>Super admin</span>
-      <div class="avatar sm circle" style="background:var(--neutral)">JL</div>
-      <div style="font-size:13px"><b>Jérémy Lechat</b></div>
-    </div>
+<div class="content" style="max-width:1180px;margin:0 auto;padding:26px 22px">
+  <div class="page-head">
+    <div><h1 class="page-title">Le conducteur sur le terrain</h1>
+      <div class="page-sub">Téléphone en main, souvent avec des gants — trois raccourcis et rien d'autre à chercher</div></div>
+    <span class="badge fn-conducteur badge-lg"><i class="dot"></i>Conducteur de travaux</span>
   </div>
-    <div class="content">
-      <div class="page-head">
-        <div><h1 class="page-title">Cabinets et abonnements</h1>
-          <div class="page-sub">4 cabinets · la facturation de la plateforme, et l'entrée dans un cabinet</div></div>
-        <div class="page-actions">
-          <a class="btn" href="#">Ouvrir Stripe ↗</a>
-          <button class="btn btn-primary">＋ Cabinet</button>
+
+  <div class="alert alert-info">
+    <span class="ico">◆</span>
+    <div><b>Un conducteur passe sa journée dehors, pas devant un écran large.</b>
+      Son écran de bureau sert à préparer et à arbitrer ; celui-ci sert à agir. Trois raccourcis
+      couvrent ce qu'il fait réellement : <b>visiter un chantier</b>, <b>prendre un rendez-vous</b>,
+      <b>écrire un compte rendu</b>. Le reste se consulte au bureau.</div>
+  </div>
+
+  <div class="phones">
+
+    <div>
+      <div class="phone">
+        <div class="phone-notch"><i></i></div>
+        <div class="phone-body">
+          <div class="row between">
+            <div class="row" style="gap:9px">
+              <div class="avatar sm" style="background:var(--fn-conducteur);color:#3a2800">ÉC</div>
+              <div><b style="font-size:13px">Élodie Charrier</b>
+                <div class="muted" style="font-size:11.5px">Agence Verdier</div></div>
+            </div>
+            <span class="badge st-warning">▲ 7</span>
+          </div>
+
+          <div class="stack-sm">
+            <a class="btn btn-lg btn-primary btn-block" href="#" style="padding:19px;font-size:16px">
+              ◉ Visiter un chantier</a>
+            <div class="row" style="gap:9px;align-items:stretch">
+              <a class="btn btn-block" href="#" style="padding:14px 10px;font-size:12.5px;flex-direction:column;gap:5px;line-height:1.3;text-align:center">
+                <span style="font-size:20px">▦</span>Prendre un<br>rendez-vous</a>
+              <a class="btn btn-block" href="13-chantier-comptes-rendus.html" style="padding:14px 10px;font-size:12.5px;flex-direction:column;gap:5px;line-height:1.3;text-align:center">
+                <span style="font-size:20px">◴</span>Compte rendu<br>de chantier</a>
+            </div>
+          </div>
+
+          <div class="m-head"><div class="m-title" style="font-size:16px">Aujourd'hui</div>
+            <div class="m-sub">mardi 6 octobre · 2 visites prévues</div></div>
+
+          <div class="m-row">
+            <div style="text-align:center;width:44px;flex:none">
+              <div style="font-size:15px;font-weight:650;line-height:1">09:00</div>
+              <div class="muted" style="font-size:10.5px">1 h</div></div>
+            <div class="grow"><b style="font-size:13px">Extension Martin</b>
+              <small class="muted">Craponne · réunion de chantier n° 3</small></div>
+            <span class="m-chevron">›</span>
+          </div>
+
+          <div class="m-row">
+            <div style="text-align:center;width:44px;flex:none">
+              <div style="font-size:15px;font-weight:650;line-height:1">14:30</div>
+              <div class="muted" style="font-size:10.5px">45 min</div></div>
+            <div class="grow"><b style="font-size:13px">SCI Les Tilleuls</b>
+              <small class="muted">Lyon 3e · réception de la charpente</small></div>
+            <span class="m-chevron">›</span>
+          </div>
+
+          <div class="m-card">
+            <div class="tile-label">À faire sur le terrain</div>
+            <div class="row between" style="font-size:12.5px"><span>Relever le compteur provisoire</span>
+              <span class="badge st-neutral">Martin</span></div>
+            <div class="row between" style="font-size:12.5px"><span>Vérifier la fissure mitoyenne</span>
+              <span class="badge st-neutral">Martin</span></div>
+            <div class="row between" style="font-size:12.5px"><span>Contrôler l'avancement situation n° 2</span>
+              <span class="badge st-neutral">Tilleuls</span></div>
+          </div>
+        </div>
+        <div class="m-tabbar">
+          <div class="m-tab is-active"><span class="ico">⌂</span>Aujourd'hui</div>
+          <div class="m-tab"><span class="ico">▦</span>Planning</div>
+          <div class="m-tab"><span class="ico">✓</span>Tâches</div>
+          <div class="m-tab"><span class="ico">☺</span>Compte</div>
         </div>
       </div>
+      <div class="phone-caption">Accueil — une action domine, les visites du jour suivent</div>
+    </div>
 
-      <div class="alert alert-warning">
-        <span class="ico">▲</span>
-        <div><b>Le super admin n'a aucune vue consolidée du métier des cabinets.</b>
-          Pas de liste de tous les chantiers, pas de chiffre d'affaires cumulé, pas de recherche
-          qui traverse les cloisons. Pour voir quoi que ce soit d'un cabinet, il faut
-          <b>y entrer</b> — et chaque entrée est journalisée. Ce qui est consolidé ici, c'est
-          uniquement <b>la facturation de la plateforme</b> : ce que les cabinets paient pour
-          l'utiliser, pas ce qu'ils gagnent.</div>
-      </div>
+    <div>
+      <div class="phone">
+        <div class="phone-notch"><i></i></div>
+        <div class="phone-body">
+          <div class="row" style="gap:9px"><span class="m-chevron">‹</span>
+            <b style="font-size:14px">Quel chantier ?</b></div>
 
-      <div class="grid-4">
-        <div class="tile"><div class="tile-label">Revenu mensuel</div><div class="tile-value">414 €</div><div class="tile-note">HT · abonnements actifs</div></div>
-        <div class="tile"><div class="tile-label">Cabinets payants</div><div class="tile-value">3</div><div class="tile-note">+ 1 en essai</div></div>
-        <div class="tile"><div class="tile-label">Sièges facturés</div><div class="tile-value">18</div><div class="tile-note">sur 19 utilisateurs</div></div>
-        <div class="tile" style="border-color:var(--phase-3)"><div class="tile-label">À régler</div><div class="tile-value" style="color:var(--critical-ink)">1</div><div class="tile-note">paiement en échec</div></div>
-      </div>
+          <div class="search" style="max-width:none"><span>⌕</span><span>Client, adresse, référence…</span></div>
 
-      <div class="card">
-        <div class="card-head"><div class="card-title">Les cabinets</div>
-          <div class="seg"><span class="is-active">Tous</span><span>Actifs</span><span>En essai</span><span>Impayés</span></div></div>
-        <div class="scroll-x"><table class="tbl">
-          <thead><tr><th>Cabinet</th><th>Abonnement</th><th class="num">Sièges</th><th class="num">Montant</th><th>État Stripe</th><th>Prochaine échéance</th><th></th></tr></thead>
-          <tbody>
-            <tr>
-              <td><div class="row" style="gap:10px"><div class="avatar sm">AV</div>
-                <div><b>Agence Verdier</b><div class="muted" style="font-size:12px">Craponne (69) · depuis le 02/09/2026</div></div></div></td>
-              <td><b style="font-size:12.5px">Cabinet</b><div class="muted" style="font-size:11.5px">mensuel · 24 €/siège</div></td>
-              <td class="num">6</td>
-              <td class="num"><b>144 €</b><div class="muted" style="font-size:11.5px">/ mois</div></td>
-              <td><span class="badge st-good">✓ Actif</span><div class="muted" style="font-size:11.5px">CB ···· 4242</div></td>
-              <td class="num">1<sup>er</sup> nov. 2026</td>
-              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
+          <div class="m-card accent">
+            <div class="tile-label">Vous y êtes</div>
+            <div class="row" style="gap:11px">
+              <div class="avatar ph-3-bg">MA</div>
+              <div class="grow"><b style="font-size:13.5px">Extension Martin</b>
+                <small class="muted">14 ch. des Vignes, Craponne · à 120 m</small></div>
+            </div>
+            <a class="btn btn-primary btn-block" href="#">Commencer la visite</a>
+          </div>
 
-            <tr>
-              <td><div class="row" style="gap:10px"><div class="avatar sm">AT</div>
-                <div><b>Atelier Tramoyes</b><div class="muted" style="font-size:12px">Villeurbanne (69) · depuis le 14/03/2026</div></div></div></td>
-              <td><b style="font-size:12.5px">Cabinet</b><div class="muted" style="font-size:11.5px">annuel · 2 mois offerts</div></td>
-              <td class="num">3</td>
-              <td class="num"><b>648 €</b><div class="muted" style="font-size:11.5px">/ an · 54 €/mois</div></td>
-              <td><span class="badge st-good">✓ Actif</span><div class="muted" style="font-size:11.5px">Prélèvement SEPA</div></td>
-              <td class="num">14 mars 2027</td>
-              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
+          <div class="m-head"><div class="m-title" style="font-size:15px">Mes chantiers</div></div>
 
-            <tr style="background:var(--critical-wash)">
-              <td><div class="row" style="gap:10px"><div class="avatar sm">MP</div>
-                <div><b>MO Pays de Savoie</b><div class="muted" style="font-size:12px">Annecy (74) · depuis le 08/01/2026</div></div></div></td>
-              <td><b style="font-size:12.5px">Agence</b><div class="muted" style="font-size:11.5px">mensuel · 24 €/siège</div></td>
-              <td class="num">9</td>
-              <td class="num"><b>216 €</b><div class="muted" style="font-size:11.5px">/ mois</div></td>
-              <td><span class="badge st-critical">✕ Paiement en échec</span><div class="muted" style="font-size:11.5px">2<sup>e</sup> relance sur 4 · carte expirée</div></td>
-              <td class="num">réessai le 8 oct.</td>
-              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
+          <div class="m-row">
+            <div class="avatar sm ph-4-bg">TI</div>
+            <div class="grow"><b style="font-size:13px">SCI Les Tilleuls</b>
+              <small class="muted">Lyon 3e · visite à 14 h 30</small></div>
+            <span class="badge st-neutral">Aujourd'hui</span>
+          </div>
 
-            <tr>
-              <td><div class="row" style="gap:10px"><div class="avatar sm">CB</div>
-                <div><b>Cabinet Brunel</b><div class="muted" style="font-size:12px">Saint-Étienne (42) · depuis le 05/10/2026</div></div></div></td>
-              <td><b style="font-size:12.5px">Essai</b><div class="muted" style="font-size:11.5px">14 jours · sans carte</div></td>
-              <td class="num">1</td>
-              <td class="num muted">—</td>
-              <td><span class="badge st-warning">▲ Essai</span><div class="muted" style="font-size:11.5px">se termine dans 14 jours</div></td>
-              <td class="num">19 oct. 2026</td>
-              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
-          </tbody>
-        </table></div>
-        <div class="card-foot">
-          <small class="muted">Les sièges sont comptés sur les utilisateurs actifs du cabinet et
-            remontés à Stripe à chaque changement. Un compte désactivé cesse d'être facturé au
-            cycle suivant, pas rétroactivement.</small>
+          <div class="m-row">
+            <div class="avatar sm ph-2-bg">MB</div>
+            <div class="grow"><b style="font-size:13px">École Brindas</b>
+              <small class="muted">Brindas · dernière visite le 22 sept.</small></div>
+            <span class="m-chevron">›</span>
+          </div>
+
+          <div class="m-row">
+            <div class="avatar sm ph-4-bg">SB</div>
+            <div class="grow"><b style="font-size:13px">Surélévation Berger</b>
+              <small class="muted">Francheville · dernière visite le 1<sup>er</sup> oct.</small></div>
+            <span class="m-chevron">›</span>
+          </div>
+
+          <div class="note">
+            <small>Le chantier le plus proche est proposé en premier — c'est presque toujours le
+              bon, et ça évite de chercher dans une liste au soleil.</small>
+          </div>
         </div>
       </div>
+      <div class="phone-caption">Choix du chantier — le plus proche d'abord</div>
+    </div>
 
-      <div class="grid-main">
-        <div class="stack">
+    <div>
+      <div class="phone">
+        <div class="phone-notch"><i></i></div>
+        <div class="phone-body">
+          <div class="row between">
+            <div class="row" style="gap:9px"><span class="m-chevron">‹</span>
+              <div><b style="font-size:14px">Extension Martin</b>
+                <div class="muted" style="font-size:11.5px">visite commencée à 09 h 04</div></div></div>
+            <span class="badge st-good">● En cours</span>
+          </div>
 
-          <div class="card" style="border-color:var(--phase-3)">
-            <div class="card-head" style="background:var(--phase-1-wash)">
-              <div class="card-title">Entrer dans un cabinet</div>
-              <span class="badge st-neutral">journalisé</span></div>
-            <div class="card-body stack">
-              <div class="spec">C'est le <b>seul</b> moyen de voir le métier d'un cabinet, et ça se
-                fait un cabinet à la fois. Pendant la session, tout l'écran est celui de ce
-                cabinet — le bandeau le rappelle en permanence.</div>
+          <button class="btn btn-lg btn-primary btn-block" style="padding:20px;font-size:17px">
+            ◉ Prendre une photo</button>
 
-              <div class="topbar" style="border-radius:var(--radius-sm);border:1px solid var(--border);height:auto;padding:10px 14px">
-                <span class="badge st-warning">▲ Vous êtes entré dans <b>MO Pays de Savoie</b></span>
-                <span class="muted" style="font-size:12px">depuis 8 minutes</span>
-                <button class="btn btn-sm" style="margin-left:auto">Sortir</button>
-              </div>
+          <div class="photos" style="grid-template-columns:repeat(3,1fr);gap:7px">
+            <div class="photo"><div class="img ph-a" style="font-size:9px">09 h 14</div></div>
+            <div class="photo"><div class="img ph-b" style="font-size:9px">09 h 22</div></div>
+            <div class="photo"><div class="img ph-d" style="font-size:9px">09 h 31</div></div>
+            <div class="photo"><div class="img ph-e" style="font-size:9px">09 h 38</div></div>
+            <div class="photo" style="display:grid;place-items:center;border-style:dashed;aspect-ratio:4/3">
+              <span class="muted" style="font-size:19px">＋</span></div>
+          </div>
+          <small class="muted">4 photos · 19,8 Mo → <b>2,1 Mo</b> après compression</small>
 
-              <div class="field">
-                <label>Motif de l'entrée</label>
-                <select class="select">
-                  <option>Assistance demandée par le cabinet</option>
-                  <option>Incident technique</option>
-                  <option>Migration ou reprise de données</option>
-                  <option>Mise en place initiale</option>
-                </select>
-                <span class="hint">Obligatoire. Il est écrit au journal avec la date et la durée,
-                  et il est consultable par l'administrateur du cabinet.</span>
-              </div>
-              <small class="muted">Un accès qui ne laisse pas de trace n'est pas un accès
-                d'administration, c'est une porte dérobée.</small>
+          <div class="m-card">
+            <div class="tile-label">Légender la dernière</div>
+            <input class="input" value="Regard EU 40 cm plus haut que le plan">
+            <div class="row wrap" style="gap:6px">
+              <span class="badge st-neutral">Gros œuvre</span>
+              <span class="badge st-neutral">＋ lot</span>
+              <span class="badge st-serious">▲ Réserve</span>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-head"><div class="card-title">MO Pays de Savoie — paiement en échec</div>
-              <span class="badge st-critical">✕ depuis 6 jours</span></div>
-            <div class="card-body stack">
-              <table class="tbl" style="margin:-17px -17px 0;width:calc(100% + 34px)">
-                <tbody>
-                  <tr><td class="muted" style="width:40%">Facture</td><td><b>FA-2026-0412</b> · 216 € HT</td></tr>
-                  <tr><td class="muted">Motif de l'échec</td><td>Carte expirée <code style="font-size:11.5px">expired_card</code></td></tr>
-                  <tr><td class="muted">Relances Stripe</td><td>2 sur 4 · prochaine le 8 octobre</td></tr>
-                  <tr><td class="muted">Après la 4<sup>e</sup></td><td>l'abonnement passe en <code style="font-size:11.5px">unpaid</code></td></tr>
-                </tbody>
-              </table>
-              <div class="note">
-                <small><b>Ce qui se passe alors, et qui est à trancher avec vous.</b> Couper l'accès
-                  d'un cabinet dont la carte a expiré, c'est bloquer neuf personnes et leurs
-                  chantiers pour un problème de carte bancaire. Je propose un palier : lecture
-                  seule après la 4<sup>e</sup> relance, et jamais de suppression de données.</small>
-              </div>
-              <div class="row wrap">
-                <button class="btn">✉ Relancer l'administrateur</button>
-                <button class="btn">Ouvrir la facture dans Stripe ↗</button>
-              </div>
+          <div class="m-card">
+            <div class="tile-label">Pendant que vous y êtes</div>
+            <label class="check is-on"><span class="box">✓</span><span style="font-size:13px">Relever le compteur provisoire</span></label>
+            <label class="check"><span class="box"></span><span style="font-size:13px">Vérifier la fissure mitoyenne</span></label>
+            <div class="row between" style="padding-top:4px">
+              <div><b style="font-size:12.5px">Étape 34 — Tableau de dommage</b>
+                <small class="muted">étape en cours</small></div>
+              <button class="btn btn-sm">Terminer</button>
             </div>
           </div>
 
-        </div>
+          <div class="field"><label>Observation</label>
+            <textarea class="input" rows="2" placeholder="Ce que vous diriez à voix haute…"></textarea></div>
 
-        <div class="stack">
-
-          <div class="card">
-            <div class="card-head"><div class="card-title">Ce que le super admin ne voit pas</div></div>
-            <div class="card-body">
-              <div class="row wrap" style="gap:9px">
-                <span class="badge">✕ Les chantiers de tous les cabinets</span>
-                <span class="badge">✕ Un chiffre d'affaires cumulé</span>
-                <span class="badge">✕ Une recherche inter-cabinets</span>
-                <span class="badge">✕ Les clients et les artisans</span>
-                <span class="badge">✕ Les messageries</span>
-                <span class="badge">✕ Les documents et les photos</span>
-              </div>
-              <small class="muted" style="display:block;margin-top:12px">Ces écrans n'existent pas,
-                ils ne sont pas simplement masqués. Un tableau de bord qui agrégerait quatre
-                cabinets concurrents serait un passif, pas une fonctionnalité.</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-head"><div class="card-title">Les formules</div></div>
-            <div class="card-body">
-              <table class="tbl" style="margin:-17px">
-                <thead><tr><th>Formule</th><th class="num">Prix</th><th>Comprend</th></tr></thead>
-                <tbody>
-                  <tr><td><b>Essai</b></td><td class="num">—</td><td class="muted"><small>14 jours, 1 siège, sans carte</small></td></tr>
-                  <tr><td><b>Cabinet</b></td><td class="num">24 €<div class="muted" style="font-size:11px">/siège/mois</div></td><td class="muted"><small>tout, jusqu'à 10 sièges</small></td></tr>
-                  <tr><td><b>Agence</b></td><td class="num">24 €<div class="muted" style="font-size:11px">/siège/mois</div></td><td class="muted"><small>+ modèles de workflow multiples, API</small></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="card-foot"><small class="muted">Au siège plutôt qu'au forfait : un cabinet
-              de trois personnes ne paie pas comme un cabinet de dix, et la facture suit l'équipe
-              sans renégociation.</small></div>
-          </div>
-
-          <div class="card">
-            <div class="card-head"><div class="card-title">Journal des entrées</div>
-              <a href="#" style="font-size:12.5px">Tout voir ›</a></div>
-            <div class="card-body stack-sm" style="font-size:12.5px">
-              <div><b>MO Pays de Savoie</b> · 12 min
-                <div class="muted">aujourd'hui 08 h 31 — migration ou reprise de données</div></div>
-              <hr style="border:0;border-top:1px solid var(--grid)">
-              <div><b>Cabinet Brunel</b> · 34 min
-                <div class="muted">hier 14 h 12 — mise en place initiale</div></div>
-              <hr style="border:0;border-top:1px solid var(--grid)">
-              <div><b>Atelier Tramoyes</b> · 6 min
-                <div class="muted">2 oct. 09 h 45 — incident technique</div></div>
-              <small class="muted">Consultable aussi par l'administrateur de chaque cabinet, pour
-                son propre cabinet.</small>
-            </div>
-          </div>
-
+          <button class="btn btn-lg btn-primary btn-block">Terminer la visite</button>
+          <small class="muted center">On vous proposera d'en faire un compte rendu de chantier.</small>
         </div>
       </div>
+      <div class="phone-caption">La visite — photographier, cocher, observer</div>
+    </div>
 
+    <div>
+      <div class="phone">
+        <div class="phone-notch"><i></i></div>
+        <div class="phone-body">
+          <div class="row" style="gap:9px"><span class="m-chevron">‹</span>
+            <b style="font-size:14px">Prendre un rendez-vous</b></div>
+
+          <div class="field"><label>Avec qui</label>
+            <div class="row wrap" style="gap:5px;padding:8px;border:1px solid var(--border-strong);border-radius:var(--radius-sm)">
+              <span class="badge fn-client"><i class="dot"></i>M. et Mme Martin ✕</span>
+              <span class="badge fn-artisan"><i class="dot"></i>Maçonnerie Fontaine ✕</span>
+              <span class="muted" style="font-size:12px;padding:2px 4px">＋ ajouter…</span>
+            </div></div>
+
+          <div class="field"><label>Sur quel chantier</label>
+            <select class="select"><option>CH-2026-014 · Extension Martin</option><option>CH-2026-011 · SCI Les Tilleuls</option></select></div>
+
+          <div class="field"><label>Objet</label>
+            <select class="select">
+              <option>Réunion de chantier</option>
+              <option>Réception de travaux</option>
+              <option>RDV client</option>
+              <option>Visite d'expertise</option>
+            </select></div>
+
+          <div class="m-card">
+            <div class="tile-label">Quand</div>
+            <div class="row" style="gap:8px">
+              <input class="input" type="date" value="2026-11-16" style="flex:1">
+              <input class="input" type="time" value="09:00" style="width:104px">
+            </div>
+            <div class="row wrap" style="gap:6px">
+              <span class="badge st-good">✓ Vous êtes libre</span>
+              <span class="badge st-neutral">1 h</span>
+            </div>
+            <small class="muted">Lundi 16, votre matinée est vide. Créneaux suivants :
+              mar 17 à 8 h, mer 18 à 14 h, jeu 19 à 9 h.</small>
+          </div>
+
+          <label class="check is-on"><span class="box">✓</span><span style="font-size:13px">Envoyer une invitation à confirmer</span></label>
+          <label class="check"><span class="box"></span><span style="font-size:13px">Ajouter à mon agenda</span></label>
+
+          <button class="btn btn-lg btn-primary btn-block">Proposer le rendez-vous</button>
+          <small class="muted center">Chacun reçoit son lien et répond d'un doigt —
+            <a href="29-artisan-confirmer-sa-venue.html">le même mécanisme</a> que pour les venues sur chantier.</small>
+        </div>
+      </div>
+      <div class="phone-caption">Le rendez-vous — qui, où, quand, et une invitation à confirmer</div>
+    </div>
+
+  </div>
+
+  <div class="grid-3" style="margin-top:22px">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Trois raccourcis, pas un menu</div></div>
+      <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
+        <div>Un conducteur ouvre l'application pour trois raisons : il arrive sur un chantier, il
+          doit caler une date, ou il sort d'une réunion. Le faire naviguer dans une liste, puis un
+          onglet, puis une galerie, c'est trois gestes de trop avec des gants et du soleil sur
+          l'écran.</div>
+        <div><b>Visiter</b> reste au-dessus et en aplat : c'est l'ouverture la plus fréquente de
+          loin. Les deux autres sont à égalité en dessous. Les cibles font plus de 56 px de haut.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Ce que la visite produit</div></div>
+      <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
+        <div><b>Des photos datées</b>, compressées dans le navigateur avant l'envoi, versées au
+          chantier. <a href="12-chantier-photos.html">Voir côté bureau ›</a></div>
+        <div><b>Des étapes franchies</b> — l'étape en cours est à portée de pouce, et la terminer
+          crée la tâche suivante. <a href="06-chantier-etapes.html">Voir ›</a></div>
+        <div><b>Un compte rendu</b>, proposé à la fermeture de la visite, avec les photos déjà
+          sélectionnées. <a href="13-chantier-comptes-rendus.html">Voir ›</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Hors connexion</div></div>
+      <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
+        <div>Un sous-sol en travaux n'a pas de réseau. Les photos et les observations sont gardées
+          sur l'appareil et partent quand le réseau revient.</div>
+        <div>C'est la seule partie de l'application qui en a besoin : tout le reste se consulte
+          au bureau.</div>
+        <span class="badge st-neutral">à confirmer avec vous</span>
+      </div>
     </div>
   </div>
 </div>

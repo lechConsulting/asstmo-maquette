@@ -1,95 +1,203 @@
-<!--meta { "id":"26", "titre":"Cabinets", "groupe":"Administration", "role":"Super admin", "largeur":1440, "hauteur":820 } -->
+<!--meta { "id":"26", "titre":"Cabinets", "groupe":"Administration", "role":"Super admin", "largeur":1440, "hauteur":1240 } -->
 <div class="app">
   {{sidebar:cabinets}}
   <div class="main">
     {{topbar:Jérémy Lechat@JL@Super admin|st-neutral}}
     <div class="content">
       <div class="page-head">
-        <div><h1 class="page-title">Cabinets</h1>
-          <div class="page-sub">4 cabinets sur la plateforme · 1 en essai</div></div>
-        <div class="page-actions"><button class="btn btn-primary">＋ Cabinet</button></div>
+        <div><h1 class="page-title">Cabinets et abonnements</h1>
+          <div class="page-sub">4 cabinets · la facturation de la plateforme, et l'entrée dans un cabinet</div></div>
+        <div class="page-actions">
+          <a class="btn" href="#">Ouvrir Stripe ↗</a>
+          <button class="btn btn-primary">＋ Cabinet</button>
+        </div>
       </div>
 
       <div class="alert alert-warning">
         <span class="ico">▲</span>
-        <div><b>Le seul rôle qui franchit le cloisonnement</b> — et il le fait en basculant
-          explicitement d'un cabinet à l'autre, jamais en voyant tout à la fois. Chaque bascule est
-          journalisée. Un administrateur de cabinet, lui, ne voit jamais cette page.</div>
+        <div><b>Le super admin n'a aucune vue consolidée du métier des cabinets.</b>
+          Pas de liste de tous les chantiers, pas de chiffre d'affaires cumulé, pas de recherche
+          qui traverse les cloisons. Pour voir quoi que ce soit d'un cabinet, il faut
+          <b>y entrer</b> — et chaque entrée est journalisée. Ce qui est consolidé ici, c'est
+          uniquement <b>la facturation de la plateforme</b> : ce que les cabinets paient pour
+          l'utiliser, pas ce qu'ils gagnent.</div>
+      </div>
+
+      <div class="grid-4">
+        <div class="tile"><div class="tile-label">Revenu mensuel</div><div class="tile-value">414 €</div><div class="tile-note">HT · abonnements actifs</div></div>
+        <div class="tile"><div class="tile-label">Cabinets payants</div><div class="tile-value">3</div><div class="tile-note">+ 1 en essai</div></div>
+        <div class="tile"><div class="tile-label">Sièges facturés</div><div class="tile-value">18</div><div class="tile-note">sur 19 utilisateurs</div></div>
+        <div class="tile" style="border-color:var(--phase-3)"><div class="tile-label">À régler</div><div class="tile-value" style="color:var(--critical-ink)">1</div><div class="tile-note">paiement en échec</div></div>
       </div>
 
       <div class="card">
+        <div class="card-head"><div class="card-title">Les cabinets</div>
+          <div class="seg"><span class="is-active">Tous</span><span>Actifs</span><span>En essai</span><span>Impayés</span></div></div>
         <div class="scroll-x"><table class="tbl">
-          <thead><tr><th>Cabinet</th><th>Ville</th><th class="num">Utilisateurs</th><th class="num">Chantiers</th><th class="num">Artisans</th><th>Modèles de workflow</th><th>État</th><th></th></tr></thead>
+          <thead><tr><th>Cabinet</th><th>Abonnement</th><th class="num">Sièges</th><th class="num">Montant</th><th>État Stripe</th><th>Prochaine échéance</th><th></th></tr></thead>
           <tbody>
-            <tr style="background:var(--phase-1-wash)">
-              <td><div class="row" style="gap:10px"><div class="avatar sm" style="background:var(--neutral)">AV</div>
-                <div><b>Agence Verdier</b><div class="muted" style="font-size:12px">agence-verdier.fr</div></div></div></td>
-              <td>Craponne (69)</td><td class="num">6</td><td class="num">15</td><td class="num">46</td>
-              <td><small>Rénovation après sinistre · Construction neuve</small></td>
-              <td><span class="badge st-good">✓ Actif</span></td>
-              <td class="right"><span class="badge st-neutral">cabinet courant</span></td></tr>
+            <tr>
+              <td><div class="row" style="gap:10px"><div class="avatar sm">AV</div>
+                <div><b>Agence Verdier</b><div class="muted" style="font-size:12px">Craponne (69) · depuis le 02/09/2026</div></div></div></td>
+              <td><b style="font-size:12.5px">Cabinet</b><div class="muted" style="font-size:11.5px">mensuel · 24 €/siège</div></td>
+              <td class="num">6</td>
+              <td class="num"><b>144 €</b><div class="muted" style="font-size:11.5px">/ mois</div></td>
+              <td><span class="badge st-good">✓ Actif</span><div class="muted" style="font-size:11.5px">CB ···· 4242</div></td>
+              <td class="num">1<sup>er</sup> nov. 2026</td>
+              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
 
-            <tr><td><div class="row" style="gap:10px"><div class="avatar sm neutral">AT</div>
-                <div><b>Atelier Tramoyes</b><div class="muted" style="font-size:12px">atelier-tramoyes.fr</div></div></div></td>
-              <td>Villeurbanne (69)</td><td class="num">3</td><td class="num">8</td><td class="num">22</td>
-              <td><small>Rénovation après sinistre</small></td>
-              <td><span class="badge st-good">✓ Actif</span></td>
-              <td class="right"><button class="btn btn-sm">Basculer</button></td></tr>
+            <tr>
+              <td><div class="row" style="gap:10px"><div class="avatar sm">AT</div>
+                <div><b>Atelier Tramoyes</b><div class="muted" style="font-size:12px">Villeurbanne (69) · depuis le 14/03/2026</div></div></div></td>
+              <td><b style="font-size:12.5px">Cabinet</b><div class="muted" style="font-size:11.5px">annuel · 2 mois offerts</div></td>
+              <td class="num">3</td>
+              <td class="num"><b>648 €</b><div class="muted" style="font-size:11.5px">/ an · 54 €/mois</div></td>
+              <td><span class="badge st-good">✓ Actif</span><div class="muted" style="font-size:11.5px">Prélèvement SEPA</div></td>
+              <td class="num">14 mars 2027</td>
+              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
 
-            <tr><td><div class="row" style="gap:10px"><div class="avatar sm neutral">MP</div>
-                <div><b>MO Pays de Savoie</b><div class="muted" style="font-size:12px">mo-savoie.fr</div></div></div></td>
-              <td>Annecy (74)</td><td class="num">9</td><td class="num">31</td><td class="num">78</td>
-              <td><small>3 modèles</small></td>
-              <td><span class="badge st-good">✓ Actif</span></td>
-              <td class="right"><button class="btn btn-sm">Basculer</button></td></tr>
+            <tr style="background:var(--critical-wash)">
+              <td><div class="row" style="gap:10px"><div class="avatar sm">MP</div>
+                <div><b>MO Pays de Savoie</b><div class="muted" style="font-size:12px">Annecy (74) · depuis le 08/01/2026</div></div></div></td>
+              <td><b style="font-size:12.5px">Agence</b><div class="muted" style="font-size:11.5px">mensuel · 24 €/siège</div></td>
+              <td class="num">9</td>
+              <td class="num"><b>216 €</b><div class="muted" style="font-size:11.5px">/ mois</div></td>
+              <td><span class="badge st-critical">✕ Paiement en échec</span><div class="muted" style="font-size:11.5px">2<sup>e</sup> relance sur 4 · carte expirée</div></td>
+              <td class="num">réessai le 8 oct.</td>
+              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
 
-            <tr><td><div class="row" style="gap:10px"><div class="avatar sm neutral">CB</div>
-                <div><b>Cabinet Brunel</b><div class="muted" style="font-size:12px">—</div></div></div></td>
-              <td>Saint-Étienne (42)</td><td class="num">1</td><td class="num">0</td><td class="num">0</td>
-              <td class="muted"><small>aucun — modèle à amorcer</small></td>
-              <td><span class="badge st-warning">▲ En essai</span></td>
-              <td class="right"><button class="btn btn-sm">Basculer</button></td></tr>
+            <tr>
+              <td><div class="row" style="gap:10px"><div class="avatar sm">CB</div>
+                <div><b>Cabinet Brunel</b><div class="muted" style="font-size:12px">Saint-Étienne (42) · depuis le 05/10/2026</div></div></div></td>
+              <td><b style="font-size:12.5px">Essai</b><div class="muted" style="font-size:11.5px">14 jours · sans carte</div></td>
+              <td class="num">1</td>
+              <td class="num muted">—</td>
+              <td><span class="badge st-warning">▲ Essai</span><div class="muted" style="font-size:11.5px">se termine dans 14 jours</div></td>
+              <td class="num">19 oct. 2026</td>
+              <td class="right"><button class="btn btn-sm">Entrer ›</button></td></tr>
           </tbody>
         </table></div>
         <div class="card-foot">
-          <small class="muted">Chaque cabinet a <b>ses</b> utilisateurs, <b>ses</b> chantiers,
-            <b>son</b> référentiel d'artisans et <b>ses</b> modèles de workflow. Rien ne traverse :
-            un artisan présent chez deux cabinets y est deux fiches distinctes, avec sa propre
-            décennale et son propre historique de réponse aux devis.</small>
+          <small class="muted">Les sièges sont comptés sur les utilisateurs actifs du cabinet et
+            remontés à Stripe à chaque changement. Un compte désactivé cesse d'être facturé au
+            cycle suivant, pas rétroactivement.</small>
         </div>
       </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-head"><div class="card-title">Comment le cloisonnement tient</div></div>
-          <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
-            <div><b>1 · Un filtre en base.</b> Toute lecture d'une donnée rattachée à un cabinet est
-              restreinte au cabinet courant, sans que chaque écran ait à y penser.</div>
-            <div><b>2 · Un contrôle à l'accès.</b> Le filtre ne suffit pas : une entité déjà chargée
-              en mémoire lui échappe. Chaque ouverture d'objet est donc vérifiée en plus, et répond
-              403 si le cabinet ne correspond pas.</div>
-            <small class="muted">Deux mécanismes plutôt qu'un : le premier évite les oublis, le
-              second rattrape le cas que le premier ne couvre pas.</small>
+      <div class="grid-main">
+        <div class="stack">
+
+          <div class="card" style="border-color:var(--phase-3)">
+            <div class="card-head" style="background:var(--phase-1-wash)">
+              <div class="card-title">Entrer dans un cabinet</div>
+              <span class="badge st-neutral">journalisé</span></div>
+            <div class="card-body stack">
+              <div class="spec">C'est le <b>seul</b> moyen de voir le métier d'un cabinet, et ça se
+                fait un cabinet à la fois. Pendant la session, tout l'écran est celui de ce
+                cabinet — le bandeau le rappelle en permanence.</div>
+
+              <div class="topbar" style="border-radius:var(--radius-sm);border:1px solid var(--border);height:auto;padding:10px 14px">
+                <span class="badge st-warning">▲ Vous êtes entré dans <b>MO Pays de Savoie</b></span>
+                <span class="muted" style="font-size:12px">depuis 8 minutes</span>
+                <button class="btn btn-sm" style="margin-left:auto">Sortir</button>
+              </div>
+
+              <div class="field">
+                <label>Motif de l'entrée</label>
+                <select class="select">
+                  <option>Assistance demandée par le cabinet</option>
+                  <option>Incident technique</option>
+                  <option>Migration ou reprise de données</option>
+                  <option>Mise en place initiale</option>
+                </select>
+                <span class="hint">Obligatoire. Il est écrit au journal avec la date et la durée,
+                  et il est consultable par l'administrateur du cabinet.</span>
+              </div>
+              <small class="muted">Un accès qui ne laisse pas de trace n'est pas un accès
+                d'administration, c'est une porte dérobée.</small>
+            </div>
           </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">MO Pays de Savoie — paiement en échec</div>
+              <span class="badge st-critical">✕ depuis 6 jours</span></div>
+            <div class="card-body stack">
+              <table class="tbl" style="margin:-17px -17px 0;width:calc(100% + 34px)">
+                <tbody>
+                  <tr><td class="muted" style="width:40%">Facture</td><td><b>FA-2026-0412</b> · 216 € HT</td></tr>
+                  <tr><td class="muted">Motif de l'échec</td><td>Carte expirée <code style="font-size:11.5px">expired_card</code></td></tr>
+                  <tr><td class="muted">Relances Stripe</td><td>2 sur 4 · prochaine le 8 octobre</td></tr>
+                  <tr><td class="muted">Après la 4<sup>e</sup></td><td>l'abonnement passe en <code style="font-size:11.5px">unpaid</code></td></tr>
+                </tbody>
+              </table>
+              <div class="note">
+                <small><b>Ce qui se passe alors, et qui est à trancher avec vous.</b> Couper l'accès
+                  d'un cabinet dont la carte a expiré, c'est bloquer neuf personnes et leurs
+                  chantiers pour un problème de carte bancaire. Je propose un palier : lecture
+                  seule après la 4<sup>e</sup> relance, et jamais de suppression de données.</small>
+              </div>
+              <div class="row wrap">
+                <button class="btn">✉ Relancer l'administrateur</button>
+                <button class="btn">Ouvrir la facture dans Stripe ↗</button>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="card">
-          <div class="card-head"><div class="card-title">Amorcer un cabinet</div></div>
-          <div class="card-body stack-sm">
-            <div class="spec">Un cabinet neuf part sans rien. Trois gestes le rendent utilisable.</div>
-            <button class="btn btn-block">1 · Importer un modèle de workflow</button>
-            <button class="btn btn-block">2 · Poser un barème d'honoraires</button>
-            <button class="btn btn-block">3 · Créer le premier compte admin</button>
+
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Ce que le super admin ne voit pas</div></div>
+            <div class="card-body">
+              <div class="row wrap" style="gap:9px">
+                <span class="badge">✕ Les chantiers de tous les cabinets</span>
+                <span class="badge">✕ Un chiffre d'affaires cumulé</span>
+                <span class="badge">✕ Une recherche inter-cabinets</span>
+                <span class="badge">✕ Les clients et les artisans</span>
+                <span class="badge">✕ Les messageries</span>
+                <span class="badge">✕ Les documents et les photos</span>
+              </div>
+              <small class="muted" style="display:block;margin-top:12px">Ces écrans n'existent pas,
+                ils ne sont pas simplement masqués. Un tableau de bord qui agrégerait quatre
+                cabinets concurrents serait un passif, pas une fonctionnalité.</small>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-head"><div class="card-title">Journal des bascules</div></div>
-          <div class="card-body stack-sm" style="font-size:12.5px">
-            <div><b>MO Pays de Savoie</b><div class="muted">aujourd'hui 08 h 31 · assistance migration</div></div>
-            <hr style="border:0;border-top:1px solid var(--grid)">
-            <div><b>Cabinet Brunel</b><div class="muted">hier 14 h 12 · mise en place</div></div>
-            <hr style="border:0;border-top:1px solid var(--grid)">
-            <div><b>Atelier Tramoyes</b><div class="muted">2 oct. 09 h 45 · incident messagerie</div></div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Les formules</div></div>
+            <div class="card-body">
+              <table class="tbl" style="margin:-17px">
+                <thead><tr><th>Formule</th><th class="num">Prix</th><th>Comprend</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Essai</b></td><td class="num">—</td><td class="muted"><small>14 jours, 1 siège, sans carte</small></td></tr>
+                  <tr><td><b>Cabinet</b></td><td class="num">24 €<div class="muted" style="font-size:11px">/siège/mois</div></td><td class="muted"><small>tout, jusqu'à 10 sièges</small></td></tr>
+                  <tr><td><b>Agence</b></td><td class="num">24 €<div class="muted" style="font-size:11px">/siège/mois</div></td><td class="muted"><small>+ modèles de workflow multiples, API</small></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-foot"><small class="muted">Au siège plutôt qu'au forfait : un cabinet
+              de trois personnes ne paie pas comme un cabinet de dix, et la facture suit l'équipe
+              sans renégociation.</small></div>
           </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Journal des entrées</div>
+              <a href="#" style="font-size:12.5px">Tout voir ›</a></div>
+            <div class="card-body stack-sm" style="font-size:12.5px">
+              <div><b>MO Pays de Savoie</b> · 12 min
+                <div class="muted">aujourd'hui 08 h 31 — migration ou reprise de données</div></div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Cabinet Brunel</b> · 34 min
+                <div class="muted">hier 14 h 12 — mise en place initiale</div></div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Atelier Tramoyes</b> · 6 min
+                <div class="muted">2 oct. 09 h 45 — incident technique</div></div>
+              <small class="muted">Consultable aussi par l'administrateur de chaque cabinet, pour
+                son propre cabinet.</small>
+            </div>
+          </div>
+
         </div>
       </div>
 

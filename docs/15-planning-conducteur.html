@@ -657,6 +657,37 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .type-row:last-child { border-bottom: none; }
 .type-row .lbl { width: 150px; flex: none; font-size: 11.5px; color: var(--ink-muted); font-family: ui-monospace, monospace; }
 
+/* --------------------------------------------------------------- agenda
+   La semaine du conducteur : ce qui est prévu, jour par jour. Le planning
+   Gantt dit « qui est sur site et combien de temps » ; l'agenda dit « où je
+   dois être ». Deux questions différentes, deux vues. */
+.agenda { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; align-items: start; }
+.agenda-day {
+  background: var(--surface-2); border-radius: var(--radius);
+  padding: 11px; display: grid; gap: 8px; align-content: start; min-height: 150px;
+}
+.agenda-day.is-today { background: var(--phase-1-wash); box-shadow: inset 0 0 0 1.5px var(--phase-3); }
+.agenda-day.is-loaded { box-shadow: inset 0 0 0 1.5px var(--critical); }
+.agenda-date { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+.agenda-date b { font-size: 14px; letter-spacing: -.02em; }
+.agenda-date span { font-size: 11px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .05em; }
+.agenda-ev {
+  background: var(--surface); border-radius: var(--radius-sm); padding: 8px 10px;
+  display: grid; gap: 2px; border-left: 3px solid var(--phase-3);
+  box-shadow: 0 1px 2px rgba(27,32,45,.05);
+}
+.agenda-ev.rdv       { border-left-color: var(--fn-direction); }
+.agenda-ev.reunion   { border-left-color: var(--phase-3); }
+.agenda-ev.reception { border-left-color: var(--good); }
+.agenda-ev.conflit   { border-left-color: var(--critical); background: var(--critical-wash); }
+.agenda-h { font-size: 11px; color: var(--ink-muted); font-variant-numeric: tabular-nums; font-weight: 550; }
+.agenda-t { font-size: 12.5px; font-weight: 550; line-height: 1.3; }
+.agenda-c { font-size: 11px; color: var(--ink-muted); }
+.agenda-site { border-top: 1px dashed var(--border-strong); padding-top: 8px; margin-top: 2px; display: grid; gap: 5px; }
+.agenda-site .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); font-weight: 600; }
+.agenda-vide { font-size: 11.5px; color: var(--ink-muted); text-align: center; padding: 14px 0; }
+@media (max-width: 1000px) { .agenda { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
 </style>
 </head>
 <body>
@@ -713,36 +744,166 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
     <div class="content">
       <div class="page-head">
         <div><h1 class="page-title">Mon planning</h1>
-          <div class="page-sub">Tous mes chantiers · semaine du 2 au 15 novembre · 14 interventions</div></div>
+          <div class="page-sub">Semaine du 9 au 13 novembre · 9 rendez-vous, 6 entreprises sur 3 chantiers</div></div>
         <div class="page-actions">
+          <a class="btn btn-primary" href="36-conducteur-visite-de-chantier.html">◉ Visiter un chantier</a>
+          <div class="seg"><span class="is-active">Agenda</span><span>Travaux</span></div>
           <select class="select" style="width:auto"><option>Mes chantiers (3)</option><option>Tous les conducteurs</option><option>Marie Fontaine</option></select>
-          <div class="seg"><span>Semaine</span><span class="is-active">2 semaines</span><span>Mois</span></div>
         </div>
       </div>
 
-      <div class="grid-4">
-        <div class="tile"><div class="tile-label">Interventions</div><div class="tile-value">14</div><div class="tile-note">sur 3 chantiers</div></div>
+      <div class="grid-5">
+        <div class="tile"><div class="tile-label">Rendez-vous</div><div class="tile-value">9</div><div class="tile-note">cette semaine</div></div>
+        <div class="tile"><div class="tile-label">Jours sur le terrain</div><div class="tile-value">4</div><div class="tile-note">sur 5</div></div>
+        <div class="tile"><div class="tile-label">Entreprises sur site</div><div class="tile-value">6</div><div class="tile-note">sur 3 chantiers</div></div>
         <div class="tile"><div class="tile-label">À confirmer</div><div class="tile-value" style="color:var(--warning-ink)">4</div><div class="tile-note">relances envoyées</div></div>
-        <div class="tile"><div class="tile-label">Journée la plus chargée</div><div class="tile-value sm">jeu 12 nov.</div><div class="tile-note">5 entreprises sur 2 chantiers</div></div>
         <div class="tile"><div class="tile-label">Conflits</div><div class="tile-value" style="color:var(--critical-ink)">2</div><div class="tile-note">à arbitrer</div></div>
       </div>
 
       <div class="alert alert-critical">
         <span class="ico">✕</span>
-        <div><b>Jeudi 12 novembre, vous êtes attendue sur deux chantiers à 8 h</b> — réunion de
-          chantier à Craponne et réception de la charpente à Lyon 3<sup>e</sup>, 35 minutes de route
-          entre les deux. Et Électricité Bonnet démarre ce jour-là avec une décennale échue.</div>
+        <div><b>Jeudi 12 novembre, vous êtes attendue à 8 h sur deux chantiers</b> — réunion à
+          Craponne et réception de la charpente à Lyon 3<sup>e</sup>, 35 minutes de route entre les
+          deux. Et Électricité Bonnet démarre ce jour-là avec une décennale échue.</div>
       </div>
 
+      <!-- ====================================================== agenda semaine -->
       <div class="card">
         <div class="card-head">
-          <div class="card-title">Novembre, du 2 au 15</div>
-          <div class="row wrap" style="gap:12px;font-size:11.5px">
-            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--phase-3);display:block"></i>Confirmée</span>
-            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:repeating-linear-gradient(45deg,var(--warning) 0 4px,#e0a015 4px 8px);display:block"></i>À confirmer</span>
-            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--good);display:block"></i>Faite</span>
-            <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--critical);display:block"></i>Conflit</span>
-            <span class="row" style="gap:5px"><i style="width:10px;height:10px;background:var(--ink);transform:rotate(45deg);display:block"></i>Ma présence</span>
+          <div class="card-title">Ma semaine</div>
+          <div class="row wrap" style="gap:12px">
+            <div class="row" style="gap:6px"><button class="btn btn-sm btn-ghost">‹</button>
+              <b style="font-size:12.5px">9 → 13 novembre</b>
+              <button class="btn btn-sm btn-ghost">›</button></div>
+            <div class="row wrap" style="gap:11px;font-size:11.5px">
+              <span class="row" style="gap:5px"><i style="width:3px;height:13px;border-radius:2px;background:var(--fn-direction);display:block"></i>Rendez-vous</span>
+              <span class="row" style="gap:5px"><i style="width:3px;height:13px;border-radius:2px;background:var(--phase-3);display:block"></i>Réunion de chantier</span>
+              <span class="row" style="gap:5px"><i style="width:3px;height:13px;border-radius:2px;background:var(--good);display:block"></i>Réception / livraison</span>
+              <span class="row" style="gap:5px"><i style="width:3px;height:13px;border-radius:2px;background:var(--critical);display:block"></i>Conflit</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="agenda">
+
+            <div class="agenda-day">
+              <div class="agenda-date"><b>Lun 9</b><span>2</span></div>
+              <div class="agenda-ev reunion">
+                <div class="agenda-h">09:00 — 10:00</div>
+                <div class="agenda-t">Réunion de chantier n° 3</div>
+                <div class="agenda-c">Extension Martin · Craponne</div>
+              </div>
+              <div class="agenda-ev rdv">
+                <div class="agenda-h">14:00 — 14:30</div>
+                <div class="agenda-t">Point téléphonique client</div>
+                <div class="agenda-c">Mme Berger · Francheville</div>
+              </div>
+              <div class="agenda-site">
+                <span class="lbl">Sur site</span>
+                <span class="badge ph-3"><i class="dot"></i>Maçonnerie Fontaine</span>
+              </div>
+            </div>
+
+            <div class="agenda-day">
+              <div class="agenda-date"><b>Mar 10</b><span>2</span></div>
+              <div class="agenda-ev rdv">
+                <div class="agenda-h">08:30 — 10:00</div>
+                <div class="agenda-t">RDV client — choix sanitaires</div>
+                <div class="agenda-c">SCI Les Tilleuls · showroom</div>
+              </div>
+              <div class="agenda-ev reunion">
+                <div class="agenda-h">11:00 — 12:00</div>
+                <div class="agenda-t">Visite de site avec la mairie</div>
+                <div class="agenda-c">École Brindas</div>
+              </div>
+              <div class="agenda-site">
+                <span class="lbl">Sur site</span>
+                <span class="badge ph-3"><i class="dot"></i>Maçonnerie Fontaine</span>
+              </div>
+            </div>
+
+            <div class="agenda-day">
+              <div class="agenda-date"><b>Mer 11</b><span>1</span></div>
+              <div class="agenda-ev reception">
+                <div class="agenda-h">10:00 — 11:00</div>
+                <div class="agenda-t">Livraison de la charpente</div>
+                <div class="agenda-c">Extension Martin · à réceptionner</div>
+              </div>
+              <div class="agenda-vide">Après-midi libre</div>
+              <div class="agenda-site">
+                <span class="lbl">Sur site</span>
+                <span class="badge ph-3"><i class="dot"></i>Maçonnerie Fontaine</span>
+              </div>
+            </div>
+
+            <div class="agenda-day is-loaded">
+              <div class="agenda-date"><b>Jeu 12</b><span class="badge st-critical">✕ 2 conflits</span></div>
+              <div class="agenda-ev conflit">
+                <div class="agenda-h">08:00 — 09:00</div>
+                <div class="agenda-t">Réunion de chantier</div>
+                <div class="agenda-c">Extension Martin · Craponne</div>
+              </div>
+              <div class="agenda-ev conflit">
+                <div class="agenda-h">08:00 — 09:30</div>
+                <div class="agenda-t">Réception de la charpente</div>
+                <div class="agenda-c">SCI Les Tilleuls · Lyon 3<sup>e</sup> · 35 min de route</div>
+              </div>
+              <div class="agenda-ev rdv">
+                <div class="agenda-h">15:00 — 16:00</div>
+                <div class="agenda-t">RDV artisans — chiffrage peinture</div>
+                <div class="agenda-c">Extension Martin</div>
+              </div>
+              <div class="agenda-site">
+                <span class="lbl">Sur site</span>
+                <span class="badge ph-3"><i class="dot"></i>Toitures du Rhône</span>
+                <span class="badge st-critical">✕ Électricité Bonnet</span>
+                <span class="badge ph-3"><i class="dot"></i>Maçonnerie Fontaine</span>
+              </div>
+            </div>
+
+            <div class="agenda-day">
+              <div class="agenda-date"><b>Ven 13</b><span>2</span></div>
+              <div class="agenda-ev rdv">
+                <div class="agenda-h">09:30 — 11:00</div>
+                <div class="agenda-t">Expertise avec le cabinet Ferrand</div>
+                <div class="agenda-c">Sinistre Rochet · Oullins</div>
+              </div>
+              <div class="agenda-ev reception">
+                <div class="agenda-h">16:00 — 17:00</div>
+                <div class="agenda-t">Réception partielle — lot gros œuvre</div>
+                <div class="agenda-c">Surélévation Berger · Francheville</div>
+              </div>
+              <div class="agenda-site">
+                <span class="lbl">Sur site</span>
+                <span class="badge ph-3"><i class="dot"></i>Toitures du Rhône</span>
+                <span class="badge ph-3"><i class="dot"></i>Plomberie Sanivalley</span>
+                <span class="badge st-warning">▲ Peinture Decorhône</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="card-foot row between wrap" style="gap:10px">
+          <small class="muted">L'agenda répond à <b>« où dois-je être »</b> ; le planning des
+            travaux, plus bas, répond à <b>« qui est sur site et combien de temps »</b>. Deux
+            questions différentes, deux vues — les mélanger donne un diagramme illisible.</small>
+          <small class="muted">Les entreprises non confirmées sont signalées mais comptées :
+            elles occupent quand même votre journée.</small>
+        </div>
+      </div>
+
+      <!-- ======================================================== gantt travaux -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Travaux — qui est sur site</div>
+          <div class="row" style="gap:10px">
+            <div class="seg"><span>Semaine</span><span class="is-active">2 semaines</span><span>Mois</span></div>
+            <div class="row wrap" style="gap:11px;font-size:11.5px">
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--phase-3);display:block"></i>Confirmée</span>
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:repeating-linear-gradient(45deg,var(--warning) 0 4px,#e0a015 4px 8px);display:block"></i>À confirmer</span>
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--good);display:block"></i>Faite</span>
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--critical);display:block"></i>Conflit</span>
+            </div>
           </div>
         </div>
         <div class="card-body">
@@ -817,24 +978,25 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
           </div>
         </div>
         <div class="card-foot">
-          <small class="muted">Le planning global n'est pas une saisie : il relit les interventions
-            déclarées sur chaque chantier. On le corrige donc depuis
+          <small class="muted">Le planning des travaux n'est pas une saisie : il relit les
+            interventions déclarées sur chaque chantier. On le corrige donc depuis
             <a href="07-chantier-planning.html">le planning du chantier</a>, pas ici.</small>
         </div>
       </div>
 
       <div class="grid-2">
         <div class="card">
-          <div class="card-head"><div class="card-title">Charge par jour</div></div>
+          <div class="card-head"><div class="card-title">Charge par jour</div>
+            <span class="muted" style="font-size:12px">rendez-vous + entreprises sur site</span></div>
           <div class="card-body">
-            <table class="tbl" style="margin:-16px">
-              <thead><tr><th>Jour</th><th>Entreprises sur site</th><th>Chantiers</th><th style="width:120px">Charge</th></tr></thead>
+            <table class="tbl" style="margin:-17px">
+              <thead><tr><th>Jour</th><th class="num">RDV</th><th class="num">Entreprises</th><th>Chantiers</th><th style="width:120px">Charge</th></tr></thead>
               <tbody>
-                <tr><td>lun 9 nov.</td><td class="num">2</td><td>1</td><td><div class="progress thin"><span class="bg-good" style="width:40%"></span></div></td></tr>
-                <tr><td>mar 10 nov.</td><td class="num">2</td><td>2</td><td><div class="progress thin"><span class="bg-good" style="width:40%"></span></div></td></tr>
-                <tr><td>mer 11 nov.</td><td class="num">3</td><td>2</td><td><div class="progress thin"><span class="bg-warning" style="width:60%"></span></div></td></tr>
-                <tr style="background:var(--critical-wash)"><td><b>jeu 12 nov.</b></td><td class="num"><b>5</b></td><td>2</td><td><div class="progress thin"><span class="bg-critical" style="width:100%"></span></div></td></tr>
-                <tr><td>ven 13 nov.</td><td class="num">4</td><td>2</td><td><div class="progress thin"><span class="bg-warning" style="width:80%"></span></div></td></tr>
+                <tr><td>lun 9 nov.</td><td class="num">2</td><td class="num">1</td><td>2</td><td><div class="progress thin"><span class="bg-good" style="width:40%"></span></div></td></tr>
+                <tr><td>mar 10 nov.</td><td class="num">2</td><td class="num">1</td><td>2</td><td><div class="progress thin"><span class="bg-good" style="width:40%"></span></div></td></tr>
+                <tr><td>mer 11 nov.</td><td class="num">1</td><td class="num">1</td><td>1</td><td><div class="progress thin"><span class="bg-good" style="width:25%"></span></div></td></tr>
+                <tr style="background:var(--critical-wash)"><td><b>jeu 12 nov.</b></td><td class="num"><b>3</b></td><td class="num"><b>3</b></td><td>2</td><td><div class="progress thin"><span class="bg-critical" style="width:100%"></span></div></td></tr>
+                <tr><td>ven 13 nov.</td><td class="num">2</td><td class="num">3</td><td>3</td><td><div class="progress thin"><span class="bg-warning" style="width:80%"></span></div></td></tr>
               </tbody>
             </table>
           </div>

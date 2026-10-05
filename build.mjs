@@ -65,6 +65,7 @@ const ROUTES = {
   clientPlan:   '33-client-planning.html',
   clientPaie:   '34-client-paiements.html',
   clientCr:     '35-client-comptes-rendus.html',
+  visite:       '36-conducteur-visite-de-chantier.html',
 };
 const L = (cle) => {
   if (!ROUTES[cle]) throw new Error(`lien inconnu : {{l:${cle}}}`);
