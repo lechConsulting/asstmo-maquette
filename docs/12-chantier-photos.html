@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>AssMO · 12 — Chantier · Photos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,9 +73,14 @@
   --brand:           #dd6b13;   /* accent : indicateurs, liserés, focus */
   --brand-texte:     #b0550f;   /* le même, assombri, pour le texte et les liens */
   --brand-wash:      #fdf1e4;
-  --brand-deep:      #1b2a41;   /* actions : bouton principal, barre latérale */
+  --brand-deep:      #1b2a41;   /* identité : tuile du logo, bandeaux */
   --brand-deep-2:    #142033;
   --brand-ink:       #ffffff;
+  /* Action — l'orange le plus vif qui porte encore du texte blanc : 4,53:1.
+     L'orange du logo lui-même n'y arrive pas (3,39:1). */
+  --action:          #bd5a0d;
+  --action-2:        #a84f0c;   /* survol : 5,54:1 */
+  --action-ink:      #ffffff;
 
   /* Phases du workflow — rampe ordinale, c'est de la DONNÉE */
   --phase-1:         #86b6ef;
@@ -126,45 +132,13 @@
 }
 
 /* Mode sombre — chaque pas est choisi pour le fond sombre, pas inversé */
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme="light"])) {
-    color-scheme: dark;
-    --page: #10151e; --surface: #19202c; --surface-2: #232c3b; --surface-sunken: #0c1018;
-    --ink: #f2f4f7; --ink-2: #c3ccd8; --ink-muted: #95a2b3;
-    --grid: #232c3b; --baseline: #3b465a; --neutral: #64748b;
-    --border: rgba(255,255,255,.09); --border-strong: rgba(255,255,255,.18);
-    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px -14px rgba(0,0,0,.8);
-    --brand: #f08a3c; --brand-texte: #f08a3c; --brand-wash: #2e2113;
-    --brand-deep: #1b2a41; --brand-deep-2: #22334f; --brand-ink: #ffffff;
-    --phase-1: #9ec5f4; --phase-2: #6da7ec; --phase-3: #3987e5; --phase-4: #184f95;
-    --phase-1-wash: #1c2a3c; --phase-2-wash: #1a2639; --phase-3-wash: #182336; --phase-4-wash: #161f30;
-    --fn-direction: #9085e9; --fn-admin: #199e70; --fn-technique: #c98500; --fn-etude: #d55181; --fn-conducteur: #008300;
-    --fn-direction-wash: #262139; --fn-admin-wash: #13281f; --fn-technique-wash: #2e2614; --fn-etude-wash: #331e27; --fn-conducteur-wash: #182817;
-    --ext-artisan: #94a3b8; --ext-client: #35a79b;
-    --ext-artisan-wash: #242c38; --ext-client-wash: #16302e;
-    --good-wash: #16291a; --warning-wash: #2e2614; --serious-wash: #31211c; --critical-wash: #2f1a1a;
-    --good-ink: #5cc85c; --warning-ink: #f0c060; --serious-ink: #f0a080; --critical-ink: #ef8080;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #10151e; --surface: #19202c; --surface-2: #232c3b; --surface-sunken: #0c1018;
-  --ink: #f2f4f7; --ink-2: #c3ccd8; --ink-muted: #95a2b3;
-  --grid: #232c3b; --baseline: #3b465a; --neutral: #64748b;
-  --border: rgba(255,255,255,.09); --border-strong: rgba(255,255,255,.18);
-  --shadow: 0 1px 2px rgba(0,0,0,.5), 0 10px 26px -14px rgba(0,0,0,.8);
-  --brand: #f08a3c; --brand-texte: #f08a3c; --brand-wash: #2e2113;
-  --brand-deep: #1b2a41; --brand-deep-2: #22334f; --brand-ink: #ffffff;
-  --phase-1: #9ec5f4; --phase-2: #6da7ec; --phase-3: #3987e5; --phase-4: #184f95;
-  --phase-1-wash: #1c2a3c; --phase-2-wash: #1a2639; --phase-3-wash: #182336; --phase-4-wash: #161f30;
-  --fn-direction: #9085e9; --fn-admin: #199e70; --fn-technique: #c98500; --fn-etude: #d55181; --fn-conducteur: #008300;
-  --fn-direction-wash: #262139; --fn-admin-wash: #13281f; --fn-technique-wash: #2e2614; --fn-etude-wash: #331e27; --fn-conducteur-wash: #182817;
-  --ext-artisan: #94a3b8; --ext-client: #35a79b;
-  --ext-artisan-wash: #242c38; --ext-client-wash: #16302e;
-  --good-wash: #16291a; --warning-wash: #2e2614; --serious-wash: #31211c; --critical-wash: #2f1a1a;
-  --good-ink: #5cc85c; --warning-ink: #f0c060; --serious-ink: #f0a080; --critical-ink: #ef8080;
-}
+/* Un seul thème, et c'est le nôtre.
 
+   Le mode sombre a été retiré le 05/10/2026 : l'identité d'AssMO est claire —
+   crème, bleu nuit, orange — et la retourner en donnait une seconde, à tenir et
+   à mesurer en parallèle. `color-scheme: light` plus haut n'est pas décoratif :
+   sans lui, un navigateur réglé en sombre repeint lui-même champs, listes et
+   barres de défilement. */
 /* --------------------------------------------------------------- socle */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -199,41 +173,46 @@ small { font-size: 12px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 
 /* ------------------------------------------------------------- ossature
-   Barre latérale bleu nuit : c'est la tuile du logo, agrandie. */
+   La barre latérale était un aplat bleu nuit sur toute la hauteur. Trop :
+   une colonne sombre permanente écrase la page, et surtout elle use la couleur.
+   Le bleu nuit ne reste que là où il dit quelque chose — la tuile du logo, les
+   bandeaux. Ici c'est le liseré orange qui porte la position. */
 .app { display: grid; grid-template-columns: 252px 1fr; min-height: 100vh; }
 .sidebar {
-  background: var(--brand-deep);
-  color: #c3cdda;
+  background: var(--surface);
+  color: var(--ink-2);
   padding: 18px 14px;
   display: flex; flex-direction: column; gap: 22px;
-  border-right: 1px solid transparent;
+  border-right: 1px solid var(--border);
 }
 .brand { display: flex; align-items: center; gap: 11px; padding: 2px 6px 0; }
 .brand-mark { width: 38px; height: 38px; flex: none; display: block; }
 .brand-mark svg { width: 100%; height: 100%; display: block; }
-.brand-name { font-size: 17px; font-weight: 700; color: #fff; letter-spacing: -.028em; line-height: 1.1; }
-.brand-name em { font-style: normal; color: var(--brand); }
-.brand-sub { font-size: 11px; color: #8d9cb0; letter-spacing: .02em; }
+.brand-name { font-size: 17px; font-weight: 700; color: var(--ink); letter-spacing: -.028em; line-height: 1.1; }
+/* Sur fond clair l'orange du logo tombe à 3,09:1 : c'est sa version assombrie
+   qui écrit. Sur un bandeau bleu nuit, l'orange d'origine reprend sa place. */
+.brand-name em { font-style: normal; color: var(--brand-texte); }
+.brand-sub { font-size: 11px; color: var(--ink-muted); letter-spacing: .02em; }
 .nav-group { display: grid; gap: 2px; }
-.nav-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: #7f8ea4; padding: 0 8px 6px; font-weight: 600; }
+.nav-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: var(--ink-muted); padding: 0 8px 6px; font-weight: 600; }
 .nav-item {
   display: flex; align-items: center; gap: 10px;
   padding: 8px 10px; border-radius: var(--radius-sm);
-  color: #c3cdda; font-size: 13.5px;
+  color: var(--ink-2); font-size: 13.5px;
 }
-.nav-item:hover { background: rgba(255,255,255,.07); text-decoration: none; color: #fff; }
-/* actif : fond très léger + liseré orange. L'orange marque, il ne porte pas le texte. */
+.nav-item:hover { background: var(--surface-2); text-decoration: none; color: var(--ink); }
+/* actif : fond pâle de marque + liseré orange. L'orange marque, il ne porte pas le texte. */
 .nav-item.is-active {
-  background: rgba(255,255,255,.10); color: #fff; font-weight: 600;
+  background: var(--brand-wash); color: var(--ink); font-weight: 600;
   box-shadow: inset 3px 0 0 var(--brand);
 }
 .nav-item .ico { width: 16px; text-align: center; opacity: .85; }
 .nav-item .count {
   margin-left: auto; font-size: 11px; font-variant-numeric: tabular-nums;
-  background: rgba(255,255,255,.12); color: #c3cdda; border-radius: var(--radius-pill); padding: 1px 7px;
+  background: var(--surface-2); color: var(--ink-2); border-radius: var(--radius-pill); padding: 1px 7px;
 }
-.nav-item.is-active .count { background: var(--brand); color: #1b2a41; font-weight: 700; }
-.sidebar-foot { margin-top: auto; border-top: 1px solid rgba(255,255,255,.12); padding-top: 14px; }
+.nav-item.is-active .count { background: var(--action); color: var(--action-ink); font-weight: 700; }
+.sidebar-foot { margin-top: auto; border-top: 1px solid var(--border); padding-top: 14px; }
 
 .main { display: flex; flex-direction: column; min-width: 0; background: var(--page); }
 .topbar {
@@ -355,8 +334,11 @@ small { font-size: 12px; }
   cursor: pointer; white-space: nowrap;
 }
 .btn:hover { background: var(--surface-2); text-decoration: none; }
-.btn-primary { background: var(--brand-deep); border-color: transparent; color: var(--brand-ink); }
-.btn-primary:hover { background: var(--brand-deep-2); color: var(--brand-ink); }
+.btn-primary { background: var(--action); border-color: transparent; color: var(--action-ink); font-weight: 600; }
+.btn-primary:hover { background: var(--action-2); color: var(--action-ink); }
+/* Le bouton bleu nuit survit pour les actions secondaires lourdes. */
+.btn-nuit { background: var(--brand-deep); border-color: transparent; color: #fff; }
+.btn-nuit:hover { background: var(--brand-deep-2); color: #fff; }
 .btn-light { background: var(--surface-2); border-color: transparent; color: var(--ink-2); }
 .btn-ghost { background: transparent; border-color: transparent; color: var(--ink-2); }
 .btn-ghost:hover { background: var(--surface-2); color: var(--ink); }
@@ -656,7 +638,6 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .mock-bar .sep { opacity: .35; }
 .mock-bar a { color: #b7c4d4; }
 .mock-bar .persona { margin-left: auto; display: inline-flex; gap: 7px; align-items: center; }
-.theme-toggle { background: rgba(255,255,255,.14); border: 0; color: #fff; font: inherit; font-size: 11.5px; padding: 3px 9px; border-radius: 999px; cursor: pointer; }
 
 /* ------------------------------------------------- doc de design (page 00) */
 .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px,1fr)); gap: 11px; }
@@ -714,7 +695,6 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
   <span class="persona">
     <a href="index.html">Sommaire</a>
     <a href="01-roles.html">Rôles</a>
-    <button class="theme-toggle" id="bascule">Mode sombre</button>
   </span>
 </div>
 <div class="app">
@@ -851,17 +831,5 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
   </div>
 </div>
 
-<script>
-(function () {
-  var b = document.getElementById('bascule');
-  var sombre = matchMedia('(prefers-color-scheme: dark)').matches;
-  function peindre() {
-    document.documentElement.dataset.theme = sombre ? 'dark' : 'light';
-    b.textContent = sombre ? 'Mode clair' : 'Mode sombre';
-  }
-  peindre();
-  b.addEventListener('click', function () { sombre = !sombre; peindre(); });
-})();
-</script>
 </body>
 </html>

@@ -4,12 +4,19 @@ Tirée du logo. Les couleurs ne sont pas estimées à l'œil : elles sont **extr
 fichier vectoriel** (`logo/assmo-logo-source.pdf`), donc ce sont exactement celles
 posées par le graphiste.
 
-| Rôle | Clair | Sombre | D'où ça vient |
-|---|---|---|---|
-| Bleu nuit | `#1b2a41` | `#1b2a41` | tuile de l'icône, mot « Ass » |
-| Orange | `#dd6b13` | `#f08a3c` | chevron du toit, « MO » |
-| Ardoise | `#3a4a63` | `#c9cdd4` | ligne de sol sous la coche |
-| Crème | `#f6f4ef` | — | fond de la version claire |
+| Rôle | Valeur | D'où ça vient |
+|---|---|---|
+| Bleu nuit | `#1b2a41` | tuile de l'icône, mot « Ass » |
+| Orange | `#dd6b13` | chevron du toit, « MO » |
+| Ardoise | `#3a4a63` | ligne de sol sous la coche |
+| Crème | `#f6f4ef` | fond de la version claire |
+
+**Un seul thème.** Le mode sombre a été retiré le 05/10/2026 : l'identité d'AssMO
+est une identité claire, et la retourner en donnait une seconde — deux palettes à
+tenir, deux séries de mesures, deux occasions de dériver. Les pages déclarent
+`color-scheme: light` ; sans cette ligne, un navigateur réglé en sombre repeint
+lui-même les champs et les listes, et on obtient des saisies noires dans une carte
+blanche.
 
 ## La règle qui tient tout
 
@@ -19,12 +26,18 @@ aurait dégradé l'élément le plus cliqué de l'interface.
 
 D'où la répartition, qui est une conséquence de la mesure et non un goût :
 
-- **Bleu nuit = les actions.** Bouton principal (blanc sur `#1b2a41`, **14,4:1**),
-  barre latérale, encre principale.
-- **Orange = l'accent.** Liseré d'élément actif, soulignement d'onglet, anneau de
-  focus, interrupteur. **Jamais un fond de texte.**
+- **Orange assombri `#bd5a0d` = les actions.** Le plus vif qui porte encore du
+  texte blanc — **4,53:1** — et pas un pas de plus. C'est le bouton principal.
+- **Orange du logo `#dd6b13` = l'accent.** Liseré d'élément actif, soulignement
+  d'onglet, anneau de focus. **Jamais un fond de texte.**
 - **Orange foncé `#b0550f` = le texte orange.** Même teinte, même saturation,
-  clarté ramenée à 38 % : **5,06:1** sur blanc, **4,60:1** sur crème. Liens.
+  clarté ramenée à 38 % : **5,06:1** sur blanc, **4,60:1** sur crème. Liens, et
+  le mot « MO » sur fond clair.
+- **Bleu nuit = l'identité, et rien d'autre.** La tuile du logo, le bandeau des
+  pages publiques. *Révisé le 05/10/2026* : il tenait la barre latérale sur toute
+  la hauteur et tout l'écran de connexion. Un aplat sombre permanent cesse d'être
+  un signal, il devient un décor — et il emporte avec lui tout ce qui aurait pu
+  ressortir dessus.
 - **Bleu = les données.** La rampe des phases, et rien d'autre.
 
 ## Conflits mesurés, et comment ils sont résolus
@@ -36,34 +49,26 @@ On les sépare **par le rôle** : l'orange en accent de châssis, le statut en f
 pâle avec icône et libellé. `audit.py` vérifie qu'aucun écran n'utilise la couleur
 de marque, hors les deux pages qui portent le logo.
 
-**La surface sombre est plus noire que le bleu nuit du logo.** Sur `#1b2a41`, le
-dernier pas de la rampe des phases tombe à 1,78:1, sous le plancher de 2:1 — la
-phase 4 disparaissait. La carte sombre est donc `#19202c`, et le bleu nuit reste
-à la barre latérale, où il est à sa place.
-
 ## Phases du workflow — rampe ordinale
 
 Les quatre phases sont **ordonnées**, donc une seule teinte qui fonce, pas quatre
-couleurs : `#86b6ef` `#5598e7` `#2a78d6` `#184f95` en clair,
-`#9ec5f4` `#6da7ec` `#3987e5` `#184f95` en sombre. Tous les tests passent dans les
-deux modes.
+couleurs : `#86b6ef` `#5598e7` `#2a78d6` `#184f95`. Tous les tests passent.
 
 ## Fonctions — catégoriel, ordre figé
 
 L'orange est pris par la marque, le bleu par les phases, le rouge par les statuts :
-il restait exactement cinq teintes utilisables, et un seul ordre qui passe les deux
-modes.
+il restait exactement cinq teintes utilisables, et un seul ordre qui passe.
 
-| Fonction | Clair | Sombre |
-|---|---|---|
-| Direction | `#4a3aa7` violet | `#9085e9` |
-| Administratif | `#1baf7a` aqua | `#199e70` |
-| Secrétariat technique | `#eda100` jaune | `#c98500` |
-| Bureau d'étude | `#e87ba4` magenta | `#d55181` |
-| Conducteur de travaux | `#008300` vert | `#008300` |
+| Fonction | Valeur |
+|---|---|
+| Direction | `#4a3aa7` violet |
+| Administratif | `#1baf7a` aqua |
+| Secrétariat technique | `#eda100` jaune |
+| Bureau d'étude | `#e87ba4` magenta |
+| Conducteur de travaux | `#008300` vert |
 
 Écart le plus faible entre deux voisines : **9,1** en daltonisme protan (seuil 8),
-**19,6** en vision normale (plancher 15) en clair ; **8,4** et **19,3** en sombre.
+**19,6** en vision normale (plancher 15).
 Trois d'entre elles passent sous 3:1 sur blanc, d'où le badge à **fond teinté,
 encre foncée et pastille pleine** — jamais du texte coloré.
 

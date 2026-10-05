@@ -196,6 +196,7 @@ for (const fichier of fichiers) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>AssMO · ${meta.id} — ${meta.titre}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -214,22 +215,9 @@ ${css}
   <span class="persona">
     <a href="index.html">Sommaire</a>
     <a href="${L('roles')}">Rôles</a>
-    <button class="theme-toggle" id="bascule">Mode sombre</button>
   </span>
 </div>
 ${corps}
-<script>
-(function () {
-  var b = document.getElementById('bascule');
-  var sombre = matchMedia('(prefers-color-scheme: dark)').matches;
-  function peindre() {
-    document.documentElement.dataset.theme = sombre ? 'dark' : 'light';
-    b.textContent = sombre ? 'Mode clair' : 'Mode sombre';
-  }
-  peindre();
-  b.addEventListener('click', function () { sombre = !sombre; peindre(); });
-})();
-</script>
 </body>
 </html>
 `,
@@ -244,6 +232,7 @@ writeFileSync(
 <!-- @dsCard group="Fondations" -->
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>AssMO — maquette, sommaire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
