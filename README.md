@@ -23,9 +23,24 @@ node build.mjs     # src/*.html + _jetons.css → docs/
 - `build.mjs` — inline le CSS, injecte les fragments partagés (barre latérale, onglets),
   génère le sommaire et **vérifie tous les liens internes** (un lien mort casse le build).
 
+## Châssis
+
+Repris de l'outil actuel (PBMO), jetons relevés dans son CSS : **Inter**, neutres ardoise
+(fond `#f9fafb`, carte blanche), **rouge primaire `hsl(0 68% 45%)` = `#c12525`**, rayon
+`.625rem`, barre latérale blanche en mode clair.
+
+**Le rouge ne sort jamais du châssis.** Mesuré, il est à 4,8 d'écart perceptif du rouge
+« critique » — le plancher est à 15, les deux sont indiscernables. Plutôt que de changer
+l'une des deux teintes, on les sépare par le **rôle** : le rouge de marque n'existe qu'en
+aplat sur le châssis (bouton principal, entrée de menu active, onglet actif, liens) ; le
+rouge critique n'existe qu'en fond pâle avec une encre foncée, une icône et un libellé.
+Aucune donnée n'est peinte en rouge de marque — d'où la règle complémentaire :
+**rouge = interface, bleu = données**.
+
 ## Palette
 
-La palette est validée par script, pas à l'œil :
+La palette est validée par script, pas à l'œil, contre les surfaces réelles
+(`#ffffff` en clair, `#191e29` en sombre) :
 
 - **Phases du workflow** — rampe *ordinale* d'une seule teinte bleue, parce que les quatre
   phases sont ordonnées. Quatre teintes catégorielles avaient été essayées d'abord : le violet

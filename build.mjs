@@ -132,7 +132,7 @@ function topbar(arg) {
     <div class="search"><span>⌕</span><span>Rechercher un chantier, un client, un artisan…</span><span class="kbd">⌘K</span></div>
     <button class="btn btn-sm">＋ Nouveau chantier</button>
     <div class="row" style="gap:9px">${badges}
-      <div class="avatar sm circle" style="background:var(--brand)">${ini}</div>
+      <div class="avatar sm circle" style="background:var(--neutral)">${ini}</div>
       <div style="font-size:13px"><b>${nom}</b></div>
     </div>
   </div>`;
@@ -188,6 +188,9 @@ for (const fichier of fichiers) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AsstMO · ${meta.id} — ${meta.titre}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
 <style>
 ${css}
 </style>
@@ -232,7 +235,11 @@ writeFileSync(
 <!-- @dsCard group="Fondations" -->
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO — maquette, sommaire</title><style>${css}</style></head>
+<title>AsstMO — maquette, sommaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>${css}</style></head>
 <body><div class="content" style="max-width:940px;margin:0 auto;padding:34px 22px">
 <div class="page-head"><div>
   <h1 class="page-title">AsstMO — maquette</h1>
