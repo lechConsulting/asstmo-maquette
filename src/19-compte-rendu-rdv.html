@@ -1,0 +1,196 @@
+<!--meta { "id":"19", "titre":"Compte rendu RDV", "groupe":"Cabinet", "role":"Direction", "largeur":1440, "hauteur":1240 } -->
+<div class="app">
+  {{sidebar:crRdv}}
+  <div class="main">
+    {{topbar:Hélène Verdier@HV@Direction|fn-direction}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Compte rendu de rendez-vous</h1>
+          <div class="page-sub">Enregistrez le rendez-vous, le texte est transcrit puis mis en forme</div></div>
+        <div class="page-actions">
+          <button class="btn">✎ Saisir à la main</button>
+        </div>
+      </div>
+
+      <div class="grid-main">
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Enregistrement</div>
+              <span class="badge st-neutral">02 min 47 s</span></div>
+            <div class="card-body stack">
+              <div class="grid-2" style="gap:12px">
+                <div class="field"><label>Chantier</label>
+                  <select class="select"><option>CH-2026-014 · Extension Martin</option><option>CH-2026-011 · SCI Les Tilleuls</option></select></div>
+                <div class="field"><label>Sujet du rendez-vous</label>
+                  <input class="input" value="Choix des matériaux"></div>
+              </div>
+
+              <div style="background:var(--surface-2);border-radius:var(--radius);padding:18px;text-align:center">
+                <div class="row" style="justify-content:center;gap:14px">
+                  <button class="btn btn-lg" style="background:var(--critical);color:#fff;border-color:transparent;border-radius:50%;width:62px;height:62px;padding:0;font-size:22px">■</button>
+                </div>
+                <div class="num" style="font-size:22px;font-weight:650;margin-top:12px">02:47</div>
+                <div class="row" style="justify-content:center;gap:2px;margin-top:12px;height:34px;align-items:flex-end">
+                  <i style="width:3px;height:40%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:70%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:30%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:90%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:55%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:100%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:45%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:75%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:35%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:60%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:85%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:25%;background:var(--brand);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:50%;background:var(--baseline);display:block;border-radius:2px"></i>
+                  <i style="width:3px;height:20%;background:var(--baseline);display:block;border-radius:2px"></i>
+                </div>
+                <small class="muted" style="display:block;margin-top:12px">Appuyez pour arrêter.
+                  L'enregistrement reste sur votre appareil jusqu'à l'envoi.</small>
+              </div>
+
+              <div class="stack-sm">
+                <div class="row between"><span style="font-size:12.5px"><span class="badge st-good">✓</span> Envoi de l'enregistrement</span><span class="muted" style="font-size:12px">3,2 Mo</span></div>
+                <div class="row between"><span style="font-size:12.5px"><span class="badge st-good">✓</span> Transcription de l'audio</span><span class="muted" style="font-size:12px">18 s</span></div>
+                <div class="row between"><span style="font-size:12.5px"><span class="badge st-warning">◴</span> Rédaction du compte rendu</span><span class="muted" style="font-size:12px">en cours…</span></div>
+                <div class="progress"><span style="width:72%"></span></div>
+              </div>
+
+              <div class="alert alert-info" style="padding:10px 12px">
+                <span class="ico">◆</span>
+                <div><small><b>Deux services, deux métiers.</b> La transcription est faite par
+                  Whisper : l'API de Claude ne sait pas lire le son. C'est Claude qui rédige ensuite
+                  le compte rendu structuré à partir du texte. Si l'une des deux clés manque, la
+                  page reste utilisable en saisie manuelle.</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Compte rendu rédigé</div>
+              <div class="row" style="gap:7px">
+                <div class="seg"><span class="is-active">Aperçu</span><span>Markdown</span></div>
+                <button class="btn btn-sm">⎙ PDF</button>
+                <button class="btn btn-sm">⎙ Word</button>
+                <button class="btn btn-sm btn-primary">Enregistrer</button>
+              </div>
+            </div>
+            <div class="card-body" style="font-size:13.5px;line-height:1.7">
+              <h2 style="font-size:17px">Compte rendu de rendez-vous — Choix des matériaux</h2>
+
+              <h3 style="font-size:14px;margin-top:16px">Informations générales</h3>
+              <ul style="margin:6px 0;padding-left:20px;color:var(--ink-2)">
+                <li>Sujet : choix des matériaux</li>
+                <li>Date du rendez-vous : 5 octobre 2026</li>
+                <li>Client : M. et Mme Martin</li>
+                <li>Lieu : showroom Sols &amp; Faïences, Lyon 8<sup>e</sup></li>
+              </ul>
+
+              <h3 style="font-size:14px;margin-top:16px">Participants</h3>
+              <ul style="margin:6px 0;padding-left:20px;color:var(--ink-2)">
+                <li>M. et Mme Martin — maîtres d'ouvrage</li>
+                <li>Hélène Verdier — agence Verdier</li>
+                <li>Marco Rizzo — Sols &amp; Faïences Lyon</li>
+              </ul>
+
+              <h3 style="font-size:14px;margin-top:16px">Sujets abordés</h3>
+              <ul style="margin:6px 0;padding-left:20px;color:var(--ink-2)">
+                <li>Revêtement de sol du séjour et de la cuisine : grès cérame effet bois contre
+                  grès uni du devis initial.</li>
+                <li>Faïence de la salle de bains : format et calepinage.</li>
+                <li>Incidence de l'effet bois sur le délai d'approvisionnement.</li>
+              </ul>
+
+              <h3 style="font-size:14px;margin-top:16px">Décisions prises</h3>
+              <ul style="margin:6px 0;padding-left:20px;color:var(--ink-2)">
+                <li>Grès cérame effet bois retenu pour le séjour et la cuisine, référence
+                  « Larix naturel » 20 × 120.</li>
+                <li>Surcoût accepté à hauteur de 1 400 € HT.</li>
+                <li>Faïence de la salle de bains : format 30 × 60 posé horizontalement.</li>
+              </ul>
+
+              <h3 style="font-size:14px;margin-top:16px">Actions à réaliser</h3>
+              <ul style="margin:6px 0;padding-left:20px;color:var(--ink-2)">
+                <li>Devis modificatif du lot carrelage — Sols &amp; Faïences, avant le 9 octobre.</li>
+                <li>Vérifier le délai d'approvisionnement du Larix naturel — à préciser.</li>
+                <li>Mettre à jour le descriptif des travaux — Thomas Bauer.</li>
+              </ul>
+
+              <h3 style="font-size:14px;margin-top:16px">Prochaines étapes</h3>
+              <ul style="margin:6px 0;padding-left:20px;color:var(--ink-2)">
+                <li>Validation du devis modificatif avant la signature des marchés du 22 octobre.</li>
+              </ul>
+
+              <div class="note" style="margin-top:16px">
+                <small><b>« à préciser » n'est pas un oubli, c'est une règle.</b> Quand une
+                  information n'est pas dans l'enregistrement, elle est signalée comme telle plutôt
+                  que devinée. Un compte rendu qui invente un délai est pire qu'un compte rendu
+                  incomplet.</small>
+              </div>
+            </div>
+            <div class="card-foot row between wrap" style="gap:10px">
+              <small class="muted">Le texte est modifiable avant enregistrement — c'est un
+                brouillon sérieux, pas une vérité.</small>
+              <label class="check is-on"><span class="box">✓</span><span style="font-size:12.5px">Créer les 3 tâches des actions</span></label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Filtrer</div></div>
+            <div class="card-body stack-sm">
+              <div class="field"><label>Client</label><select class="select"><option>Tous</option><option>M. et Mme Martin</option><option>SCI Les Tilleuls</option></select></div>
+              <div class="field"><label>Date du RDV</label><input class="input" type="date"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Derniers comptes rendus</div></div>
+            <div class="maillist">
+              <div class="mail" style="grid-template-columns:1fr auto;padding:11px 14px">
+                <div><b class="mail-subj">Choix des matériaux</b>
+                  <div class="mail-snip">M. et Mme Martin</div></div>
+                <div class="mail-side"><span>5 oct.</span></div>
+              </div>
+              <div class="mail" style="grid-template-columns:1fr auto;padding:11px 14px">
+                <div><b class="mail-subj">Second RDV / modif devis</b>
+                  <div class="mail-snip">SCI Les Tilleuls</div></div>
+                <div class="mail-side"><span>1 oct.</span></div>
+              </div>
+              <div class="mail" style="grid-template-columns:1fr auto;padding:11px 14px">
+                <div><b class="mail-subj">RDV artisans pour chiffrage</b>
+                  <div class="mail-snip">M. et Mme Martin · 6 entreprises</div></div>
+                <div class="mail-side"><span>18 sept.</span></div>
+              </div>
+              <div class="mail" style="grid-template-columns:1fr auto;padding:11px 14px">
+                <div><b class="mail-subj">Premier RDV</b>
+                  <div class="mail-snip">Mairie de Brindas</div></div>
+                <div class="mail-side"><span>11 sept.</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Bon à savoir</div></div>
+            <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
+              <div><b>Durée.</b> Un envoi est plafonné à 25 Mo, soit une vingtaine de minutes.
+                Au-delà, l'enregistrement est à découper — le message le dit avant d'échouer.</div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Confidentialité.</b> L'audio part chez un tiers pour être transcrit, puis il
+                est supprimé du serveur dès que le texte est revenu. Prévenez les participants.</div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Coût.</b> Quelques centimes par rendez-vous pour la transcription, et la
+                rédaction par-dessus. À l'échelle d'un cabinet, c'est marginal.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

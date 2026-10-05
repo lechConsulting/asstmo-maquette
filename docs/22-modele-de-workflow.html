@@ -1,8 +1,12 @@
 <!doctype html>
-<!-- @dsCard group="Fondations" -->
-<html lang="fr"><head><meta charset="utf-8">
+<!-- @dsCard group="Administration" -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO — maquette, sommaire</title><style>/* ===========================================================================
+<title>AsstMO · 22 — Modèle de workflow</title>
+<style>
+/* ===========================================================================
    AsstMO — jetons de design et composants de maquette
    Palette validée avec scripts/validate_palette.js (skill dataviz) :
      · phases  = rampe ORDINALE bleue (les phases sont ordonnées 1→4)
@@ -619,78 +623,255 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .type-row { display: flex; align-items: baseline; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--grid); }
 .type-row:last-child { border-bottom: none; }
 .type-row .lbl { width: 150px; flex: none; font-size: 11.5px; color: var(--ink-muted); font-family: ui-monospace, monospace; }
-</style></head>
-<body><div class="content" style="max-width:940px;margin:0 auto;padding:34px 22px">
-<div class="page-head"><div>
-  <h1 class="page-title">AsstMO — maquette</h1>
-  <div class="page-sub">24 écrans. Chaque page est autonome et se bascule en mode sombre.</div>
-</div><div class="page-actions">
-  <a class="btn" href="00-fondations.html">Fondations</a>
-  <a class="btn btn-primary" href="01-roles.html">Commencer par les rôles</a>
-</div></div>
-<div class="card"><div class="card-head"><div class="card-title">Fondations</div>
-  <span class="muted">3 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">00</td>
-      <td><a href="00-fondations.html">Fondations</a></td>
-      <td class="right"></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">01</td>
-      <td><a href="01-roles.html">Rôles</a></td>
-      <td class="right"></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">02</td>
-      <td><a href="02-connexion.html">Connexion</a></td>
-      <td class="right"></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Cabinet</div>
-  <span class="muted">10 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">03</td>
-      <td><a href="03-tableau-de-bord.html">Tableau de bord</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">04</td>
-      <td><a href="04-vue-d-ensemble.html">Vue d'ensemble</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">05</td>
-      <td><a href="05-chantiers.html">Chantiers</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">15</td>
-      <td><a href="15-planning-conducteur.html">Planning conducteur</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">16</td>
-      <td><a href="16-mes-taches.html">Mes tâches</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur + Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">17</td>
-      <td><a href="17-messagerie-a-traiter.html">Messagerie — à traiter</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">18</td>
-      <td><a href="18-messagerie-un-e-mail.html">Messagerie — un e-mail</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">19</td>
-      <td><a href="19-compte-rendu-rdv.html">Compte rendu RDV</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">20</td>
-      <td><a href="20-annuaire-clients.html">Annuaire — clients</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">21</td>
-      <td><a href="21-annuaire-artisans.html">Annuaire — artisans</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Chantier</div>
-  <span class="muted">9 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">06</td>
-      <td><a href="06-chantier-etapes.html">Chantier · Étapes</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">07</td>
-      <td><a href="07-chantier-planning.html">Chantier · Planning</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">08</td>
-      <td><a href="08-chantier-finances.html">Chantier · Finances</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">09</td>
-      <td><a href="09-chantier-fiche-de-suivi.html">Chantier · Fiche de suivi</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">10</td>
-      <td><a href="10-chantier-intervenants.html">Chantier · Intervenants</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">11</td>
-      <td><a href="11-chantier-messagerie.html">Chantier · Messagerie</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">12</td>
-      <td><a href="12-chantier-photos.html">Chantier · Photos</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">13</td>
-      <td><a href="13-chantier-comptes-rendus.html">Chantier · Comptes rendus</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">14</td>
-      <td><a href="14-chantier-impression.html">Chantier · Impression</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Administration</div>
-  <span class="muted">2 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">22</td>
-      <td><a href="22-modele-de-workflow.html">Modèle de workflow</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">23</td>
-      <td><a href="23-bareme-d-honoraires.html">Barème d'honoraires</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr>
-  </tbody></table></div>
-</div></body></html>
+
+</style>
+</head>
+<body>
+<div class="mock-bar no-print">
+  <span class="tagid">22</span>
+  <span>Modèle de workflow</span>
+  <span class="sep">·</span>
+  <span style="color:#9a9a96">Administration</span>
+  <span class="sep">·</span><span style="color:#9ec5f4">Admin du cabinet</span>
+  <span class="persona">
+    <a href="index.html">Sommaire</a>
+    <a href="01-roles.html">Rôles</a>
+    <button class="theme-toggle" id="bascule">Mode sombre</button>
+  </span>
+</div>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">AMO</div>
+      <div><div class="brand-name">AsstMO</div><div class="brand-sub">Agence Verdier</div></div>
+    </div>
+    <div class="nav-group"><div class="nav-label">Pilotage</div>
+      <a class="nav-item" href="03-tableau-de-bord.html">
+            <span class="ico">◱</span><span>Tableau de bord</span></a><a class="nav-item" href="04-vue-d-ensemble.html">
+            <span class="ico">◫</span><span>Vue d'ensemble</span></a><a class="nav-item" href="05-chantiers.html">
+            <span class="ico">⌂</span><span>Chantiers</span><span class="count">12</span></a><a class="nav-item" href="15-planning-conducteur.html">
+            <span class="ico">▦</span><span>Planning</span></a><a class="nav-item" href="16-mes-taches.html">
+            <span class="ico">✓</span><span>Mes tâches</span><span class="count">7</span></a></div><div class="nav-group"><div class="nav-label">Échanges</div>
+      <a class="nav-item" href="17-messagerie-a-traiter.html">
+            <span class="ico">✉</span><span>Messagerie</span><span class="count">9</span></a><a class="nav-item" href="19-compte-rendu-rdv.html">
+            <span class="ico">◴</span><span>Comptes rendus</span></a></div><div class="nav-group"><div class="nav-label">Carnet d'adresses</div>
+      <a class="nav-item" href="20-annuaire-clients.html">
+            <span class="ico">☺</span><span>Clients</span></a><a class="nav-item" href="21-annuaire-artisans.html">
+            <span class="ico">⚒</span><span>Artisans</span><span class="count">46</span></a></div><div class="nav-group"><div class="nav-label">Administration</div>
+      <a class="nav-item is-active" href="22-modele-de-workflow.html">
+            <span class="ico">⇄</span><span>Modèles de workflow</span></a><a class="nav-item" href="23-bareme-d-honoraires.html">
+            <span class="ico">％</span><span>Barème d'honoraires</span></a><a class="nav-item" href="24-utilisateurs.html">
+            <span class="ico">◉</span><span>Utilisateurs</span></a><a class="nav-item" href="25-moteur-d-evenements.html">
+            <span class="ico">⚙</span><span>Moteur d'évènements</span></a><a class="nav-item" href="26-cabinets.html">
+            <span class="ico">▣</span><span>Cabinets</span></a></div>
+    <div class="sidebar-foot">
+      <a class="nav-item" href="01-roles.html"><span class="ico">⇥</span><span>Changer de rôle</span></a>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+    <div class="search"><span>⌕</span><span>Rechercher un chantier, un client, un artisan…</span><span class="kbd">⌘K</span></div>
+    <button class="btn btn-sm">＋ Nouveau chantier</button>
+    <div class="row" style="gap:9px"><span class="badge fn-direction"><i class="dot"></i>Direction</span> <span class="badge st-neutral"><i class="dot"></i>Admin du cabinet</span>
+      <div class="avatar sm circle" style="background:var(--brand)">HV</div>
+      <div style="font-size:13px"><b>Hélène Verdier</b></div>
+    </div>
+  </div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Modèles de workflow</h1>
+          <div class="page-sub">Chaque cabinet écrit ses propres étapes. 2 modèles, 62 et 38 étapes.</div></div>
+        <div class="page-actions">
+          <button class="btn">⧉ Dupliquer</button>
+          <button class="btn btn-primary">＋ Modèle</button>
+        </div>
+      </div>
+
+      <div class="row wrap">
+        <div class="seg"><span class="is-active">Rénovation après sinistre <b>62</b></span><span>Construction neuve <b>38</b></span></div>
+        <span class="badge st-good">✓ Modèle par défaut</span>
+        <span class="muted" style="font-size:12px">utilisé par 9 chantiers en cours</span>
+      </div>
+
+      <div class="alert alert-warning">
+        <span class="ico">▲</span>
+        <div><b>Modifier ce modèle ne touche pas les chantiers en cours.</b> Le titre et la consigne
+          de chaque étape sont recopiés sur le chantier au moment où il est créé. Renommer l'étape 34
+          ici ne réécrira donc pas l'historique des 9 chantiers qui l'ont déjà franchie — seuls les
+          chantiers créés ensuite prendront la nouvelle version.</div>
+      </div>
+
+      <div class="grid-main">
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Phases</div>
+              <button class="btn btn-sm">＋ Phase</button></div>
+            <div class="scroll-x"><table class="tbl">
+              <thead><tr><th style="width:36px"></th><th>Nom</th><th>Teinte</th><th class="num">Étapes</th><th></th></tr></thead>
+              <tbody>
+                <tr><td class="muted num">1</td><td><b>Réception &amp; administratif</b></td>
+                  <td><span class="badge ph-1"><i class="dot"></i>pas 1</span></td><td class="num">5</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+                <tr><td class="muted num">2</td><td><b>Études</b></td>
+                  <td><span class="badge ph-2"><i class="dot"></i>pas 2</span></td><td class="num">16</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+                <tr><td class="muted num">3</td><td><b>Préparation de chantier</b></td>
+                  <td><span class="badge ph-3"><i class="dot"></i>pas 3</span></td><td class="num">25</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+                <tr><td class="muted num">4</td><td><b>Travaux &amp; réception</b></td>
+                  <td><span class="badge ph-4"><i class="dot"></i>pas 4</span></td><td class="num">16</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button></td></tr>
+              </tbody>
+            </table></div>
+            <div class="card-foot"><small class="muted">Les teintes ne se choisissent pas une par
+              une : les phases étant ordonnées, elles prennent les pas successifs d'une même rampe.
+              Ajouter une cinquième phase redistribue la rampe.</small></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Étapes · phase 3, Préparation de chantier</div>
+              <div class="row" style="gap:8px">
+                <select class="select" style="width:auto;font-size:12px"><option>Phase 3 — Préparation</option><option>Phase 1 — Réception</option><option>Phase 2 — Études</option><option>Phase 4 — Travaux</option></select>
+                <button class="btn btn-sm btn-primary">＋ Étape</button>
+              </div>
+            </div>
+            <div class="scroll-x"><table class="tbl">
+              <thead><tr><th style="width:44px">N°</th><th>Titre et consigne</th><th style="width:190px">Responsable</th><th style="width:70px" class="center">Facult.</th><th style="width:96px"></th></tr></thead>
+              <tbody>
+                <tr><td class="num muted">32</td>
+                  <td><b>Étude géologique</b><div class="muted" style="font-size:11.5px">— pas de consigne —</div></td>
+                  <td><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></td>
+                  <td class="center"><span class="check is-on" style="display:inline-flex"><span class="box">✓</span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+
+                <tr><td class="num muted">33</td>
+                  <td><b>Dépôt DP / PC</b><div class="muted" style="font-size:11.5px">Envisionner et PDF</div></td>
+                  <td><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span></td>
+                  <td class="center"><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+
+                <tr style="background:var(--brand-wash)"><td class="num">34</td>
+                  <td>
+                    <input class="input" value="Réception tableau de dommage" style="font-weight:600;margin-bottom:5px">
+                    <input class="input" value="PDF envoyé par l'expert ou l'assurance" style="font-size:12px">
+                  </td>
+                  <td><select class="select" style="font-size:12px"><option>Conducteur de travaux</option><option>Direction</option><option>Administratif</option><option>Secrétariat technique</option><option>Bureau d'étude</option></select></td>
+                  <td class="center"><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-primary">✓</button><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+
+                <tr><td class="num muted">35</td>
+                  <td><b>Préparation tableau de situation</b><div class="muted" style="font-size:11.5px">Excel ou chantier</div></td>
+                  <td><span class="badge fn-admin"><i class="dot"></i>Administratif</span></td>
+                  <td class="center"><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+
+                <tr><td class="num muted">36</td>
+                  <td><b>Vérification conformité tableau de dommage</b><div class="muted" style="font-size:11.5px">Suivi dossier</div></td>
+                  <td><span class="badge fn-admin"><i class="dot"></i>Administratif</span></td>
+                  <td class="center"><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+
+                <tr><td class="num muted">37</td>
+                  <td><b>Branchement provisoire / remise en service</b>
+                    <div class="muted" style="font-size:11.5px">Administration · raccordement</div>
+                    <div class="step-sub" style="margin-top:8px">
+                      <div class="row between" style="padding:3px 0"><small><b>37.1</b> Demande de branchement provisoire</small>
+                        <button class="btn btn-sm btn-ghost">✕</button></div>
+                      <div class="row between" style="padding:3px 0"><small><b>37.2</b> Pose du coffret de chantier</small>
+                        <button class="btn btn-sm btn-ghost">✕</button></div>
+                      <div class="row between" style="padding:3px 0"><small><b>37.3</b> Relevé du compteur à l'ouverture <span class="badge st-neutral">facultative</span></small>
+                        <button class="btn btn-sm btn-ghost">✕</button></div>
+                      <button class="btn btn-sm" style="margin-top:5px">＋ Sous-étape</button>
+                    </div>
+                  </td>
+                  <td><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></td>
+                  <td class="center"><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+
+                <tr><td class="num muted">38</td>
+                  <td><b>Accord DP / PC</b><div class="muted" style="font-size:11.5px">PDF</div></td>
+                  <td><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span></td>
+                  <td class="center"><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">↑</button><button class="btn btn-sm btn-ghost">↓</button></td></tr>
+              </tbody>
+            </table></div>
+            <div class="card-foot"><small class="muted">Réordonnancement par boutons et non par
+              glisser-déposer : c'est fiable au clavier, utilisable sur une tablette, et ça ne demande
+              aucune bibliothèque.</small></div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Le modèle en un coup d'œil</div></div>
+            <div class="card-body stack">
+              <div>
+                <div class="meter-head"><span>62 étapes</span><b>+ 9 sous-étapes</b></div>
+                <div class="progress-stack" style="height:13px;margin-top:5px">
+                  <span class="bg-ph-1" style="flex:5"></span><span class="bg-ph-2" style="flex:16"></span>
+                  <span class="bg-ph-3" style="flex:25"></span><span class="bg-ph-4" style="flex:16"></span>
+                </div>
+              </div>
+              <div>
+                <div class="tile-label" style="margin-bottom:8px">Charge par fonction</div>
+                <div class="stack-sm">
+                  <div class="row between"><span class="badge fn-direction"><i class="dot"></i>Direction</span>
+                    <div class="row" style="gap:9px"><div class="progress thin" style="width:70px"><span style="width:100%;background:var(--fn-direction)"></span></div><b class="num" style="font-size:12px">17</b></div></div>
+                  <div class="row between"><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                    <div class="row" style="gap:9px"><div class="progress thin" style="width:70px"><span style="width:82%;background:var(--fn-conducteur)"></span></div><b class="num" style="font-size:12px">14</b></div></div>
+                  <div class="row between"><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+                    <div class="row" style="gap:9px"><div class="progress thin" style="width:70px"><span style="width:76%;background:var(--fn-etude)"></span></div><b class="num" style="font-size:12px">13</b></div></div>
+                  <div class="row between"><span class="badge fn-admin"><i class="dot"></i>Administratif</span>
+                    <div class="row" style="gap:9px"><div class="progress thin" style="width:70px"><span style="width:71%;background:var(--fn-admin)"></span></div><b class="num" style="font-size:12px">12</b></div></div>
+                  <div class="row between"><span class="badge fn-technique"><i class="dot"></i>Secr. technique</span>
+                    <div class="row" style="gap:9px"><div class="progress thin" style="width:70px"><span style="width:35%;background:var(--fn-technique)"></span></div><b class="num" style="font-size:12px">6</b></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Importer un modèle de départ</div></div>
+            <div class="card-body stack-sm">
+              <div class="spec">Plutôt que de partir d'une page blanche, on amorce avec un process
+                existant et on le remanie.</div>
+              <button class="btn btn-block">Process « maîtrise d'œuvre sinistre » · 62 étapes</button>
+              <button class="btn btn-block">Process « construction neuve » · 38 étapes</button>
+              <button class="btn btn-block">Partir d'un modèle vide</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Utilisé par</div></div>
+            <div class="card-body stack-sm" style="font-size:12.5px">
+              <div class="row between"><span>CH-2026-014 · Extension Martin</span><span class="badge ph-3"><i class="dot"></i>34/62</span></div>
+              <div class="row between"><span>CH-2026-011 · SCI Les Tilleuls</span><span class="badge ph-4"><i class="dot"></i>51/62</span></div>
+              <div class="row between"><span>CH-2026-009 · Surélévation Berger</span><span class="badge ph-4"><i class="dot"></i>47/62</span></div>
+              <div class="row between"><span>CH-2026-021 · Sinistre Rochet</span><span class="badge ph-1"><i class="dot"></i>4/62</span></div>
+              <small class="muted">et 5 autres</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var b = document.getElementById('bascule');
+  var sombre = matchMedia('(prefers-color-scheme: dark)').matches;
+  function peindre() {
+    document.documentElement.dataset.theme = sombre ? 'dark' : 'light';
+    b.textContent = sombre ? 'Mode clair' : 'Mode sombre';
+  }
+  peindre();
+  b.addEventListener('click', function () { sombre = !sombre; peindre(); });
+})();
+</script>
+</body>
+</html>

@@ -1,8 +1,12 @@
 <!doctype html>
-<!-- @dsCard group="Fondations" -->
-<html lang="fr"><head><meta charset="utf-8">
+<!-- @dsCard group="Administration" -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO — maquette, sommaire</title><style>/* ===========================================================================
+<title>AsstMO · 23 — Barème d'honoraires</title>
+<style>
+/* ===========================================================================
    AsstMO — jetons de design et composants de maquette
    Palette validée avec scripts/validate_palette.js (skill dataviz) :
      · phases  = rampe ORDINALE bleue (les phases sont ordonnées 1→4)
@@ -619,78 +623,237 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .type-row { display: flex; align-items: baseline; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--grid); }
 .type-row:last-child { border-bottom: none; }
 .type-row .lbl { width: 150px; flex: none; font-size: 11.5px; color: var(--ink-muted); font-family: ui-monospace, monospace; }
-</style></head>
-<body><div class="content" style="max-width:940px;margin:0 auto;padding:34px 22px">
-<div class="page-head"><div>
-  <h1 class="page-title">AsstMO — maquette</h1>
-  <div class="page-sub">24 écrans. Chaque page est autonome et se bascule en mode sombre.</div>
-</div><div class="page-actions">
-  <a class="btn" href="00-fondations.html">Fondations</a>
-  <a class="btn btn-primary" href="01-roles.html">Commencer par les rôles</a>
-</div></div>
-<div class="card"><div class="card-head"><div class="card-title">Fondations</div>
-  <span class="muted">3 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">00</td>
-      <td><a href="00-fondations.html">Fondations</a></td>
-      <td class="right"></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">01</td>
-      <td><a href="01-roles.html">Rôles</a></td>
-      <td class="right"></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">02</td>
-      <td><a href="02-connexion.html">Connexion</a></td>
-      <td class="right"></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Cabinet</div>
-  <span class="muted">10 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">03</td>
-      <td><a href="03-tableau-de-bord.html">Tableau de bord</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">04</td>
-      <td><a href="04-vue-d-ensemble.html">Vue d'ensemble</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">05</td>
-      <td><a href="05-chantiers.html">Chantiers</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">15</td>
-      <td><a href="15-planning-conducteur.html">Planning conducteur</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">16</td>
-      <td><a href="16-mes-taches.html">Mes tâches</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur + Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">17</td>
-      <td><a href="17-messagerie-a-traiter.html">Messagerie — à traiter</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">18</td>
-      <td><a href="18-messagerie-un-e-mail.html">Messagerie — un e-mail</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">19</td>
-      <td><a href="19-compte-rendu-rdv.html">Compte rendu RDV</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">20</td>
-      <td><a href="20-annuaire-clients.html">Annuaire — clients</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">21</td>
-      <td><a href="21-annuaire-artisans.html">Annuaire — artisans</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Chantier</div>
-  <span class="muted">9 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">06</td>
-      <td><a href="06-chantier-etapes.html">Chantier · Étapes</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">07</td>
-      <td><a href="07-chantier-planning.html">Chantier · Planning</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">08</td>
-      <td><a href="08-chantier-finances.html">Chantier · Finances</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">09</td>
-      <td><a href="09-chantier-fiche-de-suivi.html">Chantier · Fiche de suivi</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">10</td>
-      <td><a href="10-chantier-intervenants.html">Chantier · Intervenants</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">11</td>
-      <td><a href="11-chantier-messagerie.html">Chantier · Messagerie</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">12</td>
-      <td><a href="12-chantier-photos.html">Chantier · Photos</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">13</td>
-      <td><a href="13-chantier-comptes-rendus.html">Chantier · Comptes rendus</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">14</td>
-      <td><a href="14-chantier-impression.html">Chantier · Impression</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Administration</div>
-  <span class="muted">2 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">22</td>
-      <td><a href="22-modele-de-workflow.html">Modèle de workflow</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">23</td>
-      <td><a href="23-bareme-d-honoraires.html">Barème d'honoraires</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr>
-  </tbody></table></div>
-</div></body></html>
+
+</style>
+</head>
+<body>
+<div class="mock-bar no-print">
+  <span class="tagid">23</span>
+  <span>Barème d'honoraires</span>
+  <span class="sep">·</span>
+  <span style="color:#9a9a96">Administration</span>
+  <span class="sep">·</span><span style="color:#9ec5f4">Admin du cabinet</span>
+  <span class="persona">
+    <a href="index.html">Sommaire</a>
+    <a href="01-roles.html">Rôles</a>
+    <button class="theme-toggle" id="bascule">Mode sombre</button>
+  </span>
+</div>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">AMO</div>
+      <div><div class="brand-name">AsstMO</div><div class="brand-sub">Agence Verdier</div></div>
+    </div>
+    <div class="nav-group"><div class="nav-label">Pilotage</div>
+      <a class="nav-item" href="03-tableau-de-bord.html">
+            <span class="ico">◱</span><span>Tableau de bord</span></a><a class="nav-item" href="04-vue-d-ensemble.html">
+            <span class="ico">◫</span><span>Vue d'ensemble</span></a><a class="nav-item" href="05-chantiers.html">
+            <span class="ico">⌂</span><span>Chantiers</span><span class="count">12</span></a><a class="nav-item" href="15-planning-conducteur.html">
+            <span class="ico">▦</span><span>Planning</span></a><a class="nav-item" href="16-mes-taches.html">
+            <span class="ico">✓</span><span>Mes tâches</span><span class="count">7</span></a></div><div class="nav-group"><div class="nav-label">Échanges</div>
+      <a class="nav-item" href="17-messagerie-a-traiter.html">
+            <span class="ico">✉</span><span>Messagerie</span><span class="count">9</span></a><a class="nav-item" href="19-compte-rendu-rdv.html">
+            <span class="ico">◴</span><span>Comptes rendus</span></a></div><div class="nav-group"><div class="nav-label">Carnet d'adresses</div>
+      <a class="nav-item" href="20-annuaire-clients.html">
+            <span class="ico">☺</span><span>Clients</span></a><a class="nav-item" href="21-annuaire-artisans.html">
+            <span class="ico">⚒</span><span>Artisans</span><span class="count">46</span></a></div><div class="nav-group"><div class="nav-label">Administration</div>
+      <a class="nav-item" href="22-modele-de-workflow.html">
+            <span class="ico">⇄</span><span>Modèles de workflow</span></a><a class="nav-item is-active" href="23-bareme-d-honoraires.html">
+            <span class="ico">％</span><span>Barème d'honoraires</span></a><a class="nav-item" href="24-utilisateurs.html">
+            <span class="ico">◉</span><span>Utilisateurs</span></a><a class="nav-item" href="25-moteur-d-evenements.html">
+            <span class="ico">⚙</span><span>Moteur d'évènements</span></a><a class="nav-item" href="26-cabinets.html">
+            <span class="ico">▣</span><span>Cabinets</span></a></div>
+    <div class="sidebar-foot">
+      <a class="nav-item" href="01-roles.html"><span class="ico">⇥</span><span>Changer de rôle</span></a>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+    <div class="search"><span>⌕</span><span>Rechercher un chantier, un client, un artisan…</span><span class="kbd">⌘K</span></div>
+    <button class="btn btn-sm">＋ Nouveau chantier</button>
+    <div class="row" style="gap:9px"><span class="badge fn-direction"><i class="dot"></i>Direction</span> <span class="badge st-neutral"><i class="dot"></i>Admin du cabinet</span>
+      <div class="avatar sm circle" style="background:var(--brand)">HV</div>
+      <div style="font-size:13px"><b>Hélène Verdier</b></div>
+    </div>
+  </div>
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Barème d'honoraires</h1>
+          <div class="page-sub">Le calcul automatique des frais de maîtrise d'œuvre, par tranches de travaux</div></div>
+        <div class="page-actions">
+          <button class="btn">Historique</button>
+          <button class="btn btn-primary">Enregistrer</button>
+        </div>
+      </div>
+
+      <div class="grid-main">
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Tranches</div>
+              <button class="btn btn-sm">＋ Tranche</button></div>
+            <div class="scroll-x"><table class="tbl">
+              <thead><tr><th>De</th><th>À</th><th class="num">Taux</th><th class="num">Honoraires sur la tranche pleine</th><th style="width:48px"></th></tr></thead>
+              <tbody>
+                <tr><td class="num">0 €</td>
+                  <td><input class="input num" value="100 000" style="width:120px;text-align:right"></td>
+                  <td class="num"><input class="input num" value="12" style="width:70px;text-align:right"> %</td>
+                  <td class="num">12 000 €</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+                <tr><td class="num">100 000 €</td>
+                  <td><input class="input num" value="300 000" style="width:120px;text-align:right"></td>
+                  <td class="num"><input class="input num" value="10" style="width:70px;text-align:right"> %</td>
+                  <td class="num">20 000 €</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+                <tr><td class="num">300 000 €</td>
+                  <td class="muted">au-delà</td>
+                  <td class="num"><input class="input num" value="8" style="width:70px;text-align:right"> %</td>
+                  <td class="num muted">—</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+              </tbody>
+            </table></div>
+            <div class="card-foot">
+              <small class="muted">Barème <b>progressif</b> : chaque tranche ne s'applique qu'à la
+                part des travaux qui la concerne, comme un barème d'imposition. Un chantier de
+                250 000 € n'est donc pas facturé 10 % de 250 000 €.</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Simulation</div>
+              <span class="muted" style="font-size:12px">en direct, à mesure que vous changez les taux</span></div>
+            <div class="card-body stack">
+              <div class="field" style="max-width:280px">
+                <label>Montant des travaux HT</label>
+                <input class="input lg num" value="248 600" style="text-align:right">
+              </div>
+
+              <table class="tbl" style="margin:0 -16px">
+                <thead><tr><th>Tranche</th><th class="num">Base retenue</th><th class="num">Taux</th><th class="num">Montant</th></tr></thead>
+                <tbody>
+                  <tr><td>0 → 100 000 €</td><td class="num">100 000 €</td><td class="num">12 %</td><td class="num">12 000 €</td></tr>
+                  <tr><td>100 000 → 300 000 €</td><td class="num">148 600 €</td><td class="num">10 %</td><td class="num">14 860 €</td></tr>
+                  <tr class="muted"><td>au-delà de 300 000 €</td><td class="num">0 €</td><td class="num">8 %</td><td class="num">0 €</td></tr>
+                </tbody>
+                <tfoot><tr style="background:var(--surface-2)">
+                  <td colspan="3"><b>Honoraires</b></td><td class="num"><b>26 860 € HT</b></td></tr></tfoot>
+              </table>
+
+              <div class="row wrap" style="gap:22px;padding-top:4px">
+                <div><div class="tile-label">Honoraires</div><div class="hero-figure">26 860 €</div></div>
+                <div style="align-self:flex-end"><div class="tile-label">Taux effectif</div><div class="tile-value">10,8 %</div></div>
+                <div style="align-self:flex-end"><div class="tile-label">TTC</div><div class="tile-value">32 232 €</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Le taux effectif décroît</div>
+              <span class="muted" style="font-size:12px">part des honoraires dans les travaux</span></div>
+            <div class="card-body">
+              <table class="tbl" style="margin:-16px">
+                <thead><tr><th>Travaux HT</th><th class="num">Honoraires HT</th><th class="num">Taux effectif</th><th style="width:170px">Poids relatif</th></tr></thead>
+                <tbody>
+                  <tr><td class="num">50 000 €</td><td class="num">6 000 €</td><td class="num">12,0 %</td>
+                    <td><div class="progress thin"><span style="width:100%"></span></div></td></tr>
+                  <tr><td class="num">100 000 €</td><td class="num">12 000 €</td><td class="num">12,0 %</td>
+                    <td><div class="progress thin"><span style="width:100%"></span></div></td></tr>
+                  <tr><td class="num">150 000 €</td><td class="num">17 000 €</td><td class="num">11,3 %</td>
+                    <td><div class="progress thin"><span style="width:94%"></span></div></td></tr>
+                  <tr style="background:var(--brand-wash)"><td class="num"><b>248 600 €</b></td><td class="num"><b>26 860 €</b></td><td class="num"><b>10,8 %</b></td>
+                    <td><div class="progress thin"><span style="width:90%"></span></div></td></tr>
+                  <tr><td class="num">300 000 €</td><td class="num">32 000 €</td><td class="num">10,7 %</td>
+                    <td><div class="progress thin"><span style="width:89%"></span></div></td></tr>
+                  <tr><td class="num">500 000 €</td><td class="num">48 000 €</td><td class="num">9,6 %</td>
+                    <td><div class="progress thin"><span style="width:80%"></span></div></td></tr>
+                  <tr><td class="num">1 000 000 €</td><td class="num">88 000 €</td><td class="num">8,8 %</td>
+                    <td><div class="progress thin"><span style="width:73%"></span></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-foot"><small class="muted">C'est l'effet recherché : un chantier deux
+              fois plus gros ne demande pas deux fois plus de travail de maîtrise d'œuvre.</small></div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Quand le calcul se déclenche</div></div>
+            <div class="card-body stack-sm">
+              <label class="check is-on"><span class="box">✓</span><span>À la validation d'un devis</span></label>
+              <label class="check is-on"><span class="box">✓</span><span>À la signature d'un marché</span></label>
+              <label class="check"><span class="box"></span><span>À l'écartement d'un devis</span></label>
+              <label class="check is-on"><span class="box">✓</span><span>Sur demande, depuis la fiche chantier</span></label>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div class="field">
+                <label>Assiette du calcul</label>
+                <select class="select">
+                  <option>Devis signés et validés</option>
+                  <option>Devis signés uniquement</option>
+                  <option>Enveloppe prévisionnelle du chantier</option>
+                </select>
+                <span class="hint">Les devis écartés n'entrent jamais dans l'assiette.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-color:var(--brand)">
+            <div class="card-head" style="background:var(--brand-wash)"><div class="card-title">La surcharge</div></div>
+            <div class="card-body stack-sm">
+              <div class="spec">Le calcul donne un point de départ, pas une vérité. Sur chaque
+                chantier, le montant reste modifiable à la main.</div>
+              <div class="m-card">
+                <div style="font-size:12.5px">
+                  <div class="row between"><span class="muted">Calculé</span><b class="num">26 860 €</b></div>
+                  <div class="row between"><span class="muted">Retenu</span><b class="num">25 000 €</b></div>
+                  <div class="row between"><span class="muted">Surchargé le</span><span class="num">04/10/2026</span></div>
+                  <div class="row between"><span class="muted">Par</span><span>Hélène Verdier</span></div>
+                </div>
+              </div>
+              <small class="muted">Une fois surchargé, <b>un recalcul ne l'écrase plus</b> : il
+                signale seulement que le calcul a bougé. Sans ça, un devis validé six semaines plus
+                tard effacerait silencieusement un geste commercial.</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Échéancier par défaut</div></div>
+            <div class="card-body">
+              <table class="tbl" style="margin:-16px">
+                <tbody>
+                  <tr><td>Signature du contrat</td><td class="num"><input class="input num" value="30" style="width:56px;text-align:right"> %</td></tr>
+                  <tr><td>Dépôt du dossier d'autorisation</td><td class="num"><input class="input num" value="20" style="width:56px;text-align:right"> %</td></tr>
+                  <tr><td>Démarrage des travaux</td><td class="num"><input class="input num" value="30" style="width:56px;text-align:right"> %</td></tr>
+                  <tr><td>Réception des travaux</td><td class="num"><input class="input num" value="20" style="width:56px;text-align:right"> %</td></tr>
+                  <tr style="background:var(--surface-2)"><td><b>Total</b></td><td class="num"><b>100 %</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-foot"><small class="muted">Appliqué à la création d'un chantier, puis
+              ajustable chantier par chantier.</small></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var b = document.getElementById('bascule');
+  var sombre = matchMedia('(prefers-color-scheme: dark)').matches;
+  function peindre() {
+    document.documentElement.dataset.theme = sombre ? 'dark' : 'light';
+    b.textContent = sombre ? 'Mode clair' : 'Mode sombre';
+  }
+  peindre();
+  b.addEventListener('click', function () { sombre = !sombre; peindre(); });
+})();
+</script>
+</body>
+</html>

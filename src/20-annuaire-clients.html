@@ -1,0 +1,59 @@
+<!--meta { "id":"20", "titre":"Annuaire — clients", "groupe":"Cabinet", "role":"Administratif", "largeur":1440, "hauteur":820 } -->
+<div class="app">
+  {{sidebar:clients}}
+  <div class="main">
+    {{topbar:Marc Delaunay@MD@Administratif|fn-admin}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Clients</h1><div class="page-sub">23 maîtres d'ouvrage · 12 avec un chantier en cours</div></div>
+        <div class="page-actions"><button class="btn btn-primary">＋ Client</button></div>
+      </div>
+      <div class="row wrap">
+        <div class="search" style="max-width:320px"><span>⌕</span><span>Nom, ville, téléphone…</span></div>
+        <div class="seg"><span class="is-active">Tous</span><span>Particuliers</span><span>Entreprises</span><span>Public</span></div>
+      </div>
+      <div class="card">
+        <div class="scroll-x"><table class="tbl">
+          <thead><tr><th>Client</th><th>Type</th><th>Coordonnées</th><th>Ville</th><th class="num">Chantiers</th><th>Accès à son espace</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><b>M. et Mme Martin</b></td><td><span class="badge st-neutral">Particulier</span></td>
+              <td><small>06 12 44 87 03<br><span class="muted">famille.martin@orange.fr</span></small></td>
+              <td>Craponne</td><td class="num">1</td>
+              <td><span class="badge st-good">✓ Actif</span> <small class="muted">dernière visite hier</small></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+            <tr><td><b>SCI Les Tilleuls</b><br><small class="muted">M. Paoli, gérant</small></td><td><span class="badge st-neutral">Entreprise / SCI</span></td>
+              <td><small>04 72 61 09 88<br><span class="muted">gestion@scilestilleuls.fr</span></small></td>
+              <td>Lyon 3e</td><td class="num">2</td>
+              <td><span class="badge st-good">✓ Actif</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+            <tr><td><b>Mairie de Brindas</b><br><small class="muted">Service technique</small></td><td><span class="badge st-neutral">Maître d'ouvrage public</span></td>
+              <td><small>04 78 45 11 20<br><span class="muted">technique@brindas.fr</span></small></td>
+              <td>Brindas</td><td class="num">1</td>
+              <td><span class="badge st-neutral">Non ouvert</span></td>
+              <td class="right"><button class="btn btn-sm">Ouvrir l'accès</button></td></tr>
+            <tr><td><b>Mme Berger</b></td><td><span class="badge st-neutral">Particulier</span></td>
+              <td><small>06 88 20 14 77<br><span class="muted">c.berger@free.fr</span></small></td>
+              <td>Francheville</td><td class="num">1</td>
+              <td><span class="badge st-good">✓ Actif</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+            <tr><td><b>M. Rochet</b></td><td><span class="badge st-neutral">Particulier</span></td>
+              <td><small>07 61 03 92 48<br><span class="muted">—</span></small></td>
+              <td>Oullins</td><td class="num">1</td>
+              <td><span class="badge st-neutral">Non ouvert</span>
+                <div><small class="badge st-warning">▲ pas d'e-mail</small></div></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+            <tr><td><b>M. et Mme Duval</b></td><td><span class="badge st-neutral">Particulier</span></td>
+              <td><small>04 78 57 31 09<br><span class="muted">duval.renov@gmail.com</span></small></td>
+              <td>Vaugneray</td><td class="num">1</td>
+              <td><span class="badge st-neutral">Non ouvert</span></td>
+              <td class="right"><button class="btn btn-sm">Ouvrir l'accès</button></td></tr>
+          </tbody>
+        </table></div>
+        <div class="card-foot">
+          <small class="muted">Un client sans e-mail ni téléphone remonte dans les points d'attention :
+            c'est le genre de trou qui se paie au moment où il faut le joindre en urgence.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
