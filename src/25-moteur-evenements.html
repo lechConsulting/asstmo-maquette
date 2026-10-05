@@ -1,0 +1,207 @@
+<!--meta { "id":"25", "titre":"Moteur d'évènements", "groupe":"Administration", "role":"Super admin", "largeur":1440, "hauteur":1400 } -->
+<div class="app">
+  {{sidebar:moteur}}
+  <div class="main">
+    {{topbar:Jérémy Lechat@JL@Super admin|st-neutral}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Moteur d'évènements</h1>
+          <div class="page-sub">Ce que la plateforme fait des messages qu'elle reçoit · 17 règles actives</div></div>
+        <div class="page-actions">
+          <button class="btn">Journal</button>
+          <button class="btn btn-primary">＋ Règle</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-title">Le principe</div></div>
+        <div class="card-body stack">
+          <div class="spec" style="max-width:860px">
+            <b>Un fait est ce qui est arrivé</b> — daté, sourcé, immuable. <b>Une action est ce qu'on
+            en tire</b> — proposée, puis acceptée ou refusée. Les deux ne se confondent jamais : on
+            garde la trace de ce qui s'est passé même quand on décide de n'en rien faire.
+          </div>
+          <div class="row wrap" style="gap:10px">
+            <div class="m-card" style="flex:1;min-width:150px"><b style="font-size:12.5px">1 · Écarter</b>
+              <small class="muted">expéditeur muet, corps vide, adresse connue comme non-cliente</small>
+              <span class="badge st-good">gratuit</span></div>
+            <span class="muted" style="align-self:center">›</span>
+            <div class="m-card" style="flex:1;min-width:150px"><b style="font-size:12.5px">2 · Règle du socle</b>
+              <small class="muted">accusés de réception, notifications automatiques</small>
+              <span class="badge st-good">gratuit</span></div>
+            <span class="muted" style="align-self:center">›</span>
+            <div class="m-card" style="flex:1;min-width:150px"><b style="font-size:12.5px">3 · Règle explicite</b>
+              <small class="muted">écrite par un cabinet ou un utilisateur</small>
+              <span class="badge st-good">gratuit</span></div>
+            <span class="muted" style="align-self:center">›</span>
+            <div class="m-card" style="flex:1;min-width:150px"><b style="font-size:12.5px">4 · Mémoire</b>
+              <small class="muted">le moteur a déjà vu ce cas trois fois, traité pareil</small>
+              <span class="badge st-good">gratuit</span></div>
+            <span class="muted" style="align-self:center">›</span>
+            <div class="m-card" style="flex:1;min-width:150px;border-color:var(--warning)"><b style="font-size:12.5px">5 · Lecture</b>
+              <small class="muted">on demande au modèle de lire le message</small>
+              <span class="badge st-warning">▲ payant</span></div>
+          </div>
+          <div class="note">
+            <small><b>Le premier chemin qui répond l'emporte, et quatre sur cinq ne coûtent rien.</b>
+              L'ordre n'est pas un détail d'implémentation : c'est ce qui rend le dispositif tenable
+              financièrement. Sur 374 messages ce mois-ci, 31 seulement sont allés jusqu'à la
+              lecture.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div class="tile"><div class="tile-label">Faits enregistrés</div><div class="tile-value">374</div><div class="tile-note">ce mois-ci</div></div>
+        <div class="tile"><div class="tile-label">Écartés au chemin 1</div><div class="tile-value">118</div><div class="tile-note">32 % · coût nul</div></div>
+        <div class="tile"><div class="tile-label">Traités par une règle</div><div class="tile-value">225</div><div class="tile-note">60 % · coût nul</div></div>
+        <div class="tile" style="border-color:var(--warning)"><div class="tile-label">Passés par la lecture</div><div class="tile-value">31</div><div class="tile-note">8 % — le seul poste qui coûte</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Règles</div>
+          <div class="seg"><span class="is-active">Toutes <b>17</b></span><span>Socle</span><span>Cabinet</span><span>Apprises</span><span>En sommeil</span></div>
+        </div>
+        <div class="scroll-x"><table class="tbl">
+          <thead><tr><th>Condition</th><th>Action</th><th>Origine</th><th>Régime</th><th class="num">Employée</th><th>État</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><b>Émetteur contient</b> <code style="font-size:11.5px">noreply</code></td>
+              <td><span class="badge st-neutral">Ignorer</span></td>
+              <td><span class="badge st-neutral">Socle</span></td>
+              <td><span class="badge st-good">Appliquer en silence</span></td>
+              <td class="num">86</td><td><span class="badge st-good">✓ Active</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+
+            <tr><td><b>Sujet contient</b> <code style="font-size:11.5px">accusé de réception</code> <span class="muted">ou</span> <code style="font-size:11.5px">accuse de reception</code></td>
+              <td><span class="badge st-neutral">Ignorer</span></td>
+              <td><span class="badge st-neutral">Socle</span></td>
+              <td><span class="badge st-good">Appliquer en silence</span></td>
+              <td class="num">41</td><td><span class="badge st-good">✓ Active</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+
+            <tr><td><b>Domaine émetteur</b> <code style="font-size:11.5px">@sanivalley.fr</code>
+              <div class="muted" style="font-size:11.5px">et un seul chantier a cette entreprise au lot plomberie</div></td>
+              <td><span class="badge st-neutral">Rattacher</span> + <span class="badge st-neutral">Classer le devis</span></td>
+              <td><span class="badge st-neutral">Cabinet</span></td>
+              <td><span class="badge st-warning">Proposer</span></td>
+              <td class="num">4</td><td><span class="badge st-good">✓ Active</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+
+            <tr><td><b>Émetteur</b> <code style="font-size:11.5px">@smabtp.fr</code>
+              <div class="muted" style="font-size:11.5px">et le sujet contient une référence <code style="font-size:11px">DO-</code></div></td>
+              <td><span class="badge st-neutral">Rattacher par la référence</span></td>
+              <td><span class="badge st-neutral">Cabinet</span></td>
+              <td><span class="badge st-good">Appliquer et dire</span></td>
+              <td class="num">12</td><td><span class="badge st-good">✓ Active</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+
+            <tr><td><b>Pièce jointe</b> reconnue comme un devis
+              <div class="muted" style="font-size:11.5px">et aucun rattachement trouvé</div></td>
+              <td><span class="badge st-neutral">Créer une tâche</span></td>
+              <td><span class="badge st-neutral">Socle</span></td>
+              <td><span class="badge st-good">Appliquer et dire</span></td>
+              <td class="num">9</td><td><span class="badge st-good">✓ Active</span></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+
+            <tr><td><b>Émetteur</b> <code style="font-size:11.5px">@mailing-pro-btp.net</code></td>
+              <td><span class="badge st-neutral">Ignorer</span></td>
+              <td><span class="badge st-warning">Apprise</span>
+                <div class="muted" style="font-size:11.5px">3 refus concordants</div></td>
+              <td><span class="badge st-warning">Proposer</span></td>
+              <td class="num">7</td><td><span class="badge st-good">✓ Active</span></td>
+              <td class="right"><button class="btn btn-sm">Promouvoir</button></td></tr>
+
+            <tr style="opacity:.6"><td><b>Sujet contient</b> <code style="font-size:11.5px">relance facture</code></td>
+              <td><span class="badge st-neutral">Alerter l'administratif</span></td>
+              <td><span class="badge st-neutral">Cabinet</span></td>
+              <td><span class="badge st-warning">Proposer</span></td>
+              <td class="num">0</td><td><span class="badge st-neutral">En sommeil</span>
+                <div class="muted" style="font-size:11.5px">inemployée depuis 6 mois</div></td>
+              <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+          </tbody>
+        </table></div>
+        <div class="card-foot">
+          <small class="muted">Une règle inemployée pendant six mois <b>s'endort</b> plutôt que de
+            disparaître : elle cesse d'être évaluée, mais son histoire reste lisible. Une règle qu'on
+            supprime, on ne sait plus pourquoi elle existait.</small>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Écrire une règle</div></div>
+          <div class="card-body stack">
+            <div class="field"><label>Si — condition</label>
+              <select class="select">
+                <option>Domaine de l'émetteur</option>
+                <option>Adresse de l'émetteur</option>
+                <option>Le sujet contient</option>
+                <option>Signature du message</option>
+              </select></div>
+            <div class="field"><label>Vaut</label><input class="input" value="@mailing-pro-btp.net"></div>
+            <div class="field"><label>Alors — action</label>
+              <select class="select">
+                <option>Ignorer</option><option>Rattacher à un chantier</option>
+                <option>Classer une pièce jointe</option><option>Créer une tâche</option>
+                <option>Alerter une fonction</option><option>Planifier un rendez-vous</option>
+              </select></div>
+            <div class="field"><label>Régime</label>
+              <div class="stack-sm" style="margin-top:3px">
+                <label class="check is-on"><span class="box">✓</span><span><b>Proposer</b> <small class="muted">— rien n'est fait sans validation humaine</small></span></label>
+                <label class="check"><span class="box"></span><span><b>Appliquer et dire</b> <small class="muted">— fait, et signalé dans le journal</small></span></label>
+                <label class="check"><span class="box"></span><span><b>Appliquer en silence</b> <small class="muted">— fait, sans rien déranger</small></span></label>
+              </div></div>
+            <div class="field"><label>Portée</label>
+              <select class="select"><option>Tout le cabinet</option><option>Moi seulement</option></select></div>
+            <button class="btn btn-primary btn-block">Créer la règle</button>
+            <small class="muted">Les conditions et les actions sont des listes fermées. Pas de langage
+              de règles à apprendre, et surtout : aucune règle ne peut faire ce que le catalogue
+              n'a pas prévu.</small>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Mémoire du moteur</div>
+              <span class="muted" style="font-size:12px">seuil : 3 décisions concordantes</span></div>
+            <div class="card-body stack-sm">
+              <div class="spec">Quand le même cas est tranché trois fois de la même façon, le moteur
+                en déduit une règle et la propose. Il ne l'applique jamais de lui-même.</div>
+              <div class="m-card">
+                <div class="row between"><b style="font-size:12.5px">@salon-batimat.com</b><span class="badge st-warning">3/3</span></div>
+                <small class="muted">Ignoré 3 fois par Marc Delaunay · prêt à être promu en règle</small>
+                <div class="row" style="gap:7px"><button class="btn btn-sm btn-primary">Promouvoir</button><button class="btn btn-sm btn-ghost">Oublier</button></div>
+              </div>
+              <div class="m-card">
+                <div class="row between"><b style="font-size:12.5px">Devis de @alpes-bois.fr</b><span class="badge st-neutral">2/3</span></div>
+                <small class="muted">Rattaché 2 fois au même type de chantier · en observation</small>
+              </div>
+              <div class="field" style="margin-top:4px">
+                <label>Seuil d'apprentissage</label>
+                <input class="input num" value="3" style="width:80px">
+                <span class="hint">Entre 2 et 10. En dessous de 2, le moteur apprendrait d'un
+                  accident ; au-delà de 10, il n'apprendrait plus jamais rien.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Ce que le moteur ne fait jamais</div></div>
+            <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
+              <div><b>Deviner entre deux possibilités.</b> Deux chantiers correspondent ? Il s'abstient
+                et crée une tâche. Il n'y a pas de bon choix à faire à la place de quelqu'un.</div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Supprimer un message rattaché.</b> Un e-mail versé à un chantier y reste, avec
+                son message brut comme preuve de ce qui a été reçu.</div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Envoyer quoi que ce soit de sa propre initiative.</b> Le catalogue d'actions
+                contient « proposer un message », jamais « envoyer sans demander ».</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+<!--meta { "id":"26", "titre":"Cabinets", "groupe":"Administration", "role":"Super admin", "largeur":1440, "hauteur":820 } -->
+<div class="app">
+  {{sidebar:cabinets}}
+  <div class="main">
+    {{topbar:Jérémy Lechat@JL@Super admin|st-neutral}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Cabinets</h1>
+          <div class="page-sub">4 cabinets sur la plateforme · 1 en essai</div></div>
+        <div class="page-actions"><button class="btn btn-primary">＋ Cabinet</button></div>
+      </div>
+
+      <div class="alert alert-warning">
+        <span class="ico">▲</span>
+        <div><b>Le seul rôle qui franchit le cloisonnement</b> — et il le fait en basculant
+          explicitement d'un cabinet à l'autre, jamais en voyant tout à la fois. Chaque bascule est
+          journalisée. Un administrateur de cabinet, lui, ne voit jamais cette page.</div>
+      </div>
+
+      <div class="card">
+        <div class="scroll-x"><table class="tbl">
+          <thead><tr><th>Cabinet</th><th>Ville</th><th class="num">Utilisateurs</th><th class="num">Chantiers</th><th class="num">Artisans</th><th>Modèles de workflow</th><th>État</th><th></th></tr></thead>
+          <tbody>
+            <tr style="background:var(--brand-wash)">
+              <td><div class="row" style="gap:10px"><div class="avatar sm" style="background:var(--brand)">AV</div>
+                <div><b>Agence Verdier</b><div class="muted" style="font-size:12px">agence-verdier.fr</div></div></div></td>
+              <td>Craponne (69)</td><td class="num">6</td><td class="num">15</td><td class="num">46</td>
+              <td><small>Rénovation après sinistre · Construction neuve</small></td>
+              <td><span class="badge st-good">✓ Actif</span></td>
+              <td class="right"><span class="badge st-neutral">cabinet courant</span></td></tr>
+
+            <tr><td><div class="row" style="gap:10px"><div class="avatar sm neutral">AT</div>
+                <div><b>Atelier Tramoyes</b><div class="muted" style="font-size:12px">atelier-tramoyes.fr</div></div></div></td>
+              <td>Villeurbanne (69)</td><td class="num">3</td><td class="num">8</td><td class="num">22</td>
+              <td><small>Rénovation après sinistre</small></td>
+              <td><span class="badge st-good">✓ Actif</span></td>
+              <td class="right"><button class="btn btn-sm">Basculer</button></td></tr>
+
+            <tr><td><div class="row" style="gap:10px"><div class="avatar sm neutral">MP</div>
+                <div><b>MO Pays de Savoie</b><div class="muted" style="font-size:12px">mo-savoie.fr</div></div></div></td>
+              <td>Annecy (74)</td><td class="num">9</td><td class="num">31</td><td class="num">78</td>
+              <td><small>3 modèles</small></td>
+              <td><span class="badge st-good">✓ Actif</span></td>
+              <td class="right"><button class="btn btn-sm">Basculer</button></td></tr>
+
+            <tr><td><div class="row" style="gap:10px"><div class="avatar sm neutral">CB</div>
+                <div><b>Cabinet Brunel</b><div class="muted" style="font-size:12px">—</div></div></div></td>
+              <td>Saint-Étienne (42)</td><td class="num">1</td><td class="num">0</td><td class="num">0</td>
+              <td class="muted"><small>aucun — modèle à amorcer</small></td>
+              <td><span class="badge st-warning">▲ En essai</span></td>
+              <td class="right"><button class="btn btn-sm">Basculer</button></td></tr>
+          </tbody>
+        </table></div>
+        <div class="card-foot">
+          <small class="muted">Chaque cabinet a <b>ses</b> utilisateurs, <b>ses</b> chantiers,
+            <b>son</b> référentiel d'artisans et <b>ses</b> modèles de workflow. Rien ne traverse :
+            un artisan présent chez deux cabinets y est deux fiches distinctes, avec sa propre
+            décennale et son propre historique de réponse aux devis.</small>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Comment le cloisonnement tient</div></div>
+          <div class="card-body stack-sm" style="font-size:12.5px;color:var(--ink-2)">
+            <div><b>1 · Un filtre en base.</b> Toute lecture d'une donnée rattachée à un cabinet est
+              restreinte au cabinet courant, sans que chaque écran ait à y penser.</div>
+            <div><b>2 · Un contrôle à l'accès.</b> Le filtre ne suffit pas : une entité déjà chargée
+              en mémoire lui échappe. Chaque ouverture d'objet est donc vérifiée en plus, et répond
+              403 si le cabinet ne correspond pas.</div>
+            <small class="muted">Deux mécanismes plutôt qu'un : le premier évite les oublis, le
+              second rattrape le cas que le premier ne couvre pas.</small>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Amorcer un cabinet</div></div>
+          <div class="card-body stack-sm">
+            <div class="spec">Un cabinet neuf part sans rien. Trois gestes le rendent utilisable.</div>
+            <button class="btn btn-block">1 · Importer un modèle de workflow</button>
+            <button class="btn btn-block">2 · Poser un barème d'honoraires</button>
+            <button class="btn btn-block">3 · Créer le premier compte admin</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div class="card-title">Journal des bascules</div></div>
+          <div class="card-body stack-sm" style="font-size:12.5px">
+            <div><b>MO Pays de Savoie</b><div class="muted">aujourd'hui 08 h 31 · assistance migration</div></div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div><b>Cabinet Brunel</b><div class="muted">hier 14 h 12 · mise en place</div></div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div><b>Atelier Tramoyes</b><div class="muted">2 oct. 09 h 45 · incident messagerie</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
