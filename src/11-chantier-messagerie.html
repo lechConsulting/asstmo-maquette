@@ -1,0 +1,183 @@
+<!--meta { "id":"11", "titre":"Chantier · Messagerie", "groupe":"Chantier", "role":"Administratif", "largeur":1440, "hauteur":1280 } -->
+<div class="app">
+  {{sidebar:chantiers}}
+  <div class="main">
+    {{topbar:Marc Delaunay@MD@Administratif|fn-admin}}
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <div class="row" style="gap:8px"><span class="muted" style="font-size:12px">CH-2026-014</span>
+            <span class="badge ph-3"><i class="dot"></i>Préparation de chantier</span></div>
+          <h1 class="page-title" style="margin-top:6px">Extension Martin</h1>
+          <div class="page-sub">Tous les échanges du projet, client et entreprises confondus</div>
+        </div>
+        <div class="page-actions">
+          <button class="btn">✉ Écrire aux artisans</button>
+          <button class="btn btn-primary">✉ Écrire au client</button>
+        </div>
+      </div>
+
+      {{onglets:messagerieCh}}
+
+      <div class="card">
+        <div class="card-body row between wrap" style="gap:16px">
+          <div>
+            <div class="tile-label">Adresse de ce projet</div>
+            <div class="row" style="gap:9px;margin-top:5px">
+              <code style="font-size:13.5px;background:var(--surface-2);padding:5px 10px;border-radius:7px">elodie.charrier+p7k3m9x2qt@mail.asstmo.fr</code>
+              <button class="btn btn-sm">Copier</button>
+            </div>
+          </div>
+          <div style="max-width:470px">
+            <small class="muted">C'est l'adresse de réponse de tous les messages partis de ce projet.
+            Un client qui répond, transfère le fil à son conjoint ou réécrit trois semaines plus tard
+            revient toujours <b>ici</b> — le jeton est dans l'adresse, pas dans le sujet.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-main">
+        <div class="stack">
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Fil du projet</div>
+              <div class="seg"><span class="is-active">Tout</span><span>Client</span><span>Artisans</span><span>Assurance</span></div>
+            </div>
+            <div class="card-body">
+              <div class="thread">
+
+                <div class="msg out">
+                  <div class="msg-head">
+                    <div class="row" style="gap:9px"><div class="avatar sm" style="background:var(--fn-admin)">MD</div>
+                      <div><b>Marc Delaunay</b> <span class="muted">→ 6 artisans</span>
+                        <div class="muted" style="font-size:11.5px">Convocation RDV signature des marchés</div></div></div>
+                    <div class="row" style="gap:8px"><span class="badge st-good">✓ Remis</span><span class="muted">4 oct. 09 h 12</span></div>
+                  </div>
+                  <div class="msg-body">
+                    Bonjour, nous vous convions à la réunion de signature des marchés le mercredi
+                    22 octobre à 14 h dans nos bureaux. Merci de confirmer votre présence via le lien
+                    ci-dessous et d'apporter vos attestations à jour.
+                    <div class="row wrap" style="gap:7px;margin-top:11px">
+                      <span class="attach">⎙ Plan_EXE_v3.pdf · 2,4 Mo</span>
+                      <span class="attach">⎙ Descriptif_lots.pdf · 880 Ko</span>
+                    </div>
+                    <div class="row wrap" style="gap:6px;margin-top:10px">
+                      <span class="badge st-good">✓ 4 confirmés</span>
+                      <span class="badge st-warning">▲ 2 sans réponse</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="msg">
+                  <div class="msg-head">
+                    <div class="row" style="gap:9px"><div class="avatar sm" style="background:var(--ext-artisan)">PS</div>
+                      <div><b>Léa Vidal</b> <span class="muted">· Plomberie Sanivalley</span>
+                        <div class="muted" style="font-size:11.5px">Re: Convocation RDV signature des marchés</div></div></div>
+                    <div class="row" style="gap:8px"><span class="badge st-good">✓ Jeton</span><span class="muted">4 oct. 16 h 48</span></div>
+                  </div>
+                  <div class="msg-body">
+                    Bonjour, c'est noté pour le 22. Je vous joins notre devis mis à jour avec la
+                    reprise de l'alimentation cuisine que vous demandiez.
+                    <div class="row wrap" style="gap:7px;margin-top:11px">
+                      <span class="attach">⎙ DEV-2214_Sanivalley.pdf · 310 Ko</span>
+                    </div>
+                    <div class="match" style="margin-top:11px">
+                      <b>✓ Rattaché automatiquement par le jeton de l'adresse</b>
+                      <span>Devis reconnu et versé au lot <b>Plomberie</b> — 18 400 € HT.
+                        <a href="{{l:finances}}" style="color:inherit;text-decoration:underline">Voir dans les finances</a></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="msg">
+                  <div class="msg-head">
+                    <div class="row" style="gap:9px"><div class="avatar sm" style="background:var(--ext-client)">MM</div>
+                      <div><b>Mme Martin</b> <span class="muted">· cliente</span>
+                        <div class="muted" style="font-size:11.5px">Question sur le carrelage</div></div></div>
+                    <div class="row" style="gap:8px"><span class="badge st-good">✓ Fil</span><span class="muted">3 oct. 20 h 31</span></div>
+                  </div>
+                  <div class="msg-body">
+                    Bonsoir, nous avons vu en magasin un grès cérame effet bois qui nous plaît
+                    beaucoup. Est-il possible de le substituer à celui du devis sans trop changer le
+                    prix ? Je vous mets la référence en photo.
+                    <div class="row wrap" style="gap:7px;margin-top:11px">
+                      <span class="attach">⎙ IMG_4471.jpg · 1,1 Mo</span>
+                    </div>
+                    <div class="match weak" style="margin-top:11px">
+                      <b>✓ Rattaché par le fil</b>
+                      <span>Répondu depuis une autre adresse que celle du dossier, mais
+                        <code>In-Reply-To</code> pointait un message que nous avions envoyé.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="msg">
+                  <div class="msg-head">
+                    <div class="row" style="gap:9px"><div class="avatar sm" style="background:var(--baseline);color:var(--ink)">CF</div>
+                      <div><b>Gilles Ferrand</b> <span class="muted">· Cabinet Ferrand, expert</span>
+                        <div class="muted" style="font-size:11.5px">Tableau de dommages — dossier Martin</div></div></div>
+                    <div class="row" style="gap:8px"><span class="badge st-warning">▲ Adresse</span><span class="muted">2 oct. 11 h 05</span></div>
+                  </div>
+                  <div class="msg-body">
+                    Veuillez trouver ci-joint le tableau de dommages validé pour le sinistre du
+                    14 août. Je reste à disposition pour la réunion d'expertise.
+                    <div class="row wrap" style="gap:7px;margin-top:11px">
+                      <span class="attach">⎙ Tableau_dommages_Martin.pdf · 640 Ko</span>
+                    </div>
+                    <div class="match weak" style="margin-top:11px">
+                      <b>▲ Rattaché par l'adresse de l'expéditeur</b>
+                      <span>Un seul chantier du cabinet a le cabinet Ferrand pour expert. En cas de
+                        doute — deux chantiers, le même expert — rien n'aurait été rattaché, et le
+                        message serait parti dans « à traiter ».</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Écrire aux artisans</div></div>
+            <div class="card-body stack">
+              <div class="field">
+                <label>Destinataires</label>
+                <div class="row wrap" style="gap:5px;padding:7px;border:1px solid var(--border-strong);border-radius:var(--radius-sm);background:var(--surface)">
+                  <span class="badge fn-artisan"><i class="dot"></i>Maçonnerie Fontaine ✕</span>
+                  <span class="badge fn-artisan"><i class="dot"></i>Toitures du Rhône ✕</span>
+                  <span class="badge fn-artisan"><i class="dot"></i>Électricité Bonnet ✕</span>
+                  <span class="muted" style="font-size:12px;padding:2px 4px">＋ ajouter…</span>
+                </div>
+                <span class="hint">Les 7 entreprises du chantier, ou une sélection.</span>
+              </div>
+              <div class="field"><label>Modèle</label>
+                <select class="select">
+                  <option>Confirmation de venue sur le chantier</option>
+                  <option>Convocation RDV signature des marchés</option>
+                  <option>Demande de devis</option>
+                  <option>Relance de devis</option>
+                  <option>Message libre</option>
+                </select>
+              </div>
+              <div class="field"><label>Message</label>
+                <textarea class="input" rows="4">Bonjour, pouvez-vous confirmer votre venue sur le chantier aux dates indiquées ? Si elles ne vous conviennent pas, proposez-nous une autre date directement depuis le lien.</textarea>
+              </div>
+              <label class="check is-on"><span class="box">✓</span><span>Joindre un lien de confirmation personnel</span></label>
+              <div class="note">
+                <small>Chaque destinataire reçoit <b>son</b> lien, valable 30 jours. Un écran, deux
+                  boutons, sans mot de passe. <a href="{{l:artisanVenue}}">Voir ›</a></small>
+              </div>
+              <button class="btn btn-primary btn-block">Envoyer à 3 artisans</button>
+              <small class="muted">L'expéditeur et l'adresse de réponse ne sont pas négociables : le
+                message part au nom de l'agence avec l'adresse de ce projet, sinon la réponse se
+                perdrait.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

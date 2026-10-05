@@ -1,0 +1,221 @@
+<!--meta { "id":"08", "titre":"Chantier · Finances", "groupe":"Chantier", "role":"Direction", "largeur":1440, "hauteur":1560 } -->
+<div class="app">
+  {{sidebar:chantiers}}
+  <div class="main">
+    {{topbar:Hélène Verdier@HV@Direction|fn-direction}}
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <div class="row" style="gap:8px"><span class="muted" style="font-size:12px">CH-2026-014</span>
+            <span class="badge ph-3"><i class="dot"></i>Préparation de chantier</span></div>
+          <h1 class="page-title" style="margin-top:6px">Extension Martin</h1>
+          <div class="page-sub">Devis des artisans, honoraires de maîtrise d'œuvre, échéances</div>
+        </div>
+        <div class="page-actions">
+          <button class="btn">⟳ Recalculer les honoraires</button>
+          <button class="btn btn-primary">＋ Devis</button>
+        </div>
+      </div>
+
+      {{onglets:finances}}
+
+      <div class="grid-4">
+        <div class="tile">
+          <div class="tile-label">Travaux retenus</div>
+          <div class="tile-value">248 600 €</div>
+          <div class="tile-note">HT · 6 devis signés sur 8</div>
+        </div>
+        <div class="tile">
+          <div class="tile-label">Enveloppe</div>
+          <div class="tile-value">260 000 €</div>
+          <div class="tile-delta up">▲ 11 400 € de marge</div>
+        </div>
+        <div class="tile" style="border-color:var(--brand)">
+          <div class="tile-label">Honoraires de MO</div>
+          <div class="tile-value">26 860 €</div>
+          <div class="tile-note">10,8 % des travaux</div>
+        </div>
+        <div class="tile">
+          <div class="tile-label">Encaissé</div>
+          <div class="tile-value">8 058 €</div>
+          <div class="tile-note">30 % · prochaine échéance le 02/11</div>
+        </div>
+      </div>
+
+      <div class="grid-main">
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Devis des artisans</div>
+              <div class="row" style="gap:9px">
+                <div class="seg"><span class="is-active">Tous</span><span>Reçus</span><span>Validés</span><span>Signés</span></div>
+              </div>
+            </div>
+            <div class="scroll-x"><table class="tbl">
+              <thead><tr><th>Lot</th><th>Entreprise</th><th>Origine</th><th class="num">HT</th><th class="num">TTC</th><th>État</th><th class="center">Client</th><th></th></tr></thead>
+              <tbody>
+                <tr><td><b>Gros œuvre</b></td><td>Maçonnerie Fontaine</td>
+                  <td><span class="badge st-neutral">Espace artisan</span></td>
+                  <td class="num">86 400 €</td><td class="num">103 680 €</td>
+                  <td><span class="badge st-good">✓ Signé</span></td>
+                  <td class="center"><span class="switch is-on" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+                <tr><td><b>Charpente / couverture</b></td><td>SARL Toitures du Rhône</td>
+                  <td><span class="badge st-neutral">E-mail</span></td>
+                  <td class="num">52 300 €</td><td class="num">62 760 €</td>
+                  <td><span class="badge st-good">✓ Signé</span></td>
+                  <td class="center"><span class="switch is-on" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+                <tr><td><b>Menuiseries ext.</b></td><td>Alpes Bois</td>
+                  <td><span class="badge st-neutral">Espace artisan</span></td>
+                  <td class="num">38 900 €</td><td class="num">46 680 €</td>
+                  <td><span class="badge st-good">✓ Signé</span></td>
+                  <td class="center"><span class="switch is-on" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+                <tr><td><b>Plomberie</b></td><td>Plomberie Sanivalley</td>
+                  <td><span class="badge st-neutral">Espace artisan</span></td>
+                  <td class="num">18 400 €</td><td class="num">22 080 €</td>
+                  <td><span class="badge st-warning">▲ Reçu — à valider</span></td>
+                  <td class="center"><span class="switch" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm">Valider</button></td></tr>
+                <tr><td><b>Électricité</b></td><td>Électricité Bonnet</td>
+                  <td><span class="badge st-neutral">Saisie</span></td>
+                  <td class="num">26 700 €</td><td class="num">32 040 €</td>
+                  <td><span class="badge st-good">✓ Signé</span></td>
+                  <td class="center"><span class="switch is-on" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+                <tr><td><b>Plâtrerie</b></td><td>Cloisons Rhodania</td>
+                  <td><span class="badge st-neutral">E-mail</span></td>
+                  <td class="num">21 400 €</td><td class="num">25 680 €</td>
+                  <td><span class="badge st-good">✓ Signé</span></td>
+                  <td class="center"><span class="switch is-on" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+                <tr><td><b>Carrelage</b></td><td>Sols &amp; Faïences Lyon</td>
+                  <td><span class="badge st-neutral">E-mail</span></td>
+                  <td class="num">23 500 €</td><td class="num">28 200 €</td>
+                  <td><span class="badge st-good">✓ Signé</span></td>
+                  <td class="center"><span class="switch is-on" style="display:inline-block"></span></td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+                <tr style="opacity:.6"><td><b>Peinture</b></td><td>Peinture Decorhône</td>
+                  <td><span class="badge st-neutral">E-mail</span></td>
+                  <td class="num">14 800 €</td><td class="num">17 760 €</td>
+                  <td><span class="badge st-serious">▲ Écarté — trop cher</span></td>
+                  <td class="center muted">—</td>
+                  <td class="right"><button class="btn btn-sm btn-ghost">⋯</button></td></tr>
+              </tbody>
+              <tfoot><tr style="background:var(--surface-2)">
+                <td colspan="3"><b>Total retenu (signés + validés)</b></td>
+                <td class="num"><b>248 600 €</b></td><td class="num"><b>298 320 €</b></td>
+                <td colspan="3"><small class="muted">le devis écarté n'entre pas dans le calcul</small></td>
+              </tr></tfoot>
+            </table></div>
+            <div class="card-foot">
+              <small class="muted">La colonne <b>Client</b> décide de ce que le maître d'ouvrage voit
+                dans <a href="{{l:clientDevis}}">son espace</a>. Par défaut, rien n'est partagé.</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Situations de travaux</div>
+              <span class="muted" style="font-size:12px">ce que les entreprises ont facturé</span></div>
+            <div class="scroll-x"><table class="tbl">
+              <thead><tr><th>Entreprise</th><th>Situation</th><th class="num">Marché HT</th><th class="num">Appelé</th><th style="width:130px">Avancement</th><th>État</th></tr></thead>
+              <tbody>
+                <tr><td>Maçonnerie Fontaine</td><td>n° 1 — 30 sept.</td><td class="num">86 400 €</td><td class="num">25 920 €</td>
+                  <td><div class="progress thin"><span class="bg-good" style="width:30%"></span></div><small class="muted num">30 %</small></td>
+                  <td><span class="badge st-good">✓ Payée</span></td></tr>
+                <tr><td>Maçonnerie Fontaine</td><td>n° 2 — 31 oct.</td><td class="num">86 400 €</td><td class="num">34 560 €</td>
+                  <td><div class="progress thin"><span class="bg-warning" style="width:40%"></span></div><small class="muted num">40 %</small></td>
+                  <td><span class="badge st-warning">▲ Validée, à payer</span></td></tr>
+                <tr><td>SARL Toitures du Rhône</td><td>n° 1 — 31 oct.</td><td class="num">52 300 €</td><td class="num">15 690 €</td>
+                  <td><div class="progress thin"><span class="bg-ph-3" style="width:30%"></span></div><small class="muted num">30 %</small></td>
+                  <td><span class="badge st-serious">▲ À vérifier</span></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+
+          <div class="card" style="border-color:var(--brand)">
+            <div class="card-head" style="background:var(--brand-wash)">
+              <div class="card-title">Honoraires de maîtrise d'œuvre</div>
+              <span class="badge st-neutral">calculé</span>
+            </div>
+            <div class="card-body stack">
+              <div>
+                <div class="tile-label">Montant retenu</div>
+                <div class="hero-figure">26 860 €</div>
+                <div class="tile-note">HT · soit 10,8 % de 248 600 € de travaux</div>
+              </div>
+
+              <div>
+                <div class="tile-label" style="margin-bottom:7px">Ligne de calcul</div>
+                <table class="tbl" style="font-size:12.5px">
+                  <thead><tr><th>Tranche</th><th class="num">Base</th><th class="num">Taux</th><th class="num">Montant</th></tr></thead>
+                  <tbody>
+                    <tr><td>0 → 100 000 €</td><td class="num">100 000 €</td><td class="num">12 %</td><td class="num">12 000 €</td></tr>
+                    <tr><td>100 000 → 300 000 €</td><td class="num">148 600 €</td><td class="num">10 %</td><td class="num">14 860 €</td></tr>
+                    <tr class="muted"><td>au-delà de 300 000 €</td><td class="num">—</td><td class="num">8 %</td><td class="num">—</td></tr>
+                  </tbody>
+                  <tfoot><tr style="background:var(--surface-2)"><td colspan="3"><b>Total</b></td><td class="num"><b>26 860 €</b></td></tr></tfoot>
+                </table>
+              </div>
+
+              <div class="field">
+                <label>Surcharger le montant</label>
+                <input class="input" value="26 860" placeholder="laisser vide pour garder le calcul">
+                <span class="hint">Le calcul reste tracé : si vous surchargez, la valeur d'origine et
+                  la date de la surcharge sont conservées, et le recalcul ne l'écrase plus.</span>
+              </div>
+
+              <div class="alert alert-info" style="padding:10px 12px">
+                <span class="ico">◆</span>
+                <div>Recalculé le 4 octobre, à la validation du devis de plâtrerie.
+                  <a href="{{l:bareme}}">Barème du cabinet ›</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Échéancier des honoraires</div></div>
+            <div class="card-body">
+              <table class="tbl" style="margin:-16px"><tbody>
+                <tr><td><b style="font-size:12.5px">Signature du contrat</b><div class="muted" style="font-size:11.5px">30 % · 15/09/2026</div></td>
+                  <td class="num">8 058 €</td><td class="right"><span class="badge st-good">✓ Réglé</span></td></tr>
+                <tr><td><b style="font-size:12.5px">Dépôt du dossier d'autorisation</b><div class="muted" style="font-size:11.5px">20 % · 02/11/2026</div></td>
+                  <td class="num">5 372 €</td><td class="right"><span class="badge st-warning">▲ À venir</span></td></tr>
+                <tr><td><b style="font-size:12.5px">Démarrage des travaux</b><div class="muted" style="font-size:11.5px">30 % · prévu 02/11/2026</div></td>
+                  <td class="num">8 058 €</td><td class="right"><span class="badge st-neutral">À venir</span></td></tr>
+                <tr><td><b style="font-size:12.5px">Réception des travaux</b><div class="muted" style="font-size:11.5px">20 % · prévu 28/02/2027</div></td>
+                  <td class="num">5 372 €</td><td class="right"><span class="badge st-neutral">À venir</span></td></tr>
+              </tbody></table>
+            </div>
+            <div class="card-foot">
+              <div class="meter">
+                <div class="meter-head"><span>Encaissé</span><b>8 058 € / 26 860 €</b></div>
+                <div class="progress"><span class="bg-good" style="width:30%"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Enveloppe</div></div>
+            <div class="card-body stack-sm">
+              <div class="meter">
+                <div class="meter-head"><span>Marchés retenus</span><b>248 600 € / 260 000 €</b></div>
+                <div class="progress"><span class="bg-good" style="width:95.6%"></span></div>
+              </div>
+              <small class="muted">Il reste <b>11 400 €</b>. Le lot peinture est encore à attribuer :
+                le devis écarté était à 14 800 € — au-dessus de ce qui reste.</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

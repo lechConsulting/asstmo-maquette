@@ -1,0 +1,171 @@
+<!--meta { "id":"06", "titre":"Chantier · Étapes", "groupe":"Chantier", "role":"Conducteur", "largeur":1440, "hauteur":1420 } -->
+<div class="app">
+  {{sidebar:chantiers}}
+  <div class="main">
+    {{topbar:Élodie Charrier@ÉC@Conducteur de travaux|fn-conducteur}}
+    <div class="content">
+
+      <div class="page-head">
+        <div>
+          <div class="row" style="gap:8px">
+            <span class="muted" style="font-size:12px">CH-2026-014</span>
+            <span class="badge ph-3"><i class="dot"></i>Préparation de chantier</span>
+          </div>
+          <h1 class="page-title" style="margin-top:6px">Extension Martin</h1>
+          <div class="page-sub">14 chemin des Vignes, 69290 Craponne · M. et Mme Martin · conductrice Élodie Charrier</div>
+        </div>
+        <div class="page-actions">
+          <a class="btn" href="{{l:impression}}">⎙ Imprimer la fiche</a>
+          <button class="btn">Modifier</button>
+        </div>
+      </div>
+
+      {{onglets:etapes}}
+
+      <div class="alert alert-critical">
+        <span class="ico">✕</span>
+        <div><b>Électricité Bonnet (Électricité) : décennale échue le 15/09/2026.</b>
+          L'intervention est prévue le 12 octobre — l'attestation doit couvrir la date d'arrivée sur
+          le chantier, pas la date du jour. <a href="{{l:intervenants}}">Voir l'intervenant</a></div>
+      </div>
+
+      <div class="grid-main">
+        <div class="stack">
+
+          <div class="card">
+            <div class="card-head">
+              <div class="card-title">Workflow du chantier</div>
+              <div class="row" style="gap:12px">
+                <span class="muted num" style="font-size:12px">34 / 62 · 2 sautées</span>
+                <div class="progress thin" style="width:120px"><span class="bg-ph-3" style="width:55%"></span></div>
+                <b class="num" style="font-size:13px">55 %</b>
+              </div>
+            </div>
+            <div class="card-body" style="padding-top:8px">
+              <div class="steps">
+
+                <div class="step is-done"><div class="step-mark">✓</div>
+                  <div><div class="step-title">31 — Réception devis projet</div>
+                    <div class="step-consigne">Réunion client · terminée le 22/09 par Thomas Bauer</div></div></div>
+
+                <div class="step is-skipped"><div class="step-mark">32</div>
+                  <div><div class="step-title">Étude géologique</div>
+                    <div class="step-consigne">Sautée le 23/09 — terrain déjà sondé en 2024</div></div></div>
+
+                <div class="step is-done"><div class="step-mark">✓</div>
+                  <div><div class="step-title">33 — Dépôt DP / PC</div>
+                    <div class="step-consigne">Déposé le 25/09 en mairie de Craponne</div></div></div>
+
+                <div class="step is-current">
+                  <div class="row-top" style="gap:12px">
+                    <div class="step-mark">34</div>
+                    <div class="grow">
+                      <div class="row between wrap">
+                        <div>
+                          <div class="step-title">Réception tableau de dommage</div>
+                          <div class="step-consigne">PDF envoyé par l'expert ou l'assurance</div>
+                        </div>
+                        <span class="badge fn-conducteur"><i class="dot"></i>Conducteur de travaux</span>
+                      </div>
+                      <div class="stack-sm" style="margin-top:11px">
+                        <textarea class="input" rows="2" placeholder="Commentaire à verser au dossier (facultatif)…"></textarea>
+                        <div class="row wrap">
+                          <button class="btn btn-primary">✓ Terminer l'étape</button>
+                          <button class="btn btn-ghost">Sauter</button>
+                          <select class="select" style="width:auto"><option>Réattribuer à…</option><option>Direction</option><option>Administratif</option><option>Secrétariat technique</option><option>Bureau d'étude</option></select>
+                        </div>
+                        <small class="muted">Terminer cette étape crée automatiquement la tâche de
+                          l'étape 35 — <i>Préparation tableau de situation</i> — pour l'Administratif.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step"><div class="step-mark">35</div>
+                  <div><div class="step-title">Préparation tableau de situation</div>
+                    <div class="step-consigne">Excel ou chantier</div>
+                    <div style="margin-top:5px"><span class="badge fn-admin"><i class="dot"></i>Administratif</span></div></div></div>
+
+                <div class="step"><div class="step-mark">36</div>
+                  <div><div class="step-title">Vérification conformité tableau de dommage</div>
+                    <div class="step-consigne">Suivi dossier</div>
+                    <div style="margin-top:5px"><span class="badge fn-admin"><i class="dot"></i>Administratif</span></div></div></div>
+
+                <div class="step"><div class="step-mark">37</div>
+                  <div>
+                    <div class="step-title">Branchement provisoire / remise en service</div>
+                    <div class="step-consigne">Administration · raccordement</div>
+                    <div style="margin-top:5px"><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></div>
+                    <div class="step-sub" style="margin-top:9px">
+                      <div class="row between" style="padding:4px 0"><div><small><b>37.1</b> Demande de branchement provisoire</small></div><span class="badge st-neutral">sous-étape</span></div>
+                      <div class="row between" style="padding:4px 0"><div><small><b>37.2</b> Pose du coffret de chantier</small></div><span class="badge st-neutral">sous-étape</span></div>
+                      <div class="row between" style="padding:4px 0"><div><small><b>37.3</b> Relevé du compteur à l'ouverture</small></div><span class="badge st-neutral">facultative</span></div>
+                    </div>
+                  </div></div>
+
+                <div class="step"><div class="step-mark">38</div>
+                  <div><div class="step-title">Accord DP / PC</div>
+                    <div class="step-consigne">PDF</div>
+                    <div style="margin-top:5px"><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span></div></div></div>
+
+              </div>
+            </div>
+            <div class="card-foot row between">
+              <small class="muted">Les 62 étapes viennent du modèle « Rénovation après sinistre » du cabinet.</small>
+              <a href="{{l:workflow}}" style="font-size:12.5px">Modifier le modèle ›</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Avancement par phase</div></div>
+            <div class="card-body stack">
+              <div class="progress-stack" style="height:13px">
+                <span class="bg-ph-1" style="flex:5"></span>
+                <span class="bg-ph-2" style="flex:16"></span>
+                <span class="bg-ph-3" style="flex:13"></span>
+                <span class="bg-muted" style="flex:28"></span>
+              </div>
+              <div class="stack-sm">
+                <div class="row between"><span class="badge ph-1"><i class="dot"></i>Réception</span><span class="badge st-good">✓ 5/5</span></div>
+                <div class="row between"><span class="badge ph-2"><i class="dot"></i>Études</span><span class="badge st-good">✓ 16/16</span></div>
+                <div class="row between"><span class="badge ph-3"><i class="dot"></i>Préparation</span><span class="badge st-neutral">13/25</span></div>
+                <div class="row between"><span class="badge ph-4"><i class="dot"></i>Travaux</span><span class="badge st-neutral">0/16</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Le chantier</div></div>
+            <div class="card-body">
+              <table class="tbl" style="margin:-16px"><tbody>
+                <tr><td class="muted">Client</td><td class="right"><b>M. et Mme Martin</b></td></tr>
+                <tr><td class="muted">Téléphone</td><td class="right">06 12 44 87 03</td></tr>
+                <tr><td class="muted">Début prévu</td><td class="right num">02/11/2026</td></tr>
+                <tr><td class="muted">Fin prévue</td><td class="right num">28/02/2027</td></tr>
+                <tr><td class="muted">Enveloppe HT</td><td class="right num">260 000 €</td></tr>
+                <tr><td class="muted">Marchés signés</td><td class="right num"><b>248 600 €</b></td></tr>
+                <tr><td class="muted">Honoraires</td><td class="right num">26 860 €</td></tr>
+              </tbody></table>
+            </div>
+            <div class="card-foot"><a href="{{l:finances}}" style="font-size:12.5px">Voir les finances ›</a></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head"><div class="card-title">Dernière activité</div></div>
+            <div class="card-body stack-sm" style="font-size:12.5px">
+              <div><b>Devis déposé</b> — Plomberie Sanivalley, 18 400 € HT<div class="muted">il y a 2 h · espace artisan</div></div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>Venue confirmée</b> — Maçonnerie Fontaine, 2 nov.<div class="muted">hier 17 h 20 · lien à jeton</div></div>
+              <hr style="border:0;border-top:1px solid var(--grid)">
+              <div><b>6 photos</b> ajoutées par Élodie<div class="muted">hier 14 h 05 · depuis le téléphone</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

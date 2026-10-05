@@ -1,0 +1,218 @@
+<!--meta { "id":"01", "titre":"Rôles", "groupe":"Fondations", "largeur":1280, "hauteur":1800 } -->
+<div class="content" style="max-width:1120px;margin:0 auto;padding:28px 22px">
+
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">Les rôles</h1>
+      <div class="page-sub">Qui voit quoi, et qui tient quelles étapes. Cette page est la porte d'entrée de la maquette.</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">
+    <span class="ico">◆</span>
+    <div>
+      <b>Un utilisateur peut cumuler plusieurs fonctions.</b> C'est votre demande : « on pourra avoir
+      deux rôles, conducteur et direction par exemple ». Marie Fontaine, ci-dessous, est conductrice
+      <i>et</i> direction — son tableau de bord agrège les tâches des deux fonctions, et elle voit les
+      écrans de paramétrage que les autres conducteurs n'ont pas.
+    </div>
+  </div>
+
+  <!-- ================================================= fonctions internes -->
+  <h2 style="font-size:15px;margin-top:6px">Les cinq fonctions du cabinet</h2>
+  <div class="card">
+    <div class="scroll-x"><table class="tbl">
+      <thead><tr>
+        <th>Fonction</th><th>Ce dont elle répond</th>
+        <th class="num">Étapes tenues</th><th>Part des 62</th><th>Écrans</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="badge fn-direction"><i class="dot"></i>Direction</span></td>
+          <td>Le premier contact, les rendez-vous client, la validation des plans, l'affectation des
+            conducteurs, le pointage du chiffrage, la réception des travaux.</td>
+          <td class="num"><b>17</b></td>
+          <td style="min-width:150px"><div class="progress thin"><span style="width:27.4%;background:var(--fn-direction)"></span></div><small class="muted">27 %</small></td>
+          <td><small><a href="{{l:tableau}}">Tableau de bord</a> · <a href="{{l:ensemble}}">Vue d'ensemble</a> · <a href="{{l:finances}}">Finances</a></small></td>
+        </tr>
+        <tr>
+          <td><span class="badge fn-conducteur"><i class="dot"></i>Conducteur de travaux</span></td>
+          <td>Le chantier en vrai : raccordements, étude de sol, signature des marchés, démarrage,
+            validation des factures, perméabilité, PV de réception.</td>
+          <td class="num"><b>14</b></td>
+          <td><div class="progress thin"><span style="width:22.6%;background:var(--fn-conducteur)"></span></div><small class="muted">23 %</small></td>
+          <td><small><a href="{{l:planningCond}}">Planning global</a> · <a href="{{l:planning}}">Planning chantier</a> · <a href="{{l:taches}}">Mes tâches</a></small></td>
+        </tr>
+        <tr>
+          <td><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span></td>
+          <td>La mise en plan, les échanges de plans avec le client, le descriptif, le dépôt et le
+            suivi de la déclaration préalable ou du permis, les plans d'exécution, la DAACT.</td>
+          <td class="num"><b>13</b></td>
+          <td><div class="progress thin"><span style="width:21%;background:var(--fn-etude)"></span></div><small class="muted">21 %</small></td>
+          <td><small><a href="{{l:etapes}}">Étapes</a> · <a href="{{l:fiche}}">Fiche de suivi</a></small></td>
+        </tr>
+        <tr>
+          <td><span class="badge fn-admin"><i class="dot"></i>Administratif</span></td>
+          <td>Le contrat de maîtrise d'œuvre, les convocations, les tableaux de situation, l'envoi des
+            devis signés, le panneau de chantier, les PV, l'archivage.</td>
+          <td class="num"><b>12</b></td>
+          <td><div class="progress thin"><span style="width:19.4%;background:var(--fn-admin)"></span></div><small class="muted">19 %</small></td>
+          <td><small><a href="{{l:messagerie}}">Messagerie</a> · <a href="{{l:finances}}">Finances</a></small></td>
+        </tr>
+        <tr>
+          <td><span class="badge fn-technique"><i class="dot"></i>Secrétariat technique</span></td>
+          <td>La réception et la relance des devis, la DICT, l'envoi des pièces à l'expert, le compte
+            rendu de chantier, le dossier de fin de chantier.</td>
+          <td class="num"><b>6</b></td>
+          <td><div class="progress thin"><span style="width:9.7%;background:var(--fn-technique)"></span></div><small class="muted">10 %</small></td>
+          <td><small><a href="{{l:mail}}">Rapprochement</a> · <a href="{{l:crCh}}">Comptes rendus</a></small></td>
+        </tr>
+      </tbody>
+    </table></div>
+    <div class="card-foot">
+      <small class="muted">Répartition relevée dans le workflow de PBMO. Dans AsstMO elle est
+        <b>paramétrable</b> : chaque cabinet réécrit ses étapes et réaffecte les responsables
+        (<a href="{{l:workflow}}">voir l'écran d'édition</a>).</small>
+    </div>
+  </div>
+
+  <!-- ====================================================== l'équipe type -->
+  <h2 style="font-size:15px;margin-top:10px">L'équipe de démonstration</h2>
+  <div class="grid-3">
+    <div class="card"><div class="card-body stack-sm">
+      <div class="row"><div class="avatar" style="background:var(--fn-direction)">HV</div>
+        <div class="grow"><b style="font-size:13.5px">Hélène Verdier</b><div class="muted" style="font-size:12px">helene@agence-verdier.fr</div></div></div>
+      <div class="row wrap" style="gap:5px"><span class="badge fn-direction"><i class="dot"></i>Direction</span><span class="badge st-neutral">Admin du cabinet</span></div>
+      <small class="muted">Paramètre le workflow, le barème d'honoraires et les comptes.</small>
+    </div></div>
+    <div class="card"><div class="card-body stack-sm">
+      <div class="row"><div class="avatar" style="background:var(--fn-conducteur);color:#3a2800">MF</div>
+        <div class="grow"><b style="font-size:13.5px">Marie Fontaine</b><div class="muted" style="font-size:12px">marie@agence-verdier.fr</div></div></div>
+      <div class="row wrap" style="gap:5px"><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span><span class="badge fn-direction"><i class="dot"></i>Direction</span></div>
+      <small class="muted"><b>Deux fonctions cumulées</b> — 31 des 62 étapes lui reviennent.</small>
+    </div></div>
+    <div class="card"><div class="card-body stack-sm">
+      <div class="row"><div class="avatar" style="background:var(--fn-conducteur);color:#3a2800">ÉC</div>
+        <div class="grow"><b style="font-size:13.5px">Élodie Charrier</b><div class="muted" style="font-size:12px">elodie@agence-verdier.fr</div></div></div>
+      <div class="row wrap" style="gap:5px"><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></div>
+      <small class="muted">3 chantiers en cours, 12 interventions cette semaine.</small>
+    </div></div>
+    <div class="card"><div class="card-body stack-sm">
+      <div class="row"><div class="avatar" style="background:var(--fn-admin)">MD</div>
+        <div class="grow"><b style="font-size:13.5px">Marc Delaunay</b><div class="muted" style="font-size:12px">marc@agence-verdier.fr</div></div></div>
+      <div class="row wrap" style="gap:5px"><span class="badge fn-admin"><i class="dot"></i>Administratif</span></div>
+      <small class="muted">Tient la messagerie « à traiter » et les convocations.</small>
+    </div></div>
+    <div class="card"><div class="card-body stack-sm">
+      <div class="row"><div class="avatar" style="background:var(--fn-etude);color:#3d1326">TB</div>
+        <div class="grow"><b style="font-size:13.5px">Thomas Bauer</b><div class="muted" style="font-size:12px">thomas@agence-verdier.fr</div></div></div>
+      <div class="row wrap" style="gap:5px"><span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span></div>
+      <small class="muted">Plans, descriptifs, dossiers d'autorisation.</small>
+    </div></div>
+    <div class="card"><div class="card-body stack-sm">
+      <div class="row"><div class="avatar" style="background:var(--fn-technique)">SN</div>
+        <div class="grow"><b style="font-size:13.5px">Sophie Nguyen</b><div class="muted" style="font-size:12px">sophie@agence-verdier.fr</div></div></div>
+      <div class="row wrap" style="gap:5px"><span class="badge fn-technique"><i class="dot"></i>Secr. technique</span></div>
+      <small class="muted">Relance les devis, prépare les comptes rendus.</small>
+    </div></div>
+  </div>
+
+  <!-- ==================================================== rôles transverses -->
+  <h2 style="font-size:15px;margin-top:10px">Les rôles d'administration</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Admin du cabinet</div><span class="badge st-neutral">ROLE_ADMIN_CABINET</span></div>
+      <div class="card-body stack-sm">
+        <div class="spec">Un cumul, pas une sixième fonction : il s'ajoute à une fonction métier.
+          Englobe les cinq rôles de fonction, donc voit tous les écrans du cabinet.</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.75">
+          <li><a href="{{l:workflow}}">Modèles de workflow</a> — crée, réordonne, duplique les étapes et sous-étapes</li>
+          <li><a href="{{l:bareme}}">Barème d'honoraires</a> — les tranches et les taux</li>
+          <li><a href="{{l:users}}">Utilisateurs</a> — comptes et fonctions</li>
+          <li>Référentiel des artisans du cabinet</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Super admin plateforme</div><span class="badge st-neutral">ROLE_SUPER_ADMIN</span></div>
+      <div class="card-body stack-sm">
+        <div class="spec">Hors cabinet. C'est le seul rôle qui franchit le cloisonnement, et il le fait
+          en basculant explicitement de cabinet — jamais en voyant tout à la fois.</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.75">
+          <li><a href="{{l:cabinets}}">Cabinets</a> — création, bascule</li>
+          <li><a href="{{l:moteur}}">Moteur d'évènements</a> — les règles de traitement des e-mails</li>
+          <li>Mémoire du moteur et répertoire des non-clients</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================= rôles externes -->
+  <h2 style="font-size:15px;margin-top:10px">Les rôles externes</h2>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Artisan</div><span class="badge fn-artisan"><i class="dot"></i>ROLE_ARTISAN</span></div>
+      <div class="card-body stack-sm">
+        <div class="spec">Avec compte. Ne voit <b>que les chantiers où il est affecté</b>, et sur
+          ceux-là, que ce qui le concerne : son lot, ses dates, ses devis, ses factures. Jamais les
+          devis d'un confrère, jamais les honoraires du cabinet.</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.7">
+          <li><a href="{{l:artisanHome}}">Ses chantiers et demandes</a></li>
+          <li><a href="{{l:artisanDevis}}">Déposer un devis</a></li>
+          <li><a href="{{l:artisanPhoto}}">Envoyer des photos</a> depuis le téléphone</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Client</div><span class="badge fn-client"><i class="dot"></i>ROLE_CLIENT</span></div>
+      <div class="card-body stack-sm">
+        <div class="spec">Avec compte, une page simple. <b>Rien n'est visible par défaut :</b> chaque
+          volet s'ouvre sur décision du maître d'œuvre, et le planning seulement une fois le marché
+          signé.</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.7">
+          <li><a href="{{l:clientHome}}">Où en est mon chantier</a></li>
+          <li><a href="{{l:clientDevis}}">Mes devis</a> <span class="badge st-neutral">si partagé</span></li>
+          <li><a href="{{l:clientPlan}}">Mon planning</a> <span class="badge st-neutral">si signé</span></li>
+          <li><a href="{{l:clientPaie}}">Paiements et échéances</a></li>
+          <li><a href="{{l:clientCr}}">Comptes rendus</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Sans compte, par jeton</div><span class="badge st-neutral">anonyme</span></div>
+      <div class="card-body stack-sm">
+        <div class="spec">Pas un rôle, un <b>lien à usage borné</b>. C'est ce qui rend la confirmation
+          de venue réellement utilisable par un artisan sur un chantier : un lien dans un SMS, un
+          écran, deux boutons. Aucun mot de passe, aucune session.</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-2);line-height:1.7">
+          <li><a href="{{l:artisanVenue}}">Confirmer ou déplacer une venue</a></li>
+          <li>Consulter un document partagé</li>
+        </ul>
+        <div class="note" style="margin-top:4px"><small>Repris de Topika : un jeton sans terme est tenu
+          pour périmé, un lien révoqué répond 410 plutôt que de faire croire à une faute de frappe, et
+          un lien mort ne dit jamais s'il a existé.</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= cloisonnement -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">Ce que chaque rôle ne voit pas</div></div>
+    <div class="scroll-x"><table class="tbl">
+      <thead><tr><th>Donnée</th><th class="center">Cabinet</th><th class="center">Artisan</th><th class="center">Client</th></tr></thead>
+      <tbody>
+        <tr><td>Avancement du workflow, étape par étape</td><td class="center">✓</td><td class="center muted">—</td><td class="center muted">résumé en clair</td></tr>
+        <tr><td>Devis des autres artisans</td><td class="center">✓</td><td class="center muted">—</td><td class="center muted">si partagés</td></tr>
+        <tr><td>Honoraires du cabinet et leur calcul</td><td class="center">✓</td><td class="center muted">—</td><td class="center">montant et échéances</td></tr>
+        <tr><td>Planning complet du chantier</td><td class="center">✓</td><td class="center muted">ses interventions</td><td class="center muted">si marché signé</td></tr>
+        <tr><td>Messagerie du projet</td><td class="center">✓</td><td class="center muted">ses échanges</td><td class="center muted">ses échanges</td></tr>
+        <tr><td>Points d'attention et alertes internes</td><td class="center">✓</td><td class="center muted">—</td><td class="center muted">—</td></tr>
+        <tr><td>Chantiers d'un autre cabinet</td><td class="center muted">403</td><td class="center muted">403</td><td class="center muted">403</td></tr>
+      </tbody>
+    </table></div>
+    <div class="card-foot"><small class="muted">Le cloisonnement entre cabinets est posé deux fois :
+      un filtre en base, et un contrôle à l'accès de chaque objet — le filtre seul ne protège pas une
+      entité déjà chargée en mémoire.</small></div>
+  </div>
+
+</div>

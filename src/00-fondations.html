@@ -1,0 +1,142 @@
+<!--meta { "id":"00", "titre":"Fondations", "groupe":"Fondations", "largeur":1280, "hauteur":1600 } -->
+<div class="content" style="max-width:1120px;margin:0 auto;padding:28px 22px">
+
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">Fondations</h1>
+      <div class="page-sub">Les jetons et composants dont sont faits les 35 écrans. Tout ce qui suit est validé en clair et en sombre.</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info">
+    <span class="ico">◆</span>
+    <div>
+      <b>Les phases sont une rampe ordinale, pas des couleurs catégorielles.</b>
+      Les quatre phases d'un chantier sont <i>ordonnées</i> : une seule teinte, du clair au foncé, dit
+      l'avancement sans que l'œil ait à mémoriser un code. Quatre teintes distinctes avaient été
+      essayées d'abord : le violet et le bleu se confondent en mode sombre (écart perceptif 1,9 pour
+      un daltonisme protan, seuil à 8). La rampe règle le problème par construction.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-title">Phases du workflow — rampe ordinale bleue</div>
+      <span class="muted">clair → foncé = début → fin</span></div>
+    <div class="card-body stack">
+      <div class="swatches">
+        <div class="swatch"><div class="chip bg-ph-1"></div><div class="meta"><b>Phase 1</b><span class="muted">Réception &amp; administratif</span><code>#86b6ef</code></div></div>
+        <div class="swatch"><div class="chip bg-ph-2"></div><div class="meta"><b>Phase 2</b><span class="muted">Études</span><code>#5598e7</code></div></div>
+        <div class="swatch"><div class="chip bg-ph-3"></div><div class="meta"><b>Phase 3</b><span class="muted">Préparation de chantier</span><code>#2a78d6</code></div></div>
+        <div class="swatch"><div class="chip bg-ph-4"></div><div class="meta"><b>Phase 4</b><span class="muted">Travaux &amp; réception</span><code>#184f95</code></div></div>
+      </div>
+      <div class="spec">Mode sombre : <code>#9ec5f4</code> <code>#6da7ec</code> <code>#3987e5</code> <code>#184f95</code> — même sens de lecture, fenêtre décalée pour le fond sombre. Lightness monotone, écarts ≥ 0,06, extrémité la plus proche du fond à 2,15:1.</div>
+      <div>
+        <div class="meter-head"><span>Répartition des 62 étapes</span><b>62</b></div>
+        <div class="progress-stack" style="height:12px">
+          <span class="bg-ph-1" style="flex:5"></span>
+          <span class="bg-ph-2" style="flex:16"></span>
+          <span class="bg-ph-3" style="flex:25"></span>
+          <span class="bg-ph-4" style="flex:16"></span>
+        </div>
+        <div class="row wrap" style="margin-top:8px;gap:14px">
+          <span class="badge ph-1"><i class="dot"></i>1 — Réception &amp; administratif · ét. 1-5</span>
+          <span class="badge ph-2"><i class="dot"></i>2 — Études · ét. 6-21</span>
+          <span class="badge ph-3"><i class="dot"></i>3 — Préparation · ét. 22-46</span>
+          <span class="badge ph-4"><i class="dot"></i>4 — Travaux &amp; réception · ét. 47-62</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div class="card-title">Fonctions — catégoriel, ordre figé</div>
+      <span class="muted">sans bleu : le bleu est réservé à la marque et aux phases</span></div>
+    <div class="card-body stack">
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:var(--fn-direction)"></div><div class="meta"><b>Direction</b><code>#eb6834</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-admin)"></div><div class="meta"><b>Administratif</b><code>#4a3aa7</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-technique)"></div><div class="meta"><b>Secr. technique</b><code>#008300</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-etude)"></div><div class="meta"><b>Bureau d'étude</b><code>#e87ba4</code></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--fn-conducteur)"></div><div class="meta"><b>Conducteur</b><code>#eda100</code></div></div>
+      </div>
+      <div class="spec">
+        Écart perceptif le plus faible entre deux fonctions voisines : <b>16,3</b> en daltonisme deutan
+        (seuil 8), <b>19,6</b> en vision normale (plancher 15), en mode clair ; <b>13,0</b> et <b>19,3</b>
+        en sombre. Le magenta et le jaune passent sous 3:1 sur fond clair : c'est pourquoi un badge de
+        fonction est un <i>fond teinté + encre foncée + pastille pleine</i>, et jamais du texte coloré.
+      </div>
+      <div class="row wrap">
+        <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+        <span class="badge fn-admin"><i class="dot"></i>Administratif</span>
+        <span class="badge fn-technique"><i class="dot"></i>Secrétariat technique</span>
+        <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+        <span class="badge fn-conducteur"><i class="dot"></i>Conducteur de travaux</span>
+        <span class="badge fn-artisan"><i class="dot"></i>Artisan</span>
+        <span class="badge fn-client"><i class="dot"></i>Client</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Statut — palette fixe, jamais thémée</div></div>
+      <div class="card-body stack-sm">
+        <div class="row wrap">
+          <span class="badge st-good">✓ Décennale valide</span>
+          <span class="badge st-warning">▲ À renouveler</span>
+          <span class="badge st-serious">▲ Devis manquant</span>
+          <span class="badge st-critical">✕ Décennale échue</span>
+        </div>
+        <div class="spec">Un statut porte <b>toujours</b> une icône et un libellé : sur fond clair,
+          l'avertissement est à 1,79:1, la couleur seule serait illisible. Ces quatre pas sont
+          délibérément distincts des teintes de fonction pour qu'un statut n'usurpe jamais une fonction.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Typographie</div></div>
+      <div class="card-body">
+        <div class="type-row"><span class="lbl">page-title · 21/600</span><span style="font-size:21px;font-weight:600">Extension Martin</span></div>
+        <div class="type-row"><span class="lbl">tile-value · 26/650</span><span class="tile-value">26 860 €</span></div>
+        <div class="type-row"><span class="lbl">hero · 40/680</span><span class="hero-figure">55 %</span></div>
+        <div class="type-row"><span class="lbl">corps · 14/400</span><span>Réception du devis de couverture</span></div>
+        <div class="type-row"><span class="lbl">meta · 12/400</span><span class="muted">il y a 2 heures · Élodie Charrier</span></div>
+        <div class="spec" style="margin-top:10px">Une seule famille, la sans-serif du système. Chiffres
+          proportionnels par défaut ; <code>tabular-nums</code> réservé aux colonnes qui doivent s'aligner.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Boutons et contrôles</div></div>
+      <div class="card-body stack">
+        <div class="row wrap">
+          <button class="btn btn-primary">Terminer l'étape</button>
+          <button class="btn">Modifier</button>
+          <button class="btn btn-ghost">Sauter</button>
+          <button class="btn btn-danger">Écarter définitivement</button>
+        </div>
+        <div class="row wrap">
+          <button class="btn btn-lg btn-primary">Oui, je serai là</button>
+        </div>
+        <div class="seg"><span class="is-active">Tous</span><span>En cours</span><span>Terminés</span><span>Archivés</span></div>
+        <div class="row">
+          <span class="switch is-on"></span><span style="font-size:13px">Partagé au client</span>
+          <span class="switch" style="margin-left:14px"></span><span style="font-size:13px">Masqué</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Tuiles chiffrées</div></div>
+      <div class="card-body">
+        <div class="grid-2" style="gap:12px">
+          <div class="tile"><div class="tile-label">En attente</div><div class="tile-value">7</div><div class="tile-note">dont 2 en retard</div></div>
+          <div class="tile"><div class="tile-label">Faites aujourd'hui</div><div class="tile-value">4</div><div class="tile-delta up">▲ +2 vs hier</div></div>
+        </div>
+        <div class="spec" style="margin-top:12px">Le chiffre domine, le libellé le précède, le contexte
+          le suit. Pas de graphique là où un nombre suffit.</div>
+      </div>
+    </div>
+  </div>
+
+</div>

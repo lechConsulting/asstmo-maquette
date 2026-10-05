@@ -1,0 +1,77 @@
+<!--meta { "id":"05", "titre":"Chantiers", "groupe":"Cabinet", "role":"Direction", "largeur":1440, "hauteur":900 } -->
+<div class="app">
+  {{sidebar:chantiers}}
+  <div class="main">
+    {{topbar:Hélène Verdier@HV@Direction|fn-direction}}
+    <div class="content">
+      <div class="page-head">
+        <div><h1 class="page-title">Chantiers</h1><div class="page-sub">15 chantiers au total — 12 en cours</div></div>
+        <div class="page-actions"><button class="btn btn-primary">＋ Nouveau chantier</button></div>
+      </div>
+      <div class="row wrap">
+        <div class="search" style="max-width:320px"><span>⌕</span><span>Rechercher un client ou une adresse…</span></div>
+        <div class="seg"><span>Tous</span><span class="is-active">En cours</span><span>Terminés</span><span>Archivés</span></div>
+        <select class="select" style="width:auto"><option>Tous les conducteurs</option><option>Élodie Charrier</option><option>Marie Fontaine</option></select>
+      </div>
+      <div class="card">
+        <div class="scroll-x"><table class="tbl">
+          <thead><tr><th>Chantier</th><th>Client</th><th>Phase</th><th>Étape en cours</th><th>Conducteur</th><th class="num">Travaux HT</th><th style="width:150px">Avancement</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>CH-2026-014</b><br><small class="muted">Extension Martin · Craponne</small></td>
+              <td>M. et Mme Martin</td>
+              <td><span class="badge ph-3"><i class="dot"></i>Préparation</span></td>
+              <td><small>34 — Réception tableau de dommage</small><br><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></td>
+              <td><div class="row" style="gap:7px"><div class="avatar sm" style="background:var(--fn-conducteur);color:#3a2800">ÉC</div><small>Élodie</small></div></td>
+              <td class="num">248 600 €</td>
+              <td><div class="progress thin"><span class="bg-ph-3" style="width:55%"></span></div><small class="muted num">55 % · 34/62</small></td>
+              <td class="right"><span class="badge st-critical">✕ 1</span></td>
+            </tr>
+            <tr>
+              <td><b>CH-2026-011</b><br><small class="muted">SCI Les Tilleuls · Lyon 3e</small></td>
+              <td>SCI Les Tilleuls</td>
+              <td><span class="badge ph-4"><i class="dot"></i>Travaux</span></td>
+              <td><small>51 — Liaison B Enedis</small><br><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></td>
+              <td><div class="row" style="gap:7px"><div class="avatar sm" style="background:var(--fn-conducteur);color:#3a2800">MF</div><small>Marie</small></div></td>
+              <td class="num">612 400 €</td>
+              <td><div class="progress thin"><span class="bg-ph-4" style="width:82%"></span></div><small class="muted num">82 % · 51/62</small></td>
+              <td class="right"><span class="badge st-warning">▲ 1</span></td>
+            </tr>
+            <tr>
+              <td><b>CH-2026-018</b><br><small class="muted">École Brindas · Brindas</small></td>
+              <td>Mairie de Brindas</td>
+              <td><span class="badge ph-2"><i class="dot"></i>Études</span></td>
+              <td><small>12 — Listing artisan suivi dossier</small><br><span class="badge fn-direction"><i class="dot"></i>Direction</span></td>
+              <td><div class="row" style="gap:7px"><div class="avatar sm" style="background:var(--fn-conducteur);color:#3a2800">ÉC</div><small>Élodie</small></div></td>
+              <td class="num muted">—</td>
+              <td><div class="progress thin"><span class="bg-ph-2" style="width:19%"></span></div><small class="muted num">19 % · 12/62</small></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>CH-2026-021</b><br><small class="muted">Sinistre Rochet · Oullins</small></td>
+              <td>M. Rochet</td>
+              <td><span class="badge ph-1"><i class="dot"></i>Réception</span></td>
+              <td><small>4 — Relevé Polycam</small><br><span class="badge fn-direction"><i class="dot"></i>Direction</span></td>
+              <td class="muted"><small>— non affecté</small></td>
+              <td class="num muted">—</td>
+              <td><div class="progress thin"><span class="bg-ph-1" style="width:6%"></span></div><small class="muted num">6 % · 4/62</small></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>CH-2026-009</b><br><small class="muted">Surélévation Berger · Francheville</small></td>
+              <td>Mme Berger</td>
+              <td><span class="badge ph-4"><i class="dot"></i>Travaux</span></td>
+              <td><small>47 — Démarrage travaux</small><br><span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span></td>
+              <td><div class="row" style="gap:7px"><div class="avatar sm" style="background:var(--fn-conducteur);color:#3a2800">MF</div><small>Marie</small></div></td>
+              <td class="num">184 900 €</td>
+              <td><div class="progress thin"><span class="bg-ph-4" style="width:76%"></span></div><small class="muted num">76 % · 47/62</small></td>
+              <td class="right"><span class="badge st-critical">✕ 1</span></td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+      <small class="muted">Le tableau est le filet : la <a href="{{l:ensemble}}">vue d'ensemble</a> sert à
+        voir où en est le portefeuille, celui-ci à retrouver un chantier précis.</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<!--meta { "id":"02", "titre":"Connexion", "groupe":"Fondations", "largeur":1280, "hauteur":820 } -->
+<div style="min-height:calc(100vh - 34px);display:grid;place-items:center;background:var(--brand-deep);padding:30px">
+  <div style="width:100%;max-width:400px">
+    <div style="text-align:center;margin-bottom:26px">
+      <div class="brand-mark" style="width:52px;height:52px;border-radius:15px;font-size:17px;margin:0 auto 14px">AMO</div>
+      <div style="font-size:24px;font-weight:650;color:#fff;letter-spacing:-.02em">AsstMO</div>
+      <div style="font-size:13px;color:#9ab6d6;margin-top:3px">L'assistant des maîtres d'œuvre</div>
+    </div>
+
+    <div class="card">
+      <div class="card-body stack">
+        <div class="field">
+          <label>Adresse e-mail</label>
+          <input class="input" type="email" value="helene@agence-verdier.fr">
+        </div>
+        <div class="field">
+          <label>Mot de passe</label>
+          <input class="input" type="password" value="••••••••••">
+        </div>
+        <label class="check is-on"><span class="box">✓</span><span>Se souvenir de moi pendant 7 jours</span></label>
+        <button class="btn btn-primary btn-block" style="padding:10px">Se connecter</button>
+      </div>
+      <div class="card-foot center">
+        <small class="muted">Mot de passe oublié ? Demandez à la direction de votre cabinet.</small>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-body stack-sm">
+        <small class="muted" style="text-transform:uppercase;letter-spacing:.06em;font-weight:600;font-size:10.5px">Pour la maquette — entrer directement</small>
+        <a class="m-row" href="{{l:tableau}}" style="padding:9px 11px">
+          <div class="avatar sm" style="background:var(--fn-direction)">HV</div>
+          <div class="grow"><b style="font-size:13px">Espace cabinet</b><small class="muted">Hélène Verdier · Direction</small></div>
+          <span class="m-chevron">›</span>
+        </a>
+        <a class="m-row" href="{{l:artisanHome}}" style="padding:9px 11px">
+          <div class="avatar sm" style="background:var(--ext-artisan)">MF</div>
+          <div class="grow"><b style="font-size:13px">Espace artisan</b><small class="muted">Maçonnerie Fontaine</small></div>
+          <span class="m-chevron">›</span>
+        </a>
+        <a class="m-row" href="{{l:clientHome}}" style="padding:9px 11px">
+          <div class="avatar sm" style="background:var(--ext-client)">MM</div>
+          <div class="grow"><b style="font-size:13px">Espace client</b><small class="muted">M. et Mme Martin</small></div>
+          <span class="m-chevron">›</span>
+        </a>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:18px">
+      <small style="color:#7fa0c4">Trois espaces, trois pare-feu distincts. Un artisan ne peut pas
+      atteindre une URL du cabinet, même en la tapant.</small>
+    </div>
+  </div>
+</div>

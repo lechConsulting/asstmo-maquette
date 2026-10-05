@@ -1,0 +1,153 @@
+<!--meta { "id":"07", "titre":"Chantier · Planning", "groupe":"Chantier", "role":"Conducteur", "largeur":1440, "hauteur":1060 } -->
+<div class="app">
+  {{sidebar:chantiers}}
+  <div class="main">
+    {{topbar:Élodie Charrier@ÉC@Conducteur de travaux|fn-conducteur}}
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <div class="row" style="gap:8px"><span class="muted" style="font-size:12px">CH-2026-014</span>
+            <span class="badge ph-3"><i class="dot"></i>Préparation de chantier</span></div>
+          <h1 class="page-title" style="margin-top:6px">Extension Martin</h1>
+          <div class="page-sub">Planning du chantier · 02/11/2026 → 28/02/2027</div>
+        </div>
+        <div class="page-actions">
+          <button class="btn">✉ Relancer les non-confirmés <span class="badge st-warning" style="margin-left:4px">2</span></button>
+          <button class="btn btn-primary">＋ Intervention</button>
+        </div>
+      </div>
+
+      {{onglets:planning}}
+
+      <div class="alert alert-warning">
+        <span class="ico">▲</span>
+        <div><b>2 interventions attendent une confirmation.</b> Électricité Bonnet et Peinture
+          Decorhône n'ont pas répondu au lien envoyé le 1<sup>er</sup> octobre. Les barres hachurées
+          ci-dessous sont des dates proposées, pas des dates tenues.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Semaine du 2 au 15 novembre</div>
+          <div class="row" style="gap:10px">
+            <div class="seg"><span>Semaine</span><span class="is-active">2 semaines</span><span>Mois</span></div>
+            <div class="row" style="gap:12px;font-size:11.5px">
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--phase-3);display:block"></i>Confirmée</span>
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:repeating-linear-gradient(45deg,var(--warning) 0 4px,#e0a015 4px 8px);display:block"></i>Proposée</span>
+              <span class="row" style="gap:5px"><i style="width:11px;height:11px;border-radius:3px;background:var(--good);display:block"></i>Faite</span>
+              <span class="row" style="gap:5px"><i style="width:10px;height:10px;background:var(--ink);transform:rotate(45deg);display:block"></i>Jalon</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="gantt">
+            <div class="gantt-head">
+              <div></div>
+              <div class="gantt-days">
+                <div class="gantt-day">lun 2</div><div class="gantt-day">mar 3</div><div class="gantt-day">mer 4</div>
+                <div class="gantt-day">jeu 5</div><div class="gantt-day">ven 6</div><div class="gantt-day we">sam 7</div>
+                <div class="gantt-day we">dim 8</div><div class="gantt-day">lun 9</div><div class="gantt-day">mar 10</div>
+                <div class="gantt-day">mer 11</div><div class="gantt-day">jeu 12</div><div class="gantt-day">ven 13</div>
+                <div class="gantt-day we">sam 14</div><div class="gantt-day we">dim 15</div>
+              </div>
+            </div>
+
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Démolition / dépose</b><small class="muted">Maçonnerie Fontaine</small></div>
+              <div class="gantt-track">
+                <div class="gantt-bar done" style="grid-column:1 / span 3">✓ Fait</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Gros œuvre</b><small class="muted">Maçonnerie Fontaine</small></div>
+              <div class="gantt-track">
+                <div class="gantt-bar ok" style="grid-column:4 / span 7">✓ Confirmée le 5 oct.</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Charpente</b><small class="muted">SARL Toitures du Rhône</small></div>
+              <div class="gantt-track">
+                <div class="gantt-bar ok" style="grid-column:11 / span 4">✓ Confirmée</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Électricité</b><small class="muted">Électricité Bonnet</small></div>
+              <div class="gantt-track">
+                <div class="gantt-bar pending" style="grid-column:11 / span 3">▲ En attente</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Plomberie</b><small class="muted">Plomberie Sanivalley</small></div>
+              <div class="gantt-track">
+                <div class="gantt-bar ok" style="grid-column:12 / span 3">✓ Confirmée</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Peinture</b><small class="muted">Peinture Decorhône</small></div>
+              <div class="gantt-track">
+                <div class="gantt-bar pending" style="grid-column:13 / span 2">▲ En attente</div>
+              </div>
+            </div>
+            <div class="gantt-row">
+              <div class="gantt-label"><b>Jalons</b><small class="muted">réunions et visites</small></div>
+              <div class="gantt-track">
+                <div class="gantt-milestone" style="grid-column:4" title="Ouverture du chantier"></div>
+                <div class="gantt-milestone" style="grid-column:9" title="Réunion de chantier"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><div class="card-title">Confirmations attendues</div>
+            <span class="badge st-warning">▲ 2</span></div>
+          <div class="card-body stack-sm">
+            <div class="row between" style="gap:12px">
+              <div><b style="font-size:13px">Électricité Bonnet</b>
+                <div class="muted" style="font-size:12px">Électricité · proposé du 12 au 14 nov.</div>
+                <div class="muted" style="font-size:11.5px">Lien envoyé le 01/10, non ouvert</div></div>
+              <div class="row" style="gap:6px">
+                <span class="badge st-critical">✕ Décennale</span>
+                <button class="btn btn-sm">Relancer</button>
+              </div>
+            </div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <div class="row between" style="gap:12px">
+              <div><b style="font-size:13px">Peinture Decorhône</b>
+                <div class="muted" style="font-size:12px">Peinture · proposé du 14 au 15 nov.</div>
+                <div class="muted" style="font-size:11.5px">Lien ouvert le 02/10, sans réponse</div></div>
+              <button class="btn btn-sm">Relancer</button>
+            </div>
+            <div class="note" style="margin-top:4px"><small>La relance envoie un lien à jeton :
+              <b>un écran, deux boutons</b> — « je serai là » ou « je propose une autre date ».
+              Aucun compte à créer. <a href="{{l:artisanVenue}}">Voir l'écran de l'artisan ›</a></small></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><div class="card-title">Ce qui coince</div></div>
+          <div class="card-body stack-sm">
+            <div class="alert alert-critical" style="padding:10px 12px">
+              <span class="ico">✕</span>
+              <div><b>Électricité le 12 nov. :</b> décennale échue le 15/09/2026.
+                L'attestation est jugée à la date d'arrivée sur le chantier.</div>
+            </div>
+            <div class="alert alert-warning" style="padding:10px 12px">
+              <span class="ico">▲</span>
+              <div><b>Chevauchement</b> électricité / plomberie du 12 au 14 nov. dans la même pièce.
+                À arbitrer avec les deux entreprises.</div>
+            </div>
+            <div class="alert alert-warning" style="padding:10px 12px">
+              <span class="ico">▲</span>
+              <div><b>Peinture le 14 nov.</b> alors que la fin prévue du gros œuvre est le 10 :
+                deux jours de marge seulement si le gros œuvre glisse.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

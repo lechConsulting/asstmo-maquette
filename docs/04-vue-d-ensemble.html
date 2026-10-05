@@ -1,0 +1,905 @@
+<!doctype html>
+<!-- @dsCard group="Cabinet" -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AsstMO · 04 — Vue d'ensemble</title>
+<style>
+/* ===========================================================================
+   AsstMO — jetons de design et composants de maquette
+   Palette validée avec scripts/validate_palette.js (skill dataviz) :
+     · phases  = rampe ORDINALE bleue (les phases sont ordonnées 1→4)
+                 clair  #86b6ef #5598e7 #2a78d6 #184f95   → tous les tests passent
+                 sombre #9ec5f4 #6da7ec #3987e5 #184f95   → tous les tests passent
+     · fonctions = 5 teintes CATÉGORIELLES, ordre figé, sans bleu (réservé à la marque)
+                 orange · violet · vert · magenta · jaune
+                 CVD ΔE 16,3 clair / 13,0 sombre · vision normale 19,6 / 19,3
+                 magenta et jaune sont sous 3:1 sur fond clair : les badges portent
+                 un fond teinté et un texte foncé, jamais du texte coloré.
+     · statut  = palette fixe, jamais thémée, toujours icône + libellé.
+   =========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces et encres */
+  --page:            #f9f9f7;
+  --surface:         #fcfcfb;
+  --surface-2:       #f3f3f0;
+  --surface-sunken:  #eeeeea;
+  --ink:             #0b0b0b;
+  --ink-2:           #52514e;
+  --ink-muted:       #898781;
+  --grid:            #e1e0d9;
+  --baseline:        #c3c2b7;
+  --border:          rgba(11, 11, 11, .10);
+  --border-strong:   rgba(11, 11, 11, .18);
+  --shadow:          0 1px 2px rgba(11, 11, 11, .04), 0 8px 24px -12px rgba(11, 11, 11, .12);
+
+  /* Marque — rampe bleue */
+  --brand:           #2a78d6;
+  --brand-hover:     #256abf;
+  --brand-ink:       #ffffff;
+  --brand-wash:      #e8f1fd;
+  --brand-deep:      #0d366b;   /* bleu ardoise : barre latérale */
+  --brand-deep-2:    #104281;
+
+  /* Phases du workflow — rampe ordinale */
+  --phase-1:         #86b6ef;
+  --phase-2:         #5598e7;
+  --phase-3:         #2a78d6;
+  --phase-4:         #184f95;
+  --phase-1-wash:    #eaf2fd;
+  --phase-2-wash:    #e3eefc;
+  --phase-3-wash:    #dbe9fb;
+  --phase-4-wash:    #d6e4f7;
+
+  /* Fonctions — catégoriel, ordre figé */
+  --fn-direction:    #eb6834;
+  --fn-admin:        #4a3aa7;
+  --fn-technique:    #008300;
+  --fn-etude:        #e87ba4;
+  --fn-conducteur:   #eda100;
+  --fn-direction-wash:  #fdece5;
+  --fn-admin-wash:      #eceaf7;
+  --fn-technique-wash:  #e3f2e3;
+  --fn-etude-wash:      #fdedf3;
+  --fn-conducteur-wash: #fdf3e0;
+
+  /* Acteurs externes */
+  --ext-artisan:     #b45309;
+  --ext-client:      #0f766e;
+  --ext-artisan-wash:#fdf0e0;
+  --ext-client-wash: #e2f1ef;
+
+  /* Statut — fixe */
+  --good:            #0ca30c;
+  --warning:         #fab219;
+  --serious:         #ec835a;
+  --critical:        #d03b3b;
+  --good-wash:       #e6f6e6;
+  --warning-wash:    #fdf4e0;
+  --serious-wash:    #fdeee7;
+  --critical-wash:   #fbe8e8;
+  --good-ink:        #006300;
+  --warning-ink:     #7a5200;
+  --serious-ink:     #9c3c13;
+  --critical-ink:    #a02020;
+
+  --radius:          12px;
+  --radius-sm:       8px;
+  --radius-lg:       18px;
+  --radius-pill:     999px;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Mode sombre — pas un simple inverse : chaque pas est choisi pour le fond sombre */
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --surface-2: #232321; --surface-sunken: #121211;
+    --ink: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
+    --grid: #2c2c2a; --baseline: #383835;
+    --border: rgba(255,255,255,.10); --border-strong: rgba(255,255,255,.20);
+    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 8px 24px -12px rgba(0,0,0,.7);
+    --brand: #3987e5; --brand-hover: #5598e7; --brand-wash: #15283f; --brand-deep: #0d1b2e; --brand-deep-2: #122740;
+    --phase-1: #9ec5f4; --phase-2: #6da7ec; --phase-3: #3987e5; --phase-4: #184f95;
+    --phase-1-wash: #1b2b3d; --phase-2-wash: #18283a; --phase-3-wash: #152436; --phase-4-wash: #131f2f;
+    --fn-direction: #d95926; --fn-admin: #9085e9; --fn-technique: #008300; --fn-etude: #d55181; --fn-conducteur: #c98500;
+    --fn-direction-wash: #35211a; --fn-admin-wash: #241f3a; --fn-technique-wash: #152415; --fn-etude-wash: #331d26; --fn-conducteur-wash: #2e2512;
+    --ext-artisan: #d99543; --ext-client: #35a79b;
+    --ext-artisan-wash: #2e2314; --ext-client-wash: #15302d;
+    --good-wash: #142914; --warning-wash: #2e2512; --serious-wash: #31201a; --critical-wash: #301717;
+    --good-ink: #5cc85c; --warning-ink: #f0c060; --serious-ink: #f0a080; --critical-ink: #ef8080;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --surface-2: #232321; --surface-sunken: #121211;
+  --ink: #ffffff; --ink-2: #c3c2b7; --ink-muted: #898781;
+  --grid: #2c2c2a; --baseline: #383835;
+  --border: rgba(255,255,255,.10); --border-strong: rgba(255,255,255,.20);
+  --shadow: 0 1px 2px rgba(0,0,0,.5), 0 8px 24px -12px rgba(0,0,0,.7);
+  --brand: #3987e5; --brand-hover: #5598e7; --brand-wash: #15283f; --brand-deep: #0d1b2e; --brand-deep-2: #122740;
+  --phase-1: #9ec5f4; --phase-2: #6da7ec; --phase-3: #3987e5; --phase-4: #184f95;
+  --phase-1-wash: #1b2b3d; --phase-2-wash: #18283a; --phase-3-wash: #152436; --phase-4-wash: #131f2f;
+  --fn-direction: #d95926; --fn-admin: #9085e9; --fn-technique: #008300; --fn-etude: #d55181; --fn-conducteur: #c98500;
+  --fn-direction-wash: #35211a; --fn-admin-wash: #241f3a; --fn-technique-wash: #152415; --fn-etude-wash: #331d26; --fn-conducteur-wash: #2e2512;
+  --ext-artisan: #d99543; --ext-client: #35a79b;
+  --ext-artisan-wash: #2e2314; --ext-client-wash: #15302d;
+  --good-wash: #142914; --warning-wash: #2e2512; --serious-wash: #31201a; --critical-wash: #301717;
+  --good-ink: #5cc85c; --warning-ink: #f0c060; --serious-ink: #f0a080; --critical-ink: #ef8080;
+}
+
+/* --------------------------------------------------------------- socle */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--sans);
+  background: var(--page);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -.011em; }
+p { margin: 0 0 .75em; }
+p:last-child { margin-bottom: 0; }
+small { font-size: 12px; }
+.muted { color: var(--ink-muted); }
+.ink-2 { color: var(--ink-2); }
+.num { font-variant-numeric: tabular-nums; }
+.nowrap { white-space: nowrap; }
+.right { text-align: right; }
+.center { text-align: center; }
+.row { display: flex; gap: 12px; align-items: center; }
+.row-top { display: flex; gap: 12px; align-items: flex-start; }
+.between { justify-content: space-between; }
+.wrap { flex-wrap: wrap; }
+.grow { flex: 1; min-width: 0; }
+.stack { display: grid; gap: 16px; }
+.stack-sm { display: grid; gap: 8px; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+/* ------------------------------------------------------------- ossature */
+.app { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+.sidebar {
+  background: var(--brand-deep);
+  color: #dce8f6;
+  padding: 18px 14px;
+  display: flex; flex-direction: column; gap: 22px;
+  border-right: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 6px; }
+.brand-mark {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: var(--brand); color: #fff;
+  display: grid; place-items: center; font-weight: 700; font-size: 13px; letter-spacing: -.02em;
+}
+.brand-name { font-size: 15px; font-weight: 600; color: #fff; }
+.brand-sub { font-size: 11px; color: #9ab6d6; }
+.nav-group { display: grid; gap: 2px; }
+.nav-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em; color: #7fa0c4; padding: 0 8px 6px; font-weight: 600; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: var(--radius-sm);
+  color: #cfdef0; font-size: 13.5px;
+}
+.nav-item:hover { background: rgba(255,255,255,.07); text-decoration: none; color: #fff; }
+.nav-item.is-active { background: var(--brand); color: #fff; font-weight: 500; }
+.nav-item .ico { width: 16px; text-align: center; opacity: .9; }
+.nav-item .count {
+  margin-left: auto; font-size: 11px; font-variant-numeric: tabular-nums;
+  background: rgba(255,255,255,.16); border-radius: var(--radius-pill); padding: 1px 7px;
+}
+.nav-item.is-active .count { background: rgba(0,0,0,.25); }
+.sidebar-foot { margin-top: auto; border-top: 1px solid rgba(255,255,255,.12); padding-top: 14px; }
+
+.main { display: flex; flex-direction: column; min-width: 0; }
+.topbar {
+  height: 58px; flex: none;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 14px; padding: 0 22px;
+}
+.search {
+  flex: 1; max-width: 420px;
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 7px 11px; color: var(--ink-muted); font-size: 13px;
+}
+.kbd {
+  margin-left: auto; font-size: 10.5px; font-family: var(--sans);
+  border: 1px solid var(--border-strong); border-radius: 5px; padding: 1px 5px; color: var(--ink-muted);
+}
+.content { padding: 22px; display: grid; gap: 18px; align-content: start; }
+
+.page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.page-title { font-size: 21px; }
+.page-sub { color: var(--ink-2); font-size: 13px; margin-top: 3px; }
+.page-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ---------------------------------------------------------------- cartes */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.card-head {
+  padding: 13px 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.card-title { font-size: 14px; font-weight: 600; }
+.card-body { padding: 16px; }
+.card-body + .card-body { border-top: 1px solid var(--border); }
+.card-foot { padding: 11px 16px; border-top: 1px solid var(--border); background: var(--surface-2); }
+.card.flat { box-shadow: none; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+.grid-5 { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; }
+.grid-main { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 18px; }
+.grid-side { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2fr); gap: 18px; }
+@media (max-width: 1100px) {
+  .grid-main, .grid-side, .grid-3, .grid-2 { grid-template-columns: minmax(0,1fr); }
+  .grid-4, .grid-5 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+/* ------------------------------------------------------- tuiles chiffrées
+   Tuile = libellé au-dessus, chiffre dominant, contexte en dessous.
+   Chiffres proportionnels par défaut (jamais tabular hors colonnes). */
+.tile {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 15px;
+  display: grid; gap: 3px; align-content: start;
+}
+.tile-label { font-size: 11.5px; color: var(--ink-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
+.tile-value { font-size: 26px; font-weight: 650; line-height: 1.1; letter-spacing: -.02em; }
+.tile-value.sm { font-size: 20px; }
+.tile-note { font-size: 12px; color: var(--ink-2); }
+.tile-delta { font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
+.tile-delta.up { color: var(--good-ink); }
+.tile-delta.down { color: var(--critical-ink); }
+.hero-figure { font-size: 40px; font-weight: 680; letter-spacing: -.03em; line-height: 1; }
+
+/* ---------------------------------------------------------------- badges */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; font-weight: 550; line-height: 1.6;
+  padding: 2px 9px; border-radius: var(--radius-pill);
+  background: var(--surface-2); color: var(--ink-2);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.badge .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: none; }
+.badge-lg { font-size: 12.5px; padding: 4px 11px; }
+
+/* fonctions : fond teinté + encre foncée + pastille pleine.
+   La couleur ne porte jamais le texte — le libellé est toujours écrit. */
+.fn-direction  { background: var(--fn-direction-wash);  color: var(--ink); border-color: transparent; }
+.fn-admin      { background: var(--fn-admin-wash);      color: var(--ink); border-color: transparent; }
+.fn-technique  { background: var(--fn-technique-wash);  color: var(--ink); border-color: transparent; }
+.fn-etude      { background: var(--fn-etude-wash);      color: var(--ink); border-color: transparent; }
+.fn-conducteur { background: var(--fn-conducteur-wash); color: var(--ink); border-color: transparent; }
+.fn-artisan    { background: var(--ext-artisan-wash);   color: var(--ink); border-color: transparent; }
+.fn-client     { background: var(--ext-client-wash);    color: var(--ink); border-color: transparent; }
+.fn-direction  .dot { background: var(--fn-direction); }
+.fn-admin      .dot { background: var(--fn-admin); }
+.fn-technique  .dot { background: var(--fn-technique); }
+.fn-etude      .dot { background: var(--fn-etude); }
+.fn-conducteur .dot { background: var(--fn-conducteur); }
+.fn-artisan    .dot { background: var(--ext-artisan); }
+.fn-client     .dot { background: var(--ext-client); }
+
+/* phases : rampe ordinale */
+.ph-1 { background: var(--phase-1-wash); color: var(--ink); border-color: transparent; }
+.ph-2 { background: var(--phase-2-wash); color: var(--ink); border-color: transparent; }
+.ph-3 { background: var(--phase-3-wash); color: var(--ink); border-color: transparent; }
+.ph-4 { background: var(--phase-4-wash); color: var(--ink); border-color: transparent; }
+.ph-1 .dot { background: var(--phase-1); }
+.ph-2 .dot { background: var(--phase-2); }
+.ph-3 .dot { background: var(--phase-3); }
+.ph-4 .dot { background: var(--phase-4); }
+
+/* statut : toujours icône + libellé */
+.st-good     { background: var(--good-wash);     color: var(--good-ink);     border-color: transparent; }
+.st-warning  { background: var(--warning-wash);  color: var(--warning-ink);  border-color: transparent; }
+.st-serious  { background: var(--serious-wash);  color: var(--serious-ink);  border-color: transparent; }
+.st-critical { background: var(--critical-wash); color: var(--critical-ink); border-color: transparent; }
+.st-neutral  { background: var(--surface-2);     color: var(--ink-2); }
+
+/* --------------------------------------------------------------- boutons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  font: inherit; font-size: 13px; font-weight: 550;
+  padding: 7px 13px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink);
+  cursor: pointer; white-space: nowrap;
+}
+.btn:hover { background: var(--surface-2); text-decoration: none; }
+.btn-primary { background: var(--brand); border-color: transparent; color: var(--brand-ink); }
+.btn-primary:hover { background: var(--brand-hover); }
+.btn-ghost { background: transparent; border-color: transparent; color: var(--ink-2); }
+.btn-ghost:hover { background: var(--surface-2); color: var(--ink); }
+.btn-danger { background: transparent; border-color: var(--critical); color: var(--critical-ink); }
+.btn-danger:hover { background: var(--critical-wash); }
+.btn-sm { font-size: 12px; padding: 4px 9px; }
+.btn-lg { font-size: 16px; padding: 14px 22px; border-radius: var(--radius); font-weight: 600; }
+.btn-block { width: 100%; }
+.btn-icon { padding: 6px; width: 30px; height: 30px; }
+.btn[disabled], .btn.is-disabled { opacity: .45; cursor: not-allowed; }
+
+.seg { display: inline-flex; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 2px; gap: 2px; }
+.seg > * { padding: 4px 11px; border-radius: 6px; font-size: 12.5px; color: var(--ink-2); cursor: pointer; }
+.seg > .is-active { background: var(--surface); color: var(--ink); font-weight: 550; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+
+/* ---------------------------------------------------------------- onglets */
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tab {
+  padding: 9px 13px; font-size: 13.5px; color: var(--ink-2);
+  border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+}
+.tab:hover { color: var(--ink); text-decoration: none; }
+.tab.is-active { color: var(--brand); border-bottom-color: var(--brand); font-weight: 600; }
+.tab .count { font-size: 11px; color: var(--ink-muted); margin-left: 5px; font-variant-numeric: tabular-nums; }
+
+/* --------------------------------------------------------------- tableaux */
+table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th {
+  text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--ink-muted); padding: 9px 14px; border-bottom: 1px solid var(--border); background: var(--surface-2);
+  white-space: nowrap;
+}
+.tbl td { padding: 11px 14px; border-bottom: 1px solid var(--grid); vertical-align: middle; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tbody tr:hover { background: var(--surface-2); }
+.tbl .num, .tbl th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl .tight td, .tbl td.tight { padding-top: 7px; padding-bottom: 7px; }
+.tbl-fixed { table-layout: fixed; }
+.scroll-x { overflow-x: auto; }
+
+/* ------------------------------------------------------------ avancement
+   Barre fine, extrémité arrondie 4px, 2px de fond entre segments empilés. */
+.progress { height: 8px; border-radius: 4px; background: var(--surface-sunken); overflow: hidden; }
+.progress > span { display: block; height: 100%; border-radius: 4px; background: var(--brand); }
+.progress.thin { height: 6px; }
+.progress-stack { display: flex; gap: 2px; height: 10px; }
+.progress-stack > span { border-radius: 3px; }
+.progress-stack > span:first-child { border-radius: 4px 3px 3px 4px; }
+.progress-stack > span:last-child { border-radius: 3px 4px 4px 3px; }
+.bg-ph-1 { background: var(--phase-1); }
+.bg-ph-2 { background: var(--phase-2); }
+.bg-ph-3 { background: var(--phase-3); }
+.bg-ph-4 { background: var(--phase-4); }
+.bg-good { background: var(--good); }
+.bg-warning { background: var(--warning); }
+.bg-critical { background: var(--critical); }
+.bg-muted { background: var(--baseline); }
+
+.meter { display: grid; gap: 5px; }
+.meter-head { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-2); gap: 10px; }
+.meter-head b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------- avatars */
+.avatar {
+  width: 38px; height: 38px; flex: none; border-radius: 11px;
+  display: grid; place-items: center; font-weight: 650; font-size: 13px; color: #fff;
+  background: var(--brand); letter-spacing: -.01em;
+}
+.avatar.sm { width: 28px; height: 28px; border-radius: 8px; font-size: 11px; }
+.avatar.lg { width: 48px; height: 48px; border-radius: 14px; font-size: 16px; }
+.avatar.circle { border-radius: 50%; }
+.avatar.ph-1-bg { background: var(--phase-1); color: #0b2544; }
+.avatar.ph-2-bg { background: var(--phase-2); color: #06203d; }
+.avatar.ph-3-bg { background: var(--phase-3); }
+.avatar.ph-4-bg { background: var(--phase-4); }
+.avatar.neutral { background: var(--baseline); color: var(--ink); }
+.avatars { display: flex; }
+.avatars .avatar { margin-left: -8px; box-shadow: 0 0 0 2px var(--surface); }
+.avatars .avatar:first-child { margin-left: 0; }
+
+/* ------------------------------------------------------------- formulaires */
+.field { display: grid; gap: 5px; }
+.field > label { font-size: 12.5px; font-weight: 550; color: var(--ink-2); }
+.field .hint { font-size: 11.5px; color: var(--ink-muted); }
+.input, .select, textarea.input {
+  font: inherit; font-size: 13.5px; width: 100%;
+  padding: 8px 11px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink);
+}
+.input::placeholder { color: var(--ink-muted); }
+.input:focus, .select:focus { outline: 2px solid var(--brand); outline-offset: -1px; border-color: var(--brand); }
+.input.lg { font-size: 16px; padding: 12px 14px; }
+textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
+.select { appearance: none; padding-right: 30px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-muted) 50%), linear-gradient(135deg, var(--ink-muted) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 16px, calc(100% - 11px) 16px;
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+.check { display: flex; align-items: flex-start; gap: 9px; font-size: 13.5px; }
+.check .box {
+  width: 17px; height: 17px; flex: none; margin-top: 1px;
+  border: 1.5px solid var(--border-strong); border-radius: 5px; background: var(--surface);
+  display: grid; place-items: center; font-size: 11px; color: transparent;
+}
+.check.is-on .box { background: var(--brand); border-color: var(--brand); color: #fff; }
+.check.is-on > span:last-child { color: var(--ink); }
+.switch { width: 36px; height: 20px; border-radius: 999px; background: var(--baseline); position: relative; flex: none; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; }
+.switch.is-on { background: var(--brand); }
+.switch.is-on::after { left: 18px; }
+.dropzone {
+  border: 1.5px dashed var(--border-strong); border-radius: var(--radius);
+  padding: 22px; text-align: center; color: var(--ink-2); background: var(--surface-2);
+}
+
+/* ---------------------------------------------------------------- alertes */
+.alert {
+  display: flex; gap: 11px; align-items: flex-start;
+  padding: 12px 14px; border-radius: var(--radius); font-size: 13px;
+  border: 1px solid var(--border);
+}
+.alert .ico { flex: none; font-size: 15px; line-height: 1.3; }
+.alert-warning  { background: var(--warning-wash);  color: var(--warning-ink);  border-color: transparent; }
+.alert-critical { background: var(--critical-wash); color: var(--critical-ink); border-color: transparent; }
+.alert-good     { background: var(--good-wash);     color: var(--good-ink);     border-color: transparent; }
+.alert-info     { background: var(--brand-wash);    color: var(--ink);          border-color: transparent; }
+.alert b { font-weight: 650; }
+
+/* -------------------------------------------------------- état vide / note */
+.empty { display: grid; justify-items: center; gap: 9px; padding: 38px 20px; text-align: center; color: var(--ink-2); }
+.empty .ico { width: 46px; height: 46px; border-radius: 50%; background: var(--brand-wash); color: var(--brand); display: grid; place-items: center; font-size: 19px; }
+.note {
+  background: var(--warning-wash); border-radius: var(--radius); padding: 11px 13px; font-size: 13px;
+  border: 1px solid transparent; color: var(--warning-ink);
+}
+
+/* -------------------------------------------------------------- étapes */
+.steps { display: grid; }
+.step { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--grid); }
+.step:last-child { border-bottom: none; }
+.step-mark {
+  width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 11px; font-weight: 650; font-variant-numeric: tabular-nums;
+  background: var(--surface-2); color: var(--ink-muted); border: 1px solid var(--border);
+}
+.step.is-done .step-mark { background: var(--good); color: #fff; border-color: transparent; }
+.step.is-current .step-mark { background: var(--brand); color: #fff; border-color: transparent; }
+.step.is-skipped .step-mark { background: var(--surface-sunken); color: var(--ink-muted); text-decoration: line-through; }
+.step-title { font-size: 13.5px; font-weight: 550; }
+.step.is-done .step-title { color: var(--ink-2); }
+.step.is-skipped .step-title { color: var(--ink-muted); text-decoration: line-through; }
+.step-consigne { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+.step-sub { margin-left: 14px; padding-left: 14px; border-left: 2px solid var(--grid); }
+.step.is-current { background: var(--brand-wash); border-radius: var(--radius); padding: 13px; margin: 4px 0; border-bottom: none; }
+
+/* -------------------------------------------------------------- kanban */
+.kanban { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; align-items: start; }
+.kanban-col { background: var(--surface-sunken); border-radius: var(--radius); padding: 11px; display: grid; gap: 9px; align-content: start; }
+.kanban-head { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; font-weight: 600; padding: 2px 3px; }
+.kanban-head .count { font-variant-numeric: tabular-nums; color: var(--ink-muted); font-weight: 500; }
+.task { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 11px 12px; display: grid; gap: 7px; box-shadow: 0 1px 2px rgba(11,11,11,.04); }
+.task-title { font-size: 13px; font-weight: 550; line-height: 1.35; }
+.task-meta { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; font-size: 11.5px; color: var(--ink-muted); }
+.prio { width: 3px; border-radius: 2px; align-self: stretch; }
+.prio-haute { background: var(--critical); }
+.prio-normale { background: var(--warning); }
+.prio-basse { background: var(--baseline); }
+@media (max-width: 900px) { .kanban { grid-template-columns: minmax(0,1fr); } }
+
+/* --------------------------------------------------------------- planning */
+.gantt { font-size: 12px; }
+.gantt-head, .gantt-row { display: grid; grid-template-columns: 190px 1fr; align-items: center; }
+.gantt-head { border-bottom: 1px solid var(--border); padding-bottom: 7px; margin-bottom: 4px; }
+.gantt-days { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; }
+.gantt-day { text-align: center; font-size: 10.5px; color: var(--ink-muted); padding: 0 1px; }
+.gantt-day.we { color: var(--baseline); }
+.gantt-row { border-bottom: 1px solid var(--grid); }
+.gantt-row:last-child { border-bottom: none; }
+.gantt-label { padding: 9px 10px 9px 0; display: grid; gap: 1px; }
+.gantt-label b { font-size: 12.5px; font-weight: 550; }
+.gantt-track { position: relative; height: 38px; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px); background-size: calc(100% / 14) 100%; }
+.gantt-bar {
+  grid-row: 1; align-self: center; height: 22px; border-radius: 6px;
+  display: flex; align-items: center; padding: 0 8px; gap: 6px;
+  font-size: 11px; font-weight: 550; color: #fff; overflow: hidden; white-space: nowrap;
+  box-shadow: 0 0 0 2px var(--surface);
+}
+.gantt-bar.pending { background: repeating-linear-gradient(45deg, var(--warning) 0 6px, #e0a015 6px 12px); color: #3a2800; }
+.gantt-bar.ok { background: var(--phase-3); }
+.gantt-bar.done { background: var(--good); }
+.gantt-bar.late { background: var(--critical); }
+.gantt-milestone { grid-row: 1; align-self: center; justify-self: center; width: 12px; height: 12px; background: var(--ink); transform: rotate(45deg); box-shadow: 0 0 0 2px var(--surface); }
+
+/* -------------------------------------------------------------- messagerie */
+.maillist { display: grid; }
+.mail {
+  display: grid; grid-template-columns: 22px 1fr auto; gap: 11px;
+  padding: 12px 14px; border-bottom: 1px solid var(--grid); align-items: start;
+}
+.mail:last-child { border-bottom: none; }
+.mail:hover { background: var(--surface-2); }
+.mail.is-unread { background: var(--brand-wash); }
+.mail-from { font-size: 13px; font-weight: 600; }
+.mail.is-read .mail-from { font-weight: 500; color: var(--ink-2); }
+.mail-subj { font-size: 13px; }
+.mail-snip { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+.mail-side { text-align: right; display: grid; gap: 5px; justify-items: end; font-size: 11.5px; color: var(--ink-muted); }
+.attach { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--ink-2); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px; }
+.thread { display: grid; gap: 12px; }
+.msg { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.msg-head { padding: 9px 13px; background: var(--surface-2); display: flex; gap: 10px; align-items: center; justify-content: space-between; font-size: 12.5px; }
+.msg-body { padding: 13px; font-size: 13px; line-height: 1.6; color: var(--ink-2); }
+.msg.out { border-color: var(--brand); }
+.msg.out .msg-head { background: var(--brand-wash); }
+.match {
+  display: grid; gap: 3px; padding: 10px 12px; border-radius: var(--radius-sm);
+  background: var(--good-wash); color: var(--good-ink); font-size: 12.5px;
+}
+.match.weak { background: var(--warning-wash); color: var(--warning-ink); }
+.match.none { background: var(--critical-wash); color: var(--critical-ink); }
+.match code { font-family: ui-monospace, monospace; font-size: 11.5px; background: rgba(0,0,0,.06); padding: 1px 4px; border-radius: 4px; }
+
+/* ---------------------------------------------------------------- photos */
+.photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 11px; }
+.photo { border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border); background: var(--surface-2); }
+.photo .img { aspect-ratio: 4/3; display: grid; place-items: center; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .04em; }
+.photo .cap { padding: 7px 9px; font-size: 11.5px; color: var(--ink-2); }
+.ph-a { background: linear-gradient(135deg, #5b6b7d, #394654); }
+.ph-b { background: linear-gradient(135deg, #7d6b5b, #544639); }
+.ph-c { background: linear-gradient(135deg, #5b7d6e, #395449); }
+.ph-d { background: linear-gradient(135deg, #6b5b7d, #463954); }
+.ph-e { background: linear-gradient(135deg, #7d5b63, #543941); }
+
+/* ------------------------------------------------- mobile / espaces externes */
+.phones { display: flex; gap: 26px; flex-wrap: wrap; align-items: flex-start; justify-content: center; }
+.phone {
+  width: 390px; flex: none; background: var(--surface);
+  border: 1px solid var(--border-strong); border-radius: 30px;
+  box-shadow: var(--shadow); overflow: hidden;
+}
+.phone-notch { height: 26px; background: var(--surface-2); display: grid; place-items: center; }
+.phone-notch i { display: block; width: 86px; height: 5px; border-radius: 3px; background: var(--baseline); }
+.phone-body { padding: 16px; display: grid; gap: 14px; }
+.phone-caption { text-align: center; font-size: 12px; color: var(--ink-muted); margin-top: 9px; }
+.m-head { display: grid; gap: 3px; }
+.m-title { font-size: 19px; font-weight: 650; letter-spacing: -.02em; }
+.m-sub { font-size: 13px; color: var(--ink-2); }
+.m-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 13px; display: grid; gap: 9px; background: var(--surface); }
+.m-card.accent { border-color: var(--brand); background: var(--brand-wash); }
+.m-row { display: flex; align-items: center; gap: 11px; padding: 12px 13px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.m-row .grow { display: grid; gap: 2px; }
+.m-chevron { color: var(--ink-muted); font-size: 16px; }
+.m-tabbar { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-top: 1px solid var(--border); background: var(--surface-2); }
+.m-tab { padding: 10px 4px; text-align: center; font-size: 10.5px; color: var(--ink-muted); display: grid; gap: 3px; }
+.m-tab .ico { font-size: 17px; }
+.m-tab.is-active { color: var(--brand); font-weight: 600; }
+
+/* ------------------------------------------------------- page d'impression */
+.a4 {
+  width: 210mm; min-height: 297mm; margin: 0 auto; padding: 14mm;
+  background: #fff; color: #111; box-shadow: var(--shadow); font-size: 10.5px;
+}
+.a4 h1 { font-size: 15px; text-align: center; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3mm; }
+.a4 .sec { margin-top: 5mm; }
+.a4 .sec-head { display: flex; align-items: center; gap: 7px; font-weight: 700; font-size: 11.5px; border-bottom: 1px solid #999; padding-bottom: 2px; margin-bottom: 2.5mm; }
+.a4 .sec-letter { width: 17px; height: 17px; border: 1px solid #111; display: grid; place-items: center; font-size: 10px; }
+.a4 table { width: 100%; border-collapse: collapse; font-size: 9.5px; }
+.a4 th, .a4 td { border: 1px solid #aaa; padding: 2.5px 4px; text-align: left; }
+.a4 th { background: #eee; font-size: 8.5px; text-transform: uppercase; letter-spacing: .03em; }
+.a4 .cb { display: inline-block; width: 10px; height: 10px; border: 1px solid #111; margin-right: 6px; vertical-align: -1px; text-align: center; line-height: 9px; font-size: 9px; }
+.a4 .line { display: inline-block; border-bottom: 1px solid #777; min-width: 90px; }
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .a4 { box-shadow: none; margin: 0; padding: 0; width: auto; }
+}
+
+/* ----------------------------------------------------- bandeau de maquette */
+.mock-bar {
+  background: var(--ink); color: #fff; font-size: 12px;
+  padding: 7px 16px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+}
+.mock-bar .tagid { font-weight: 700; letter-spacing: .04em; }
+.mock-bar .sep { opacity: .35; }
+.mock-bar a { color: #9ec5f4; }
+.mock-bar .persona { margin-left: auto; display: inline-flex; gap: 7px; align-items: center; }
+.theme-toggle { background: rgba(255,255,255,.14); border: 0; color: #fff; font: inherit; font-size: 11.5px; padding: 3px 9px; border-radius: 999px; cursor: pointer; }
+
+/* ------------------------------------------------- doc de design (page 00) */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px,1fr)); gap: 11px; }
+.swatch { border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+.swatch .chip { height: 56px; }
+.swatch .meta { padding: 7px 9px; font-size: 11px; display: grid; gap: 1px; }
+.swatch .meta b { font-size: 11.5px; }
+.swatch .meta code { font-family: ui-monospace, monospace; color: var(--ink-muted); font-size: 10.5px; }
+.spec { font-size: 12.5px; color: var(--ink-2); }
+.spec code { font-family: ui-monospace, monospace; font-size: 11.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.type-row { display: flex; align-items: baseline; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--grid); }
+.type-row:last-child { border-bottom: none; }
+.type-row .lbl { width: 150px; flex: none; font-size: 11.5px; color: var(--ink-muted); font-family: ui-monospace, monospace; }
+
+</style>
+</head>
+<body>
+<div class="mock-bar no-print">
+  <span class="tagid">04</span>
+  <span>Vue d'ensemble</span>
+  <span class="sep">·</span>
+  <span style="color:#9a9a96">Cabinet</span>
+  <span class="sep">·</span><span style="color:#9ec5f4">Direction</span>
+  <span class="persona">
+    <a href="index.html">Sommaire</a>
+    <a href="01-roles.html">Rôles</a>
+    <button class="theme-toggle" id="bascule">Mode sombre</button>
+  </span>
+</div>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">AMO</div>
+      <div><div class="brand-name">AsstMO</div><div class="brand-sub">Agence Verdier</div></div>
+    </div>
+    <div class="nav-group"><div class="nav-label">Pilotage</div>
+      <a class="nav-item" href="03-tableau-de-bord.html">
+            <span class="ico">◱</span><span>Tableau de bord</span></a><a class="nav-item is-active" href="04-vue-d-ensemble.html">
+            <span class="ico">◫</span><span>Vue d'ensemble</span></a><a class="nav-item" href="05-chantiers.html">
+            <span class="ico">⌂</span><span>Chantiers</span><span class="count">12</span></a><a class="nav-item" href="15-planning-conducteur.html">
+            <span class="ico">▦</span><span>Planning</span></a><a class="nav-item" href="16-mes-taches.html">
+            <span class="ico">✓</span><span>Mes tâches</span><span class="count">7</span></a></div><div class="nav-group"><div class="nav-label">Échanges</div>
+      <a class="nav-item" href="17-messagerie-a-traiter.html">
+            <span class="ico">✉</span><span>Messagerie</span><span class="count">9</span></a><a class="nav-item" href="19-compte-rendu-rdv.html">
+            <span class="ico">◴</span><span>Comptes rendus</span></a></div><div class="nav-group"><div class="nav-label">Carnet d'adresses</div>
+      <a class="nav-item" href="20-annuaire-clients.html">
+            <span class="ico">☺</span><span>Clients</span></a><a class="nav-item" href="21-annuaire-artisans.html">
+            <span class="ico">⚒</span><span>Artisans</span><span class="count">46</span></a></div><div class="nav-group"><div class="nav-label">Administration</div>
+      <a class="nav-item" href="22-modele-de-workflow.html">
+            <span class="ico">⇄</span><span>Modèles de workflow</span></a><a class="nav-item" href="23-bareme-d-honoraires.html">
+            <span class="ico">％</span><span>Barème d'honoraires</span></a><a class="nav-item" href="24-utilisateurs.html">
+            <span class="ico">◉</span><span>Utilisateurs</span></a><a class="nav-item" href="25-moteur-d-evenements.html">
+            <span class="ico">⚙</span><span>Moteur d'évènements</span></a><a class="nav-item" href="26-cabinets.html">
+            <span class="ico">▣</span><span>Cabinets</span></a></div>
+    <div class="sidebar-foot">
+      <a class="nav-item" href="01-roles.html"><span class="ico">⇥</span><span>Changer de rôle</span></a>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+    <div class="search"><span>⌕</span><span>Rechercher un chantier, un client, un artisan…</span><span class="kbd">⌘K</span></div>
+    <button class="btn btn-sm">＋ Nouveau chantier</button>
+    <div class="row" style="gap:9px"><span class="badge fn-direction"><i class="dot"></i>Direction</span>
+      <div class="avatar sm circle" style="background:var(--brand)">HV</div>
+      <div style="font-size:13px"><b>Hélène Verdier</b></div>
+    </div>
+  </div>
+    <div class="content">
+
+      <div class="page-head">
+        <div><h1 class="page-title">Vue d'ensemble</h1>
+          <div class="page-sub">12 chantiers actifs, groupés par phase. Avancement moyen 48 %.</div></div>
+        <div class="page-actions">
+          <div class="search" style="max-width:280px"><span>⌕</span><span>Client ou adresse…</span></div>
+          <a class="btn btn-primary" href="05-chantiers.html">＋ Nouveau chantier</a>
+        </div>
+      </div>
+
+      <div class="grid-5">
+        <div class="tile"><div class="tile-label">Chantiers actifs</div><div class="tile-value">12</div><div class="tile-note">+3 clos ce trimestre</div></div>
+        <div class="tile"><div class="tile-label">Travaux engagés</div><div class="tile-value">1,84 M€</div><div class="tile-note">HT, devis signés</div></div>
+        <div class="tile"><div class="tile-label">Honoraires</div><div class="tile-value">187 k€</div><div class="tile-note">dont 62 k€ encaissés</div></div>
+        <div class="tile"><div class="tile-label">Points d'attention</div><div class="tile-value" style="color:var(--critical-ink)">3</div><div class="tile-note">bloquants</div></div>
+        <div class="tile"><div class="tile-label">À traiter</div><div class="tile-value">9</div><div class="tile-note">e-mails non rattachés</div></div>
+      </div>
+
+      <div class="grid-4" style="align-items:start;gap:16px">
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-1 badge-lg"><i class="dot"></i>Réception &amp; administratif</span>
+            <b class="num muted">2</b>
+          </div>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-1-bg">RO</div>
+                <div class="grow"><b style="font-size:13px">Sinistre Rochet</b>
+                  <div class="muted truncate" style="font-size:12px">8 rue Pasteur, Oullins</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 4 — Relevé Polycam</span><b>6 %</b></div>
+                <div class="progress thin"><span class="bg-ph-1" style="width:6%"></span></div>
+              </div>
+              <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-1-bg">LC</div>
+                <div class="grow"><b style="font-size:13px">Loge Carron</b>
+                  <div class="muted truncate" style="font-size:12px">Adresse non renseignée</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 2 — Prise de rendez-vous</span><b>3 %</b></div>
+                <div class="progress thin"><span class="bg-ph-1" style="width:3%"></span></div>
+              </div>
+              <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-2 badge-lg"><i class="dot"></i>Études</span><b class="num muted">4</b>
+          </div>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-2-bg">MB</div>
+                <div class="grow"><b style="font-size:13px">École Brindas</b>
+                  <div class="muted truncate" style="font-size:12px">Place de la Mairie, Brindas</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 12 — Listing artisans</span><b>19 %</b></div>
+                <div class="progress thin"><span class="bg-ph-2" style="width:19%"></span></div>
+              </div>
+              <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-2-bg">GA</div>
+                <div class="grow"><b style="font-size:13px">Garage Aubert</b>
+                  <div class="muted truncate" style="font-size:12px">12 av. de la Gare, Tassin</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 9 — Retour client</span><b>15 %</b></div>
+                <div class="progress thin"><span class="bg-ph-2" style="width:15%"></span></div>
+              </div>
+              <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-2-bg">RD</div>
+                <div class="grow"><b style="font-size:13px">Rénovation Duval</b>
+                  <div class="muted truncate" style="font-size:12px">3 impasse du Puits, Vaugneray</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 20 — Descriptif travaux</span><b>32 %</b></div>
+                <div class="progress thin"><span class="bg-ph-2" style="width:32%"></span></div>
+              </div>
+              <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-3 badge-lg"><i class="dot"></i>Préparation de chantier</span><b class="num muted">3</b>
+          </div>
+          <a class="card" href="06-chantier-etapes.html" style="display:block;border-color:var(--brand)">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-3-bg">MA</div>
+                <div class="grow"><b style="font-size:13px">Extension Martin</b>
+                  <div class="muted truncate" style="font-size:12px">14 ch. des Vignes, Craponne</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 34 — Tableau de dommage</span><b>55 %</b></div>
+                <div class="progress thin"><span class="bg-ph-3" style="width:55%"></span></div>
+              </div>
+              <div class="row between">
+                <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                <span class="badge st-critical">✕ 1</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-3-bg">PL</div>
+                <div class="grow"><b style="font-size:13px">Pergola Lemoine</b>
+                  <div class="muted truncate" style="font-size:12px">7 allée des Cèdres, Charbonnières</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 42 — Convocation marchés</span><b>68 %</b></div>
+                <div class="progress thin"><span class="bg-ph-3" style="width:68%"></span></div>
+              </div>
+              <span class="badge fn-admin"><i class="dot"></i>Administratif</span>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-3-bg">CS</div>
+                <div class="grow"><b style="font-size:13px">Combles Sarda</b>
+                  <div class="muted truncate" style="font-size:12px">21 rue Bellecour, Lyon 2e</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 23 — DICT</span><b>37 %</b></div>
+                <div class="progress thin"><span class="bg-ph-3" style="width:37%"></span></div>
+              </div>
+              <span class="badge fn-technique"><i class="dot"></i>Secr. technique</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-4 badge-lg"><i class="dot"></i>Travaux &amp; réception</span><b class="num muted">3</b>
+          </div>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-4-bg">TI</div>
+                <div class="grow"><b style="font-size:13px">SCI Les Tilleuls</b>
+                  <div class="muted truncate" style="font-size:12px">45 rue Paul Bert, Lyon 3e</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 51 — Liaison B Enedis</span><b>82 %</b></div>
+                <div class="progress thin"><span class="bg-ph-4" style="width:82%"></span></div>
+              </div>
+              <div class="row between">
+                <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                <span class="badge st-warning">▲ 1</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-4-bg">SB</div>
+                <div class="grow"><b style="font-size:13px">Surélévation Berger</b>
+                  <div class="muted truncate" style="font-size:12px">9 rue des Écoles, Francheville</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 47 — Démarrage travaux</span><b>76 %</b></div>
+                <div class="progress thin"><span class="bg-ph-4" style="width:76%"></span></div>
+              </div>
+              <div class="row between">
+                <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                <span class="badge st-critical">✕ 1</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="06-chantier-etapes.html" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-4-bg">VH</div>
+                <div class="grow"><b style="font-size:13px">Véranda Hamon</b>
+                  <div class="muted truncate" style="font-size:12px">2 rue du Stade, Grézieu</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 58 — DAACT</span><b>94 %</b></div>
+                <div class="progress thin"><span class="bg-ph-4" style="width:94%"></span></div>
+              </div>
+              <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-title">Terminés et archivés</div>
+          <span class="muted" style="font-size:12px">3 chantiers</span></div>
+        <div class="card-body row wrap" style="gap:12px">
+          <div class="row" style="background:var(--surface-2);border-radius:var(--radius-sm);padding:9px 12px;gap:9px">
+            <div class="avatar sm neutral">BF</div>
+            <div><b style="font-size:12.5px">Bureau Fabre</b><div class="muted" style="font-size:11.5px">Terminé le 18/08/2026</div></div>
+          </div>
+          <div class="row" style="background:var(--surface-2);border-radius:var(--radius-sm);padding:9px 12px;gap:9px">
+            <div class="avatar sm neutral">AP</div>
+            <div><b style="font-size:12.5px">Appartement Py</b><div class="muted" style="font-size:11.5px">Archivé le 02/07/2026</div></div>
+          </div>
+          <div class="row" style="background:var(--surface-2);border-radius:var(--radius-sm);padding:9px 12px;gap:9px">
+            <div class="avatar sm neutral">GR</div>
+            <div><b style="font-size:12.5px">Grange Rostand</b><div class="muted" style="font-size:11.5px">Archivé le 14/05/2026</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var b = document.getElementById('bascule');
+  var sombre = matchMedia('(prefers-color-scheme: dark)').matches;
+  function peindre() {
+    document.documentElement.dataset.theme = sombre ? 'dark' : 'light';
+    b.textContent = sombre ? 'Mode clair' : 'Mode sombre';
+  }
+  peindre();
+  b.addEventListener('click', function () { sombre = !sombre; peindre(); });
+})();
+</script>
+</body>
+</html>

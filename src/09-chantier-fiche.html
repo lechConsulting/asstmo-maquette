@@ -1,0 +1,183 @@
+<!--meta { "id":"09", "titre":"Chantier · Fiche de suivi", "groupe":"Chantier", "role":"Administratif", "largeur":1440, "hauteur":1680 } -->
+<div class="app">
+  {{sidebar:chantiers}}
+  <div class="main">
+    {{topbar:Marc Delaunay@MD@Administratif|fn-admin}}
+    <div class="content">
+      <div class="page-head">
+        <div>
+          <div class="row" style="gap:8px"><span class="muted" style="font-size:12px">CH-2026-014</span>
+            <span class="badge ph-3"><i class="dot"></i>Préparation de chantier</span></div>
+          <h1 class="page-title" style="margin-top:6px">Extension Martin</h1>
+          <div class="page-sub">Fiche de suivi des travaux · enregistrée en continu</div>
+        </div>
+        <div class="page-actions">
+          <a class="btn" href="{{l:impression}}">⎙ Version imprimable A4</a>
+          <button class="btn btn-primary">Enregistrer</button>
+        </div>
+      </div>
+
+      {{onglets:fiche}}
+
+      <div class="alert alert-info">
+        <span class="ico">◆</span>
+        <div><b>Chaque case est un vrai champ, pas du texte libre.</b> C'est ce qui permet aux points
+          d'attention de s'en servir : « en travaux sans autorisation d'urbanisme validée » ou
+          « tableau de dommage reçu mais non vérifié » sortent directement de cette fiche.</div>
+      </div>
+
+      <div class="grid-2">
+        <!-- ============================================= A — administratif -->
+        <div class="card">
+          <div class="card-head"><div class="card-title">A — Administratif</div></div>
+          <div class="card-body stack">
+            <table class="tbl" style="margin:-16px -16px 0;width:calc(100% + 32px)">
+              <thead><tr><th style="width:34px"></th><th>Jalon</th><th class="num" style="width:120px">Date</th></tr></thead>
+              <tbody>
+                <tr><td><span class="check is-on" style="display:inline-flex"><span class="box">✓</span></span></td>
+                  <td>Contrat de maîtrise d'œuvre</td><td class="num">15/09/2026</td></tr>
+                <tr><td><span class="check is-on" style="display:inline-flex"><span class="box">✓</span></span></td>
+                  <td>Pointage du chiffrage</td><td class="num">28/09/2026</td></tr>
+                <tr><td><span class="check" style="display:inline-flex"><span class="box"></span></span></td>
+                  <td>Transfert du dossier</td><td class="muted">—</td></tr>
+              </tbody>
+            </table>
+            <div class="grid-2" style="gap:12px">
+              <div class="field"><label>Transféré par</label><select class="select"><option>Hélène Verdier</option></select></div>
+              <div class="field"><label>Transmis à</label><select class="select"><option>— Choisir —</option><option>Élodie Charrier</option><option>Marie Fontaine</option></select></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================== coordonnées -->
+        <div class="card">
+          <div class="card-head"><div class="card-title">Coordonnées du client</div>
+            <span class="badge st-neutral">reprises de la fiche client</span></div>
+          <div class="card-body">
+            <table class="tbl" style="margin:-16px"><tbody>
+              <tr><td class="muted" style="width:40%">Nom</td><td><b>M. et Mme Martin</b></td></tr>
+              <tr><td class="muted">Téléphone</td><td>06 12 44 87 03</td></tr>
+              <tr><td class="muted">Adresse e-mail</td><td>famille.martin@orange.fr</td></tr>
+              <tr><td class="muted">Adresse de facturation</td><td>14 chemin des Vignes, 69290 Craponne</td></tr>
+              <tr><td class="muted">Adresse du chantier</td><td>idem facturation</td></tr>
+              <tr><td class="muted">Adresse du projet</td><td><code style="font-size:11.5px">elodie.charrier+p7k3m9x2qt@mail.asstmo.fr</code></td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================ B — dossier technique -->
+      <div class="card">
+        <div class="card-head"><div class="card-title">B — Dossier technique</div>
+          <span class="muted" style="font-size:12px">6 sur 10 renseignés</span></div>
+        <div class="card-body">
+          <div class="grid-2" style="gap:14px 26px">
+            <div class="stack-sm">
+              <label class="check is-on"><span class="box">✓</span><span>Plan existant</span></label>
+              <label class="check is-on"><span class="box">✓</span><span>Plan projet</span></label>
+              <label class="check is-on"><span class="box">✓</span><span>Coupe</span></label>
+              <label class="check is-on"><span class="box">✓</span><span>Façades</span></label>
+              <label class="check is-on"><span class="box">✓</span><span>CCTP / estimatif</span></label>
+            </div>
+            <div class="stack-sm">
+              <label class="check is-on"><span class="box">✓</span><span>Notice descriptive</span></label>
+              <label class="check"><span class="box"></span><span>Devis artisan validé <small class="muted">(6 sur 8)</small></span></label>
+              <div class="row between">
+                <label class="check is-on"><span class="box">✓</span><span>DICT</span></label>
+                <span class="muted num" style="font-size:12px">déposée le 29/09/2026</span>
+              </div>
+              <div class="row between">
+                <label class="check"><span class="box"></span><span>Permis ou DP validé</span></label>
+                <span class="badge st-warning">▲ déposé le 25/09, en instruction</span>
+              </div>
+            </div>
+          </div>
+          <hr style="border:0;border-top:1px solid var(--grid);margin:16px 0">
+          <div class="row wrap between" style="gap:14px">
+            <label class="check is-on"><span class="box">✓</span><span><b>Tableau de dommages</b></span></label>
+            <div class="row wrap" style="gap:18px">
+              <span class="row" style="gap:7px"><span class="muted" style="font-size:12px">Reçu le</span><b class="num" style="font-size:12.5px">02/10/2026</b></span>
+              <label class="check"><span class="box"></span><span>Vérifié</span></label>
+              <span class="row" style="gap:7px"><span class="muted" style="font-size:12px">Validé le</span><span class="muted">—</span></span>
+              <span class="badge st-serious">▲ reçu, non vérifié</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <!-- ======================================== C — analyse des risques -->
+        <div class="card">
+          <div class="card-head"><div class="card-title">C — Analyse des risques</div></div>
+          <div class="card-body stack-sm">
+            <label class="check is-on"><span class="box">✓</span><span>Accès <small class="muted">(voirie, stationnement)</small></span></label>
+            <label class="check is-on"><span class="box">✓</span><span>Voisinage</span></label>
+            <label class="check is-on"><span class="box">✓</span><span>Technique</span></label>
+            <label class="check"><span class="box"></span><span>Réseaux</span></label>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <label class="check is-on"><span class="box">✓</span><span>Électricité provisoire</span></label>
+            <div class="field" style="padding-left:26px"><label style="font-size:11.5px">N° de PDL</label>
+              <input class="input" value="25 418 907 334 612" style="font-size:12.5px"></div>
+            <hr style="border:0;border-top:1px solid var(--grid)">
+            <label class="check"><span class="box"></span><span>Étude géologique <small class="muted">— sautée</small></span></label>
+            <label class="check is-on"><span class="box">✓</span><span>Étude de sol</span></label>
+            <label class="check"><span class="box"></span><span>Panneau de chantier</span></label>
+            <label class="check"><span class="box"></span><span>Branchements</span></label>
+          </div>
+        </div>
+
+        <!-- ======================================================= passation -->
+        <div class="card">
+          <div class="card-head"><div class="card-title">Passation</div></div>
+          <div class="card-body stack">
+            <div class="field"><label>Réunion commercial / conducteur</label>
+              <input class="input" type="date" value="2026-10-08"></div>
+            <div class="field"><label>DOC envoyé le</label>
+              <input class="input" type="date" value=""><span class="hint">Déclaration d'ouverture de chantier</span></div>
+            <div class="field"><label>Planning de chantier envoyé le</label>
+              <input class="input" type="date" value=""></div>
+            <div class="note"><small>Le planning ne devient visible par le client qu'une fois le
+              marché signé — <a href="{{l:clientPlan}}">voir son écran</a>.</small></div>
+          </div>
+        </div>
+
+        <!-- ======================================================= réception -->
+        <div class="card">
+          <div class="card-head"><div class="card-title">Réception</div></div>
+          <div class="card-body stack">
+            <div class="field"><label>Test de perméabilité</label><input class="input" type="date" value=""></div>
+            <div class="field"><label>Réception des travaux</label><input class="input" type="date" value=""></div>
+            <div class="field"><label>DAACT envoyée le</label><input class="input" type="date" value="">
+              <span class="hint">Déclaration attestant l'achèvement des travaux</span></div>
+            <div class="field"><label>Dossier de réception transmis le</label><input class="input" type="date" value=""></div>
+            <div class="alert alert-info" style="padding:9px 11px"><span class="ico">◆</span>
+              <div><small>Une réception saisie sans DAACT fait remonter un point d'attention.</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================================== lignes de devis détaillées -->
+      <div class="card">
+        <div class="card-head"><div class="card-title">Lignes de devis</div>
+          <button class="btn btn-sm">＋ Ajouter une ligne</button></div>
+        <div class="scroll-x"><table class="tbl">
+          <thead><tr><th style="width:150px">Lot</th><th>Libellé</th><th>Entreprise</th><th class="num" style="width:100px">Date</th><th class="num">Montant HT</th><th class="num">Montant TTC</th><th style="width:40px"></th></tr></thead>
+          <tbody>
+            <tr><td>Gros œuvre</td><td>Fondations, élévations, dalle portée</td><td>Maçonnerie Fontaine</td><td class="num">18/09/2026</td><td class="num">86 400 €</td><td class="num">103 680 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td>Charpente</td><td>Charpente traditionnelle + couverture tuiles</td><td>SARL Toitures du Rhône</td><td class="num">21/09/2026</td><td class="num">52 300 €</td><td class="num">62 760 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td>Menuiseries ext.</td><td>5 fenêtres alu + 1 coulissant 3 vantaux</td><td>Alpes Bois</td><td class="num">24/09/2026</td><td class="num">38 900 €</td><td class="num">46 680 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td>Électricité</td><td>Mise aux normes + 32 points lumineux</td><td>Électricité Bonnet</td><td class="num">26/09/2026</td><td class="num">26 700 €</td><td class="num">32 040 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td>Carrelage</td><td>62 m² grès cérame + faïence SdB</td><td>Sols &amp; Faïences Lyon</td><td class="num">30/09/2026</td><td class="num">23 500 €</td><td class="num">28 200 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td>Plâtrerie</td><td>Cloisons, doublages, faux plafonds</td><td>Cloisons Rhodania</td><td class="num">02/10/2026</td><td class="num">21 400 €</td><td class="num">25 680 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td>Plomberie</td><td>Sanitaires + alimentation cuisine</td><td>Plomberie Sanivalley</td><td class="num">05/10/2026</td><td class="num">18 400 €</td><td class="num">22 080 €</td><td class="right"><button class="btn btn-sm btn-ghost">✕</button></td></tr>
+            <tr><td class="muted" colspan="4"><i>Peinture — à attribuer</i></td><td class="num muted">—</td><td class="num muted">—</td><td></td></tr>
+          </tbody>
+          <tfoot><tr style="background:var(--surface-2)"><td colspan="4"><b>Total</b></td><td class="num"><b>267 600 €</b></td><td class="num"><b>321 120 €</b></td><td></td></tr></tfoot>
+        </table></div>
+        <div class="card-foot"><small class="muted">PBMO figeait 45 lignes vides dans sa fiche ; ici le
+          tableau s'étend à la demande et chaque ligne est rattachable à un devis existant.</small></div>
+      </div>
+
+    </div>
+  </div>
+</div>

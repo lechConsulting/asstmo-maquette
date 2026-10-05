@@ -1,0 +1,216 @@
+<!--meta { "id":"04", "titre":"Vue d'ensemble", "groupe":"Cabinet", "role":"Direction", "largeur":1440, "hauteur":1180 } -->
+<div class="app">
+  {{sidebar:ensemble}}
+  <div class="main">
+    {{topbar:Hélène Verdier@HV@Direction|fn-direction}}
+    <div class="content">
+
+      <div class="page-head">
+        <div><h1 class="page-title">Vue d'ensemble</h1>
+          <div class="page-sub">12 chantiers actifs, groupés par phase. Avancement moyen 48 %.</div></div>
+        <div class="page-actions">
+          <div class="search" style="max-width:280px"><span>⌕</span><span>Client ou adresse…</span></div>
+          <a class="btn btn-primary" href="{{l:chantiers}}">＋ Nouveau chantier</a>
+        </div>
+      </div>
+
+      <div class="grid-5">
+        <div class="tile"><div class="tile-label">Chantiers actifs</div><div class="tile-value">12</div><div class="tile-note">+3 clos ce trimestre</div></div>
+        <div class="tile"><div class="tile-label">Travaux engagés</div><div class="tile-value">1,84 M€</div><div class="tile-note">HT, devis signés</div></div>
+        <div class="tile"><div class="tile-label">Honoraires</div><div class="tile-value">187 k€</div><div class="tile-note">dont 62 k€ encaissés</div></div>
+        <div class="tile"><div class="tile-label">Points d'attention</div><div class="tile-value" style="color:var(--critical-ink)">3</div><div class="tile-note">bloquants</div></div>
+        <div class="tile"><div class="tile-label">À traiter</div><div class="tile-value">9</div><div class="tile-note">e-mails non rattachés</div></div>
+      </div>
+
+      <div class="grid-4" style="align-items:start;gap:16px">
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-1 badge-lg"><i class="dot"></i>Réception &amp; administratif</span>
+            <b class="num muted">2</b>
+          </div>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-1-bg">RO</div>
+                <div class="grow"><b style="font-size:13px">Sinistre Rochet</b>
+                  <div class="muted truncate" style="font-size:12px">8 rue Pasteur, Oullins</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 4 — Relevé Polycam</span><b>6 %</b></div>
+                <div class="progress thin"><span class="bg-ph-1" style="width:6%"></span></div>
+              </div>
+              <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-1-bg">LC</div>
+                <div class="grow"><b style="font-size:13px">Loge Carron</b>
+                  <div class="muted truncate" style="font-size:12px">Adresse non renseignée</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 2 — Prise de rendez-vous</span><b>3 %</b></div>
+                <div class="progress thin"><span class="bg-ph-1" style="width:3%"></span></div>
+              </div>
+              <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-2 badge-lg"><i class="dot"></i>Études</span><b class="num muted">4</b>
+          </div>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-2-bg">MB</div>
+                <div class="grow"><b style="font-size:13px">École Brindas</b>
+                  <div class="muted truncate" style="font-size:12px">Place de la Mairie, Brindas</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 12 — Listing artisans</span><b>19 %</b></div>
+                <div class="progress thin"><span class="bg-ph-2" style="width:19%"></span></div>
+              </div>
+              <span class="badge fn-direction"><i class="dot"></i>Direction</span>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-2-bg">GA</div>
+                <div class="grow"><b style="font-size:13px">Garage Aubert</b>
+                  <div class="muted truncate" style="font-size:12px">12 av. de la Gare, Tassin</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 9 — Retour client</span><b>15 %</b></div>
+                <div class="progress thin"><span class="bg-ph-2" style="width:15%"></span></div>
+              </div>
+              <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-2-bg">RD</div>
+                <div class="grow"><b style="font-size:13px">Rénovation Duval</b>
+                  <div class="muted truncate" style="font-size:12px">3 impasse du Puits, Vaugneray</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 20 — Descriptif travaux</span><b>32 %</b></div>
+                <div class="progress thin"><span class="bg-ph-2" style="width:32%"></span></div>
+              </div>
+              <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-3 badge-lg"><i class="dot"></i>Préparation de chantier</span><b class="num muted">3</b>
+          </div>
+          <a class="card" href="{{l:etapes}}" style="display:block;border-color:var(--brand)">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-3-bg">MA</div>
+                <div class="grow"><b style="font-size:13px">Extension Martin</b>
+                  <div class="muted truncate" style="font-size:12px">14 ch. des Vignes, Craponne</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 34 — Tableau de dommage</span><b>55 %</b></div>
+                <div class="progress thin"><span class="bg-ph-3" style="width:55%"></span></div>
+              </div>
+              <div class="row between">
+                <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                <span class="badge st-critical">✕ 1</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-3-bg">PL</div>
+                <div class="grow"><b style="font-size:13px">Pergola Lemoine</b>
+                  <div class="muted truncate" style="font-size:12px">7 allée des Cèdres, Charbonnières</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 42 — Convocation marchés</span><b>68 %</b></div>
+                <div class="progress thin"><span class="bg-ph-3" style="width:68%"></span></div>
+              </div>
+              <span class="badge fn-admin"><i class="dot"></i>Administratif</span>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-3-bg">CS</div>
+                <div class="grow"><b style="font-size:13px">Combles Sarda</b>
+                  <div class="muted truncate" style="font-size:12px">21 rue Bellecour, Lyon 2e</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 23 — DICT</span><b>37 %</b></div>
+                <div class="progress thin"><span class="bg-ph-3" style="width:37%"></span></div>
+              </div>
+              <span class="badge fn-technique"><i class="dot"></i>Secr. technique</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="stack-sm">
+          <div class="row between" style="padding:0 2px 4px">
+            <span class="badge ph-4 badge-lg"><i class="dot"></i>Travaux &amp; réception</span><b class="num muted">3</b>
+          </div>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-4-bg">TI</div>
+                <div class="grow"><b style="font-size:13px">SCI Les Tilleuls</b>
+                  <div class="muted truncate" style="font-size:12px">45 rue Paul Bert, Lyon 3e</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 51 — Liaison B Enedis</span><b>82 %</b></div>
+                <div class="progress thin"><span class="bg-ph-4" style="width:82%"></span></div>
+              </div>
+              <div class="row between">
+                <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                <span class="badge st-warning">▲ 1</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-4-bg">SB</div>
+                <div class="grow"><b style="font-size:13px">Surélévation Berger</b>
+                  <div class="muted truncate" style="font-size:12px">9 rue des Écoles, Francheville</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 47 — Démarrage travaux</span><b>76 %</b></div>
+                <div class="progress thin"><span class="bg-ph-4" style="width:76%"></span></div>
+              </div>
+              <div class="row between">
+                <span class="badge fn-conducteur"><i class="dot"></i>Conducteur</span>
+                <span class="badge st-critical">✕ 1</span>
+              </div>
+            </div>
+          </a>
+          <a class="card" href="{{l:etapes}}" style="display:block">
+            <div class="card-body stack-sm">
+              <div class="row"><div class="avatar ph-4-bg">VH</div>
+                <div class="grow"><b style="font-size:13px">Véranda Hamon</b>
+                  <div class="muted truncate" style="font-size:12px">2 rue du Stade, Grézieu</div></div></div>
+              <div class="meter">
+                <div class="meter-head"><span class="truncate">Ét. 58 — DAACT</span><b>94 %</b></div>
+                <div class="progress thin"><span class="bg-ph-4" style="width:94%"></span></div>
+              </div>
+              <span class="badge fn-etude"><i class="dot"></i>Bureau d'étude</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-title">Terminés et archivés</div>
+          <span class="muted" style="font-size:12px">3 chantiers</span></div>
+        <div class="card-body row wrap" style="gap:12px">
+          <div class="row" style="background:var(--surface-2);border-radius:var(--radius-sm);padding:9px 12px;gap:9px">
+            <div class="avatar sm neutral">BF</div>
+            <div><b style="font-size:12.5px">Bureau Fabre</b><div class="muted" style="font-size:11.5px">Terminé le 18/08/2026</div></div>
+          </div>
+          <div class="row" style="background:var(--surface-2);border-radius:var(--radius-sm);padding:9px 12px;gap:9px">
+            <div class="avatar sm neutral">AP</div>
+            <div><b style="font-size:12.5px">Appartement Py</b><div class="muted" style="font-size:11.5px">Archivé le 02/07/2026</div></div>
+          </div>
+          <div class="row" style="background:var(--surface-2);border-radius:var(--radius-sm);padding:9px 12px;gap:9px">
+            <div class="avatar sm neutral">GR</div>
+            <div><b style="font-size:12.5px">Grange Rostand</b><div class="muted" style="font-size:11.5px">Archivé le 14/05/2026</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
