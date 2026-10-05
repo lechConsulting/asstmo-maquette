@@ -16,12 +16,16 @@ Les données sont fictives mais **cohérentes d'un écran à l'autre** : le mêm
 
 ```bash
 node build.mjs     # src/*.html + _jetons.css → docs/
+python3 audit.py   # contrôles de mise en page
 ```
 
 - `_jetons.css` — jetons de design et composants.
 - `src/*.html` — un fragment par écran, avec un en-tête `<!--meta … -->`.
 - `build.mjs` — inline le CSS, injecte les fragments partagés (barre latérale, onglets),
   génère le sommaire et **vérifie tous les liens internes** (un lien mort casse le build).
+- `audit.py` — les contrôles que l'œil ferait : balises déséquilibrées, composants dont la
+  mise en page dépend d'un nombre d'enfants précis, largeurs fixes glissées dans une colonne
+  souple, et usage du rouge hors du châssis. Chaque contrôle vient d'un bug réellement rencontré.
 
 ## Châssis
 
