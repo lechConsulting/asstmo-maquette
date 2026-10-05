@@ -1,0 +1,130 @@
+<!--meta { "id":"31", "titre":"Espace client", "groupe":"Client", "role":"Client", "largeur":1280, "hauteur":1120 } -->
+<div class="content" style="max-width:1100px;margin:0 auto;padding:26px 22px">
+  <div class="page-head">
+    <div><h1 class="page-title">Espace client</h1>
+      <div class="page-sub">M. et Mme Martin · une seule page, en français, sans jargon d'étapes</div></div>
+    <span class="badge fn-client badge-lg"><i class="dot"></i>ROLE_CLIENT</span>
+  </div>
+
+  <div class="alert alert-info">
+    <span class="ico">◆</span>
+    <div><b>Rien n'est visible par défaut.</b> Chaque volet s'ouvre sur décision du maître d'œuvre,
+      et le planning seulement une fois le marché signé. Le client ne voit jamais « étape 34 sur 62 » :
+      il voit « les fondations sont coulées, la charpente arrive mi-novembre ».</div>
+  </div>
+
+  <div class="grid-side">
+    <div class="phones" style="justify-content:flex-start">
+      <div>
+        <div class="phone">
+          <div class="phone-notch"><i></i></div>
+          <div class="phone-body">
+            <div class="row between">
+              <div class="row" style="gap:9px">
+                <div class="avatar sm" style="background:var(--ext-client)">MM</div>
+                <div><b style="font-size:13px">M. et Mme Martin</b>
+                  <div class="muted" style="font-size:11.5px">Agence Verdier</div></div>
+              </div>
+            </div>
+
+            <div class="m-card accent">
+              <div class="tile-label">Où en est votre chantier</div>
+              <div style="font-size:15px;font-weight:600;line-height:1.4;margin-top:3px">
+                Les fondations sont coulées. La charpente est prévue à partir du 12 novembre.</div>
+              <div class="progress" style="margin-top:6px"><span class="bg-ph-3" style="width:55%"></span></div>
+              <div class="row between"><small class="muted">Travaux préparés</small><b style="font-size:12.5px">55 %</b></div>
+            </div>
+
+            <div class="m-card">
+              <div class="tile-label">Votre extension</div>
+              <div style="font-size:13px">14 chemin des Vignes, Craponne</div>
+              <div class="row between" style="font-size:13px"><span class="muted">Début des travaux</span><b>2 novembre 2026</b></div>
+              <div class="row between" style="font-size:13px"><span class="muted">Fin prévue</span><b>28 février 2027</b></div>
+            </div>
+
+            <a class="m-row" href="{{l:clientDevis}}">
+              <span style="font-size:17px">⎙</span>
+              <div class="grow"><b style="font-size:13px">Mes devis</b><small class="muted">6 devis partagés</small></div>
+              <span class="m-chevron">›</span></a>
+
+            <a class="m-row" href="{{l:clientPlan}}">
+              <span style="font-size:17px">▦</span>
+              <div class="grow"><b style="font-size:13px">Mon planning</b><small class="muted">qui vient, et quand</small></div>
+              <span class="m-chevron">›</span></a>
+
+            <a class="m-row" href="{{l:clientPaie}}">
+              <span style="font-size:17px">€</span>
+              <div class="grow"><b style="font-size:13px">Paiements et échéances</b>
+                <small class="badge st-warning" style="margin-top:3px">▲ 1 échéance le 2 novembre</small></div>
+              <span class="m-chevron">›</span></a>
+
+            <a class="m-row" href="{{l:clientCr}}">
+              <span style="font-size:17px">◴</span>
+              <div class="grow"><b style="font-size:13px">Comptes rendus</b><small class="muted">2 réunions de chantier</small></div>
+              <span class="m-chevron">›</span></a>
+
+            <div class="m-card">
+              <div class="tile-label">Votre interlocutrice</div>
+              <div class="row" style="gap:9px">
+                <div class="avatar sm" style="background:var(--fn-conducteur);color:#3a2800">ÉC</div>
+                <div class="grow"><b style="font-size:13px">Élodie Charrier</b>
+                  <small class="muted">Conductrice de travaux</small></div>
+                <a class="btn btn-sm" href="tel:#">Appeler</a>
+              </div>
+              <button class="btn btn-block">✉ Écrire à l'agence</button>
+            </div>
+          </div>
+        </div>
+        <div class="phone-caption">Accueil client — quatre volets, une phrase qui dit tout</div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-head"><div class="card-title">Ce que le maître d'œuvre ouvre, volet par volet</div></div>
+        <div class="scroll-x"><table class="tbl">
+          <thead><tr><th>Volet</th><th>Condition</th><th>État</th></tr></thead>
+          <tbody>
+            <tr><td><b>Avancement</b></td><td class="muted">toujours visible, en langage clair</td>
+              <td><span class="switch is-on" style="display:inline-block"></span></td></tr>
+            <tr><td><b>Devis</b></td><td class="muted">devis par devis, à la main</td>
+              <td><span class="switch is-on" style="display:inline-block"></span> <small class="muted">6 sur 8</small></td></tr>
+            <tr><td><b>Planning</b></td><td class="muted">automatiquement, dès que le marché est signé</td>
+              <td><span class="switch is-on" style="display:inline-block"></span></td></tr>
+            <tr><td><b>Paiements</b></td><td class="muted">toujours — honoraires et travaux séparés</td>
+              <td><span class="switch is-on" style="display:inline-block"></span></td></tr>
+            <tr><td><b>Comptes rendus</b></td><td class="muted">compte rendu par compte rendu</td>
+              <td><span class="switch is-on" style="display:inline-block"></span> <small class="muted">2 sur 4</small></td></tr>
+            <tr class="muted"><td><b>Photos</b></td><td>celles jointes aux comptes rendus partagés</td>
+              <td><span class="switch is-on" style="display:inline-block"></span></td></tr>
+          </tbody>
+        </table></div>
+        <div class="card-foot"><small class="muted">Un volet fermé n'apparaît pas du tout : le client
+          ne voit pas qu'il existe quelque chose qu'on lui cache. C'est moins anxiogène qu'un cadenas.</small></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-title">Traduire le workflow en français</div></div>
+        <div class="card-body">
+          <table class="tbl" style="margin:-16px">
+            <thead><tr><th>Ce que le cabinet voit</th><th>Ce que le client lit</th></tr></thead>
+            <tbody>
+              <tr><td><small class="muted">Ét. 33 — Dépôt DP / PC</small></td>
+                <td>« Le dossier a été déposé en mairie. »</td></tr>
+              <tr><td><small class="muted">Ét. 34 — Réception tableau de dommage</small></td>
+                <td>« Nous attendons le retour de l'expert d'assurance. »</td></tr>
+              <tr style="background:var(--brand-wash)"><td><small class="muted">Ét. 44 — RDV signature + planning</small></td>
+                <td><b>« Les fondations sont coulées. La charpente est prévue à partir du 12 novembre. »</b></td></tr>
+              <tr><td><small class="muted">Ét. 47 — Démarrage travaux</small></td>
+                <td>« Les travaux ont commencé. »</td></tr>
+              <tr><td><small class="muted">Ét. 56 — Réception de travaux</small></td>
+                <td>« Votre chantier est réceptionné. »</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-foot"><small class="muted">La phrase est rattachée à la phase, pas à chacune
+          des 62 étapes : cinq phrases suffisent, et elles ne changent pas tous les trois jours.</small></div>
+      </div>
+    </div>
+  </div>
+</div>

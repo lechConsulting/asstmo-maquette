@@ -1,8 +1,12 @@
 <!doctype html>
-<!-- @dsCard group="Fondations" -->
-<html lang="fr"><head><meta charset="utf-8">
+<!-- @dsCard group="Client" -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AsstMO — maquette, sommaire</title><style>/* ===========================================================================
+<title>AsstMO · 32 — Client — devis</title>
+<style>
+/* ===========================================================================
    AsstMO — jetons de design et composants de maquette
    Palette validée avec scripts/validate_palette.js (skill dataviz) :
      · phases  = rampe ORDINALE bleue (les phases sont ordonnées 1→4)
@@ -630,110 +634,160 @@ textarea.input { resize: vertical; min-height: 86px; line-height: 1.55; }
 .type-row { display: flex; align-items: baseline; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--grid); }
 .type-row:last-child { border-bottom: none; }
 .type-row .lbl { width: 150px; flex: none; font-size: 11.5px; color: var(--ink-muted); font-family: ui-monospace, monospace; }
-</style></head>
-<body><div class="content" style="max-width:940px;margin:0 auto;padding:34px 22px">
-<div class="page-head"><div>
-  <h1 class="page-title">AsstMO — maquette</h1>
-  <div class="page-sub">36 écrans. Chaque page est autonome et se bascule en mode sombre.</div>
-</div><div class="page-actions">
-  <a class="btn" href="00-fondations.html">Fondations</a>
-  <a class="btn btn-primary" href="01-roles.html">Commencer par les rôles</a>
-</div></div>
-<div class="card"><div class="card-head"><div class="card-title">Fondations</div>
-  <span class="muted">3 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">00</td>
-      <td><a href="00-fondations.html">Fondations</a></td>
-      <td class="right"></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">01</td>
-      <td><a href="01-roles.html">Rôles</a></td>
-      <td class="right"></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">02</td>
-      <td><a href="02-connexion.html">Connexion</a></td>
-      <td class="right"></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Cabinet</div>
-  <span class="muted">10 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">03</td>
-      <td><a href="03-tableau-de-bord.html">Tableau de bord</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">04</td>
-      <td><a href="04-vue-d-ensemble.html">Vue d'ensemble</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">05</td>
-      <td><a href="05-chantiers.html">Chantiers</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">15</td>
-      <td><a href="15-planning-conducteur.html">Planning conducteur</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">16</td>
-      <td><a href="16-mes-taches.html">Mes tâches</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur + Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">17</td>
-      <td><a href="17-messagerie-a-traiter.html">Messagerie — à traiter</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">18</td>
-      <td><a href="18-messagerie-un-e-mail.html">Messagerie — un e-mail</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">19</td>
-      <td><a href="19-compte-rendu-rdv.html">Compte rendu RDV</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">20</td>
-      <td><a href="20-annuaire-clients.html">Annuaire — clients</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">21</td>
-      <td><a href="21-annuaire-artisans.html">Annuaire — artisans</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Chantier</div>
-  <span class="muted">9 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">06</td>
-      <td><a href="06-chantier-etapes.html">Chantier · Étapes</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">07</td>
-      <td><a href="07-chantier-planning.html">Chantier · Planning</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">08</td>
-      <td><a href="08-chantier-finances.html">Chantier · Finances</a></td>
-      <td class="right"><span class="badge st-neutral">Direction</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">09</td>
-      <td><a href="09-chantier-fiche-de-suivi.html">Chantier · Fiche de suivi</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">10</td>
-      <td><a href="10-chantier-intervenants.html">Chantier · Intervenants</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">11</td>
-      <td><a href="11-chantier-messagerie.html">Chantier · Messagerie</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">12</td>
-      <td><a href="12-chantier-photos.html">Chantier · Photos</a></td>
-      <td class="right"><span class="badge st-neutral">Conducteur</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">13</td>
-      <td><a href="13-chantier-comptes-rendus.html">Chantier · Comptes rendus</a></td>
-      <td class="right"><span class="badge st-neutral">Secr. technique</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">14</td>
-      <td><a href="14-chantier-impression.html">Chantier · Impression</a></td>
-      <td class="right"><span class="badge st-neutral">Administratif</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Administration</div>
-  <span class="muted">5 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">22</td>
-      <td><a href="22-modele-de-workflow.html">Modèle de workflow</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">23</td>
-      <td><a href="23-bareme-d-honoraires.html">Barème d'honoraires</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">24</td>
-      <td><a href="24-utilisateurs.html">Utilisateurs</a></td>
-      <td class="right"><span class="badge st-neutral">Admin du cabinet</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">25</td>
-      <td><a href="25-moteur-d-evenements.html">Moteur d'évènements</a></td>
-      <td class="right"><span class="badge st-neutral">Super admin</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">26</td>
-      <td><a href="26-cabinets.html">Cabinets</a></td>
-      <td class="right"><span class="badge st-neutral">Super admin</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Artisan</div>
-  <span class="muted">4 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">27</td>
-      <td><a href="27-espace-artisan.html">Espace artisan</a></td>
-      <td class="right"><span class="badge st-neutral">Artisan</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">28</td>
-      <td><a href="28-artisan-deposer-un-devis.html">Artisan — déposer un devis</a></td>
-      <td class="right"><span class="badge st-neutral">Artisan</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">29</td>
-      <td><a href="29-artisan-confirmer-sa-venue.html">Artisan — confirmer sa venue</a></td>
-      <td class="right"><span class="badge st-neutral">Sans compte, par jeton</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">30</td>
-      <td><a href="30-artisan-photos.html">Artisan — photos</a></td>
-      <td class="right"><span class="badge st-neutral">Artisan</span></td></tr>
-  </tbody></table></div><div class="card"><div class="card-head"><div class="card-title">Client</div>
-  <span class="muted">5 écrans</span></div>
-  <table class="tbl"><tbody>
-  <tr><td class="num" style="width:48px;color:var(--ink-muted)">31</td>
-      <td><a href="31-espace-client.html">Espace client</a></td>
-      <td class="right"><span class="badge st-neutral">Client</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">32</td>
-      <td><a href="32-client-devis.html">Client — devis</a></td>
-      <td class="right"><span class="badge st-neutral">Client</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">33</td>
-      <td><a href="33-client-planning.html">Client — planning</a></td>
-      <td class="right"><span class="badge st-neutral">Client</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">34</td>
-      <td><a href="34-client-paiements.html">Client — paiements</a></td>
-      <td class="right"><span class="badge st-neutral">Client</span></td></tr><tr><td class="num" style="width:48px;color:var(--ink-muted)">35</td>
-      <td><a href="35-client-comptes-rendus.html">Client — comptes rendus</a></td>
-      <td class="right"><span class="badge st-neutral">Client</span></td></tr>
-  </tbody></table></div>
-</div></body></html>
+
+</style>
+</head>
+<body>
+<div class="mock-bar no-print">
+  <span class="tagid">32</span>
+  <span>Client — devis</span>
+  <span class="sep">·</span>
+  <span style="color:#9a9a96">Client</span>
+  <span class="sep">·</span><span style="color:#9ec5f4">Client</span>
+  <span class="persona">
+    <a href="index.html">Sommaire</a>
+    <a href="01-roles.html">Rôles</a>
+    <button class="theme-toggle" id="bascule">Mode sombre</button>
+  </span>
+</div>
+<div class="content" style="max-width:1100px;margin:0 auto;padding:26px 22px">
+  <div class="page-head">
+    <div><h1 class="page-title">Mes devis</h1>
+      <div class="page-sub">Ce que le client voit — seulement les devis que le maître d'œuvre a partagés</div></div>
+    <span class="badge fn-client badge-lg"><i class="dot"></i>Client</span>
+  </div>
+
+  <div class="phones" style="justify-content:flex-start;align-items:flex-start">
+    <div>
+      <div class="phone">
+        <div class="phone-notch"><i></i></div>
+        <div class="phone-body">
+          <div class="row" style="gap:9px"><span class="m-chevron">‹</span>
+            <div><b style="font-size:14px">Mes devis</b>
+              <div class="muted" style="font-size:11.5px">Extension Martin</div></div></div>
+
+          <div class="m-card accent">
+            <div class="tile-label">Total des travaux</div>
+            <div class="tile-value">248 600 €</div>
+            <small class="muted">HT · 298 320 € TTC · 6 lots sur 8</small>
+          </div>
+
+          <div class="m-row">
+            <div class="grow"><b style="font-size:13px">Gros œuvre</b>
+              <small class="muted">Maçonnerie Fontaine</small>
+              <small class="badge st-good" style="margin-top:3px">✓ Signé</small></div>
+            <div style="text-align:right"><b class="num" style="font-size:13px">86 400 €</b>
+              <div class="muted" style="font-size:11px">HT</div></div>
+          </div>
+
+          <div class="m-row">
+            <div class="grow"><b style="font-size:13px">Charpente et couverture</b>
+              <small class="muted">SARL Toitures du Rhône</small>
+              <small class="badge st-good" style="margin-top:3px">✓ Signé</small></div>
+            <div style="text-align:right"><b class="num" style="font-size:13px">52 300 €</b>
+              <div class="muted" style="font-size:11px">HT</div></div>
+          </div>
+
+          <div class="m-row">
+            <div class="grow"><b style="font-size:13px">Menuiseries extérieures</b>
+              <small class="muted">Alpes Bois</small>
+              <small class="badge st-good" style="margin-top:3px">✓ Signé</small></div>
+            <div style="text-align:right"><b class="num" style="font-size:13px">38 900 €</b>
+              <div class="muted" style="font-size:11px">HT</div></div>
+          </div>
+
+          <div class="m-row">
+            <div class="grow"><b style="font-size:13px">Électricité</b>
+              <small class="muted">Électricité Bonnet</small>
+              <small class="badge st-good" style="margin-top:3px">✓ Signé</small></div>
+            <div style="text-align:right"><b class="num" style="font-size:13px">26 700 €</b>
+              <div class="muted" style="font-size:11px">HT</div></div>
+          </div>
+
+          <div class="m-row">
+            <div class="grow"><b style="font-size:13px">Carrelage et faïence</b>
+              <small class="muted">Sols &amp; Faïences Lyon</small>
+              <small class="badge st-good" style="margin-top:3px">✓ Signé</small></div>
+            <div style="text-align:right"><b class="num" style="font-size:13px">23 500 €</b>
+              <div class="muted" style="font-size:11px">HT</div></div>
+          </div>
+
+          <div class="m-row">
+            <div class="grow"><b style="font-size:13px">Plâtrerie et cloisons</b>
+              <small class="muted">Cloisons Rhodania</small>
+              <small class="badge st-good" style="margin-top:3px">✓ Signé</small></div>
+            <div style="text-align:right"><b class="num" style="font-size:13px">21 400 €</b>
+              <div class="muted" style="font-size:11px">HT</div></div>
+          </div>
+
+          <div class="m-card">
+            <div class="tile-label">Honoraires de maîtrise d'œuvre</div>
+            <div class="row between"><div class="tile-value sm">26 860 €</div>
+              <small class="muted">HT · 10,8 %</small></div>
+            <a href="34-client-paiements.html" style="font-size:12.5px">Voir les échéances ›</a>
+          </div>
+
+          <div class="note">
+            <small>Le lot peinture est encore en consultation. Nous vous présenterons les devis
+              quand ils seront comparables.</small>
+          </div>
+        </div>
+      </div>
+      <div class="phone-caption">Les devis partagés — un lot, une entreprise, un montant</div>
+    </div>
+
+    <div class="stack" style="flex:1;min-width:320px">
+      <div class="card">
+        <div class="card-head"><div class="card-title">Ce qui n'est pas partagé, et pourquoi</div></div>
+        <div class="card-body stack-sm">
+          <div class="row between" style="gap:14px">
+            <div><b style="font-size:13px">Plomberie — Sanivalley</b>
+              <div class="muted" style="font-size:12px">18 400 € HT · reçu le 5 octobre</div></div>
+            <span class="badge st-warning">▲ Pas encore validé</span>
+          </div>
+          <small class="muted">Un devis reçu mais non vérifié ne doit pas arriver chez le client :
+            s'il contient une erreur, elle devient une attente.</small>
+          <hr style="border:0;border-top:1px solid var(--grid)">
+          <div class="row between" style="gap:14px">
+            <div><b style="font-size:13px">Peinture — Decorhône</b>
+              <div class="muted" style="font-size:12px">14 800 € HT · écarté</div></div>
+            <span class="badge st-serious">▲ Écarté</span>
+          </div>
+          <small class="muted">Un devis écarté n'a pas à être montré : il n'est plus une option, et
+            l'afficher inviterait à rediscuter un arbitrage déjà fait.</small>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><div class="card-title">L'interrupteur, côté cabinet</div></div>
+        <div class="card-body">
+          <table class="tbl" style="margin:-16px">
+            <thead><tr><th>Lot</th><th>État</th><th class="center">Partagé</th></tr></thead>
+            <tbody>
+              <tr><td>Gros œuvre</td><td><span class="badge st-good">✓ Signé</span></td><td class="center"><span class="switch is-on" style="display:inline-block"></span></td></tr>
+              <tr><td>Charpente</td><td><span class="badge st-good">✓ Signé</span></td><td class="center"><span class="switch is-on" style="display:inline-block"></span></td></tr>
+              <tr><td>Plomberie</td><td><span class="badge st-warning">▲ Reçu</span></td><td class="center"><span class="switch" style="display:inline-block"></span></td></tr>
+              <tr><td>Peinture</td><td><span class="badge st-serious">▲ Écarté</span></td><td class="center"><span class="switch" style="display:inline-block"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-foot"><a href="08-chantier-finances.html" style="font-size:12.5px">Voir l'écran des finances ›</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var b = document.getElementById('bascule');
+  var sombre = matchMedia('(prefers-color-scheme: dark)').matches;
+  function peindre() {
+    document.documentElement.dataset.theme = sombre ? 'dark' : 'light';
+    b.textContent = sombre ? 'Mode clair' : 'Mode sombre';
+  }
+  peindre();
+  b.addEventListener('click', function () { sombre = !sombre; peindre(); });
+})();
+</script>
+</body>
+</html>
